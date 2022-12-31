@@ -6,7 +6,7 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <div className="z-30 flex w-full gap-3  p-3">
+    <div className="z-30 flex w-full gap-3 border-b-2 border-slate-300 py-5">
       <FilterButton title="All" count={80} />
       <FilterButton title="In Progress" count={30} />
       <FilterButton title="In Review" count={15} />

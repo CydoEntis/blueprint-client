@@ -1,10 +1,10 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Dashboard from "./pages/dashboard";
-import Layout from "./components/ui/Layout";
-import Navbar from "./components/nav/Navbar";
-import Nav from "./components/nav/Nav";
-import Header from "./components/header/Header";
+import Dashboard from "@/pages/dashboard";
+import Layout from "@/components/ui/Layout";
+import Navbar from "@/components/nav/Navbar";
+import Nav from "@/components/nav/Nav";
+import Header from "@/components/header/Header";
 
 const router = createBrowserRouter([
   {

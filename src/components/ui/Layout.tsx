@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
-  return <div className="ml-28 flex-col pt-12">{children}</div>;
+  return <div className="ml-28 flex w-4/6 flex-col px-5 pt-12">{children}</div>;
 };
 
 export default Layout;
