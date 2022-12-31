@@ -11,6 +11,11 @@ module.exports = {
         // "gradient-white": "linear-gradient(90deg, #F2F7FD 0%, #E0E4FD 100%",
         "gradient-custom": "linear-gradient(90deg, #111 0%, #555 100%",
       }),
+      colors: {
+        "indigo-500": "#794BF4",
+        "white-500": "#F2F7FD",
+        "white-600": "#E0E4FD",
+      },
     },
   },
   plugins: [],

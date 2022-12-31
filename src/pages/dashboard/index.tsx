@@ -5,7 +5,7 @@ type Props = {};
 
 const Dashboard = (props: Props) => {
   return (
-    <section className="flex flex-wrap items-center  gap-5 py-5">
+    <section className="flex flex-wrap items-center gap-5 py-5">
       <TaskCard />
       <TaskCard />
       <TaskCard />

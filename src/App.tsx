@@ -21,7 +21,7 @@ type Props = {};
 
 const App = (props: Props) => {
   return (
-    <div className="h-full w-full bg-gradient-to-t from-[#F2F7FD] to-[#E0E4FD]">
+    <div className="h-full w-full bg-white-600">
       <Nav />
       <Layout>
         <Header />
