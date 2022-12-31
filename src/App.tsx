@@ -1,7 +1,11 @@
-import './App.css';
+import Dashboard from '@/pages/dashboard';
 
 function App() {
-	return <div className='app'></div>;
+	return (
+		<div className='app p-10'>
+			<Dashboard />
+		</div>
+	);
 }
 
 export default App;
