@@ -1,9 +1,22 @@
+import TaskCard from "@/components/cards/TaskCard";
 import React from "react";
 
 type Props = {};
 
 const Dashboard = (props: Props) => {
-  return <section className="mx-auto h-full w-11/12  p-5"></section>;
+  return (
+    <section className="flex w-11/12 flex-wrap gap-8 p-5">
+      <TaskCard />
+      <TaskCard />
+      <TaskCard />
+      <TaskCard />
+      <TaskCard />
+      <TaskCard />
+      <TaskCard />
+      <TaskCard />
+      <TaskCard />
+    </section>
+  );
 };
 
 export default Dashboard;
