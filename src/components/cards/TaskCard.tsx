@@ -12,7 +12,7 @@ type Props = {};
 
 const TaskCard = (props: Props) => {
   return (
-    <div className="relative flex h-72 w-11/12 flex-col items-center justify-center rounded-2xl bg-white p-5 drop-shadow-xl md:w-[19%]">
+    <div className="relative flex h-72 w-11/12 max-w-md flex-col items-center justify-center rounded-2xl bg-white p-5 drop-shadow-xl">
       <div className="mx-auto text-center">
         <h1 className="font-bold text-slate-700">App Development</h1>
         <p className="pb-3 text-sm  text-slate-400">Some text</p>
