@@ -14,6 +14,7 @@ import Freddy from "@/assets/freddy.jpg";
 import James from "@/assets/james.jpg";
 import Rachelle from "@/assets/rachelle.jpg";
 import Tag from "../tags/Tag";
+import TaskIcon from "@/pages/task/TaskIcon";
 
 // Change type to use enums
 type Props = {
@@ -48,14 +49,14 @@ const TaskCard = ({ title, description }: Props) => {
           </div>
         </div>
         <div className="flex items-center justify-center">
-          <div className="mr-3 flex items-center justify-center">
-            <PhotoIcon className="mr-2 h-6 w-6 text-slate-500" />
-            <p className="text-sm">3</p>
-          </div>
-          <div className="flex items-center justify-center">
-            <ChatBubbleOvalLeftEllipsisIcon className="mr-2 h-6 w-6 text-slate-500" />
-            <p className="text-sm">5</p>
-          </div>
+          <TaskIcon
+            count={3}
+            icon={<PhotoIcon className="mr-2 h-6 w-6 text-gray-60" />}
+          />
+          <TaskIcon
+            count={5}
+            icon={<ChatBubbleOvalLeftEllipsisIcon className="mr-2 h-6 w-6 " />}
+          />
         </div>
       </div>
     </div>
