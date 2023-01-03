@@ -22,7 +22,7 @@ const Project = ({ title, children }: Props) => {
   );
 
   return (
-    <ul className="mt-8 flex w-full flex-col text-grey-550">
+    <ul className="text-grey-60 mt-8 flex w-full flex-col">
       <h4
         className="flex cursor-pointer items-center py-2 text-xs  uppercase hover:text-gray-500"
         onClick={onClickHandler}

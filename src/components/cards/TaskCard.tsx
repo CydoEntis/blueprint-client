@@ -58,7 +58,7 @@ const TaskCard = ({ type }: Props) => {
           {typeIcon}
         </div> */}
           <h1 className="font-bold text-black-400">App Development</h1>
-          <p className="pb-3 text-sm text-grey-550">Some text</p>
+          <p className="text-grey-60 pb-3 text-sm">Some text</p>
           <div className="relative mx-auto ml-4 flex h-8 items-center justify-center">
             <div className="border-1 absolute mr-12 h-8 w-8 rounded-full border-white">
               <img className="rounded-full" src={Freddy} alt="" />

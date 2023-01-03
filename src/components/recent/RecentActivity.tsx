@@ -15,8 +15,8 @@ const RecentActivity = ({ imgSrc, title, username, date }: Props) => {
       </div>
       <div className="mx-5 h-10">
         <h3>{title}</h3>
-        <p className="font-italic text-sm text-grey-550">{username}</p>
-        <p className="text-xs text-grey-550">{date}</p>
+        <p className="font-italic text-grey-60 text-sm">{username}</p>
+        <p className="text-grey-60 text-xs">{date}</p>
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ const Project = ({ iconColor, title, children }: Props) => {
   };
 
   return (
-    <ul className="ml-2 text-xs text-grey-550">
+    <ul className="text-grey-60 ml-2 text-xs">
       <div className="flex items-center py-1">
         <div className={`mr-1 h-2 w-2 rounded-full bg-${iconColor}-450`}></div>
         <h4

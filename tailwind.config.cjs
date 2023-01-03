@@ -24,6 +24,8 @@ module.exports = {
         "red-450": "#DC6465",
         "green-450": "#21CB61",
         "orange-450": "#DA9B65",
+        "gray-50": "#F4F6F8",
+        "gray-60": "#8B8B8B",
       },
     },
   },

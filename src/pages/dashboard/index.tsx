@@ -15,7 +15,7 @@ type Props = {};
 const Dashboard = (props: Props) => {
   return (
     <section className="flex py-5">
-      <main className="flex h-4/5 flex-wrap items-center gap-3 p-3 md:w-10/12">
+      <main className="flex h-4/5 flex-wrap items-center gap-3 p-3 md:w-11/12">
         <TaskCard type="backend" />
         <TaskCard type="testing" />
         <TaskCard type="frontend" />

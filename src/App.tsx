@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Dashboard from "@/pages/dashboard";
 import Layout from "@/components/ui/Layout";
-import Navbar from "@/components/nav/Navbar";
+import Navbar from "@/components/nav/ProjectNav";
 import Nav from "@/components/nav/Nav";
 import Header from "@/components/header/Header";
 import { PlusIcon } from "@heroicons/react/24/solid";
@@ -26,11 +26,11 @@ type Props = {};
 
 const App = (props: Props) => {
   return (
-    <div className="h-full w-full bg-white-600">
+    <div className="h-full w-full bg-white">
       <Nav />
+      <Projects />
       <Layout>
-        <Projects />
-        {/* <RouterProvider router={router} /> */}
+        <RouterProvider router={router} />
       </Layout>
     </div>
   );

@@ -1,13 +1,18 @@
-import React from "react";
-import { HeaderProps } from "@/types/header-types";
-import ActionButton from "../buttons/ActionButton";
+type Props = {
+  title: string;
+  iconColor: string;
+  icon?: React.ReactNode;
+};
 
-const Header = ({ text, icon, onClick, styles }: HeaderProps) => {
+const Header = ({ title, iconColor, icon }: Props) => {
   return (
-    <head className="flex items-center justify-between">
-      <h1 className="text-2xl font-bold text-black-400">Projects</h1>
-      <ActionButton text={text} icon={icon} onClick={onClick} styles={styles} />
-    </head>
+    <header className="flex w-full items-center justify-between p-5">
+      <div className="flex items-center">
+        <div className={`mr-2 h-4 w-4 rounded-full bg-${iconColor}-450`}></div>
+        <h1 className="text-2xl font-bold text-black-400">{title}</h1>
+      </div>
+      {icon}
+    </header>
   );
 };
 

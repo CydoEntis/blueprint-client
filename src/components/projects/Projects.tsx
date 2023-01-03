@@ -15,13 +15,13 @@ type Props = {};
 
 const Projects = (props: Props) => {
   return (
-    <Sidebar className="flex h-screen w-[225px] flex-col justify-between border-2 border-cyan-600 p-3">
+    <Sidebar className="fixed ml-28 flex h-screen w-[225px] flex-col justify-between border-r-2 border-gray-50 p-5">
       <nav className="w-full">
         {/* Search */}
         <div className="mb-5 flex w-full items-center">
-          <MagnifyingGlassIcon className="mr-2 h-4 w-1/12 text-grey-550" />
+          <MagnifyingGlassIcon className="text-grey-60 mr-2 h-4 w-1/12" />
           <input
-            className="w-10/12 bg-transparent text-sm"
+            className="text-grey-60 w-10/12 border-indigo-500 bg-transparent text-sm focus:border-b-2 focus:outline-none"
             type="text"
             placeholder="Search..."
           />
