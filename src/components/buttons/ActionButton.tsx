@@ -1,10 +1,9 @@
-import React, { ReactNode } from "react";
-import { HeaderProps } from "@/types/header-types";
+import { ButtonProps } from "@/types/button-types";
 
-const ActionButton = ({ text, icon, onClick, styles }: HeaderProps) => {
+const ActionButton = ({ onClick, className, children }: ButtonProps) => {
   return (
-    <button onClick={onClick} className={styles}>
-      {icon} {text}
+    <button className={className} onClick={onClick}>
+      {children}
     </button>
   );
 };

@@ -1,16 +1,21 @@
 import React from "react";
 import Sidebar from "../sidebar/Sidebar";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  PlusIcon,
+} from "@heroicons/react/24/solid";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Category from "@/components/projects/Category";
 import Project from "./Project";
 import Task from "../task/Task";
+import ActionButton from "../buttons/ActionButton";
 
 type Props = {};
 
 const Projects = (props: Props) => {
   return (
-    <Sidebar className="h-screen w-[225px] border-2 border-cyan-600 p-3">
+    <Sidebar className="flex h-screen w-[225px] flex-col justify-between border-2 border-cyan-600 p-3">
       <nav className="w-full">
         {/* Search */}
         <div className="mb-5 flex w-full items-center">
@@ -44,41 +49,49 @@ const Projects = (props: Props) => {
         {/* All Projects */}
         <Category title="all projects">
           <Project iconColor="red" title="Project 1">
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
+            <Task iconColor="red" title="Task 1" />
+            <Task iconColor="yellow" title="Task 2" />
+            <Task iconColor="green" title="Task 3" />
           </Project>
           <Project iconColor="yellow" title="Project 2">
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
+            <Task iconColor="red" title="Task 1" />
+            <Task iconColor="yellow" title="Task 2" />
+            <Task iconColor="green" title="Task 3" />
           </Project>
           <Project iconColor="green" title="Project 3">
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
+            <Task iconColor="red" title="Task 1" />
+            <Task iconColor="yellow" title="Task 2" />
+            <Task iconColor="green" title="Task 3" />
           </Project>
         </Category>
 
         {/* Archived */}
         <Category title="archived">
           <Project iconColor="red" title="Project 1">
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
+            <Task iconColor="red" title="Task 1" />
+            <Task iconColor="yellow" title="Task 2" />
+            <Task iconColor="green" title="Task 3" />
           </Project>
           <Project iconColor="yellow" title="Project 2">
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
+            <Task iconColor="red" title="Task 1" />
+            <Task iconColor="yellow" title="Task 2" />
+            <Task iconColor="green" title="Task 3" />
           </Project>
           <Project iconColor="green" title="Project 3">
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
+            <Task iconColor="red" title="Task 1" />
+            <Task iconColor="yellow" title="Task 2" />
+            <Task iconColor="green" title="Task 3" />
           </Project>
         </Category>
       </nav>
+
+      <ActionButton
+        className="flex w-full items-center justify-center rounded-md bg-indigo-500 py-2 text-white"
+        onClick={() => console.log("Clicked")}
+      >
+        <PlusIcon className="mr-1 h-5 w-5" />
+        New Project
+      </ActionButton>
     </Sidebar>
   );
 };

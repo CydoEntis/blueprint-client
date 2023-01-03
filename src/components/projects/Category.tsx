@@ -24,7 +24,7 @@ const Project = ({ title, children }: Props) => {
   return (
     <ul className="mt-8 flex w-full flex-col text-grey-550">
       <h4
-        className="flex cursor-pointer items-center py-1 text-xs  uppercase hover:text-gray-500"
+        className="flex cursor-pointer items-center py-2 text-xs  uppercase hover:text-gray-500"
         onClick={onClickHandler}
       >
         {icon} {title}
