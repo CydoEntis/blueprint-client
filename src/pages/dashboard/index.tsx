@@ -7,6 +7,8 @@ import Rachelle from "@/assets/rachelle.jpg";
 import Sidebar from "@/components/sidebar/Sidebar";
 import StatsContainer from "@/components/stats/StatsContainer";
 import StatsBlock from "@/components/stats/StatsBlock";
+import RecentActivitesFeed from "@/components/recent/RecentActivitesFeed";
+import RecentActivity from "@/components/recent/RecentActivity";
 
 type Props = {};
 
@@ -32,49 +34,26 @@ const Dashboard = (props: Props) => {
           <StatsBlock count={125} text="Completed" />
         </StatsContainer>
 
-        <div className="w-full">
-          <h1 className="text-2xl font-bold">Recent Activities</h1>
-          <p>Dec 31, 2022</p>
-          {/* Acitvity */}
-          <div className="my-3 flex items-center border-2 p-3">
-            <div className="h-10 w-10 rounded-full">
-              <img className="rounded-full" src={Freddy} alt="" />
-            </div>
-            <div className="mx-5 h-10">
-              <h3>Add Mobile Navigation</h3>
-              <p className="font-italic text-sm text-grey-550">
-                Freddy Bojangles
-              </p>
-              <p className="text-xs text-grey-550">35 minutes ago</p>
-            </div>
-          </div>
-
-          <div className="my-3 flex items-center border-2 p-3">
-            <div className="h-10 w-10 rounded-full">
-              <img className="rounded-full" src={Freddy} alt="" />
-            </div>
-            <div className="mx-5 h-10">
-              <h3>Add Mobile Navigation</h3>
-              <p className="font-italic text-sm text-slate-500">
-                Freddy Bojangles
-              </p>
-              <p className="text-xs text-slate-500">35 minutes ago</p>
-            </div>
-          </div>
-
-          <div className="my-3 flex items-center border-2 p-3">
-            <div className="h-10 w-10 rounded-full">
-              <img className="rounded-full" src={Freddy} alt="" />
-            </div>
-            <div className="mx-5 h-10">
-              <h3>Add Mobile Navigation</h3>
-              <p className="font-italic text-sm text-slate-500">
-                Freddy Bojangles
-              </p>
-              <p className="text-xs text-slate-500">35 minutes ago</p>
-            </div>
-          </div>
-        </div>
+        <RecentActivitesFeed title="Recent Activies" date="Jan 3, 2023">
+          <RecentActivity
+            imgSrc={Freddy}
+            title="Add Mobile Navigation"
+            username="Freddy Bojangles"
+            date="2 hours ago"
+          />
+          <RecentActivity
+            imgSrc={Freddy}
+            title="Add Mobile Navigation"
+            username="Freddy Bojangles"
+            date="2 hours ago"
+          />
+          <RecentActivity
+            imgSrc={Freddy}
+            title="Add Mobile Navigation"
+            username="Freddy Bojangles"
+            date="2 hours ago"
+          />
+        </RecentActivitesFeed>
       </Sidebar>
     </section>
   );
