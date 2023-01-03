@@ -86,7 +86,7 @@ const Projects = (props: Props) => {
       </nav>
 
       <ActionButton
-        className="flex w-full items-center justify-center rounded-md bg-indigo-500 py-2 text-white"
+        className="flex w-full items-center justify-center rounded-md bg-indigo-500 py-2 text-white drop-shadow-lg"
         onClick={() => console.log("Clicked")}
       >
         <PlusIcon className="mr-1 h-5 w-5" />

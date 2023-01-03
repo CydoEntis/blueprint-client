@@ -14,7 +14,7 @@ import Freddy from "@/assets/freddy.jpg";
 import James from "@/assets/james.jpg";
 import Rachelle from "@/assets/rachelle.jpg";
 import Tag from "../tags/Tag";
-import TaskIcon from "@/pages/task/TaskIcon";
+import TaskIcon from "@/components/task/TaskIcon";
 
 // Change type to use enums
 type Props = {

@@ -21,4 +21,5 @@ body,
 
 .layout {
   height: calc(100vh - 106px);
+  overflow: hidden;
 }

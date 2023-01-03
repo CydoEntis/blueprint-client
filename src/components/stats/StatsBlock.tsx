@@ -14,7 +14,7 @@ const StatsBlock = ({ count, text, isFocused = false }: Props) => {
       "flex h-32 w-5/12 flex-col items-center justify-center rounded-lg bg-indigo-500 font-bold text-white drop-shadow-md";
   } else {
     appliedClass =
-      "flex h-32 w-5/12 flex-col items-center justify-center rounded-lg bg-white font-bold drop-shadow-md";
+      "flex h-32 w-5/12 flex-col items-center justify-center rounded-lg bg-indigo-50 text-gray-70 font-bold drop-shadow-md";
   }
 
   return (

@@ -17,12 +17,9 @@ const Project = ({ iconColor, title, children }: Props) => {
 
   return (
     <ul className="text-grey-60 ml-2 text-xs">
-      <div className="flex items-center py-1">
+      <div className="flex cursor-pointer items-center rounded-lg py-1 px-2 hover:bg-gray-40">
         <div className={`mr-1 h-2 w-2 rounded-full bg-${iconColor}-450`}></div>
-        <h4
-          className="cursor-pointer hover:text-slate-600"
-          onClick={onClickHandler}
-        >
+        <h4 className="" onClick={onClickHandler}>
           {title}
         </h4>
       </div>
