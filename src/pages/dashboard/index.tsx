@@ -4,6 +4,9 @@ import TaskCard from "@/components/cards/TaskCard";
 import Freddy from "@/assets/freddy.jpg";
 import James from "@/assets/james.jpg";
 import Rachelle from "@/assets/rachelle.jpg";
+import Sidebar from "@/components/sidebar/Sidebar";
+import StatsContainer from "@/components/stats/StatsContainer";
+import StatsBlock from "@/components/stats/StatsBlock";
 
 type Props = {};
 
@@ -21,28 +24,13 @@ const Dashboard = (props: Props) => {
         <TaskCard type="uiux" />
         <TaskCard type="bug" />
       </main>
-      <article className="mx-auto flex h-4/5  flex-col flex-wrap items-center justify-center gap-3 p-3 md:w-2/12">
-        <div className="w-full">
-          <h1 className="text-2xl font-bold">Stats</h1>
-          <div className="flex flex-wrap gap-2">
-            <div className="flex h-32 w-5/12 flex-col items-center justify-center rounded-lg bg-white font-bold drop-shadow-md">
-              <h1>550</h1>
-              <p>Total Tasks</p>
-            </div>
-            <div className="flex h-32 w-5/12 flex-col items-center justify-center rounded-lg bg-indigo-500 font-bold text-white drop-shadow-md">
-              <h1>250</h1>
-              <p>Upcoming</p>
-            </div>
-            <div className="flex h-32 w-5/12 flex-col items-center justify-center rounded-lg bg-white font-bold drop-shadow-md">
-              <h1>390</h1>
-              <p>In Progress</p>
-            </div>
-            <div className="flex h-32 w-5/12 flex-col items-center justify-center rounded-lg bg-white font-bold drop-shadow-md">
-              <h1>125</h1>
-              <p>Completed</p>
-            </div>
-          </div>
-        </div>
+      <Sidebar className="mx-auto flex h-4/5  flex-col flex-wrap items-center justify-center gap-3 p-3 md:w-2/12">
+        <StatsContainer title="Stats">
+          <StatsBlock count={550} text="Total Tasks" />
+          <StatsBlock isFocused count={390} text="Upcoming" />
+          <StatsBlock count={250} text="In Progress" />
+          <StatsBlock count={125} text="Completed" />
+        </StatsContainer>
 
         <div className="w-full">
           <h1 className="text-2xl font-bold">Recent Activities</h1>
@@ -87,7 +75,7 @@ const Dashboard = (props: Props) => {
             </div>
           </div>
         </div>
-      </article>
+      </Sidebar>
     </section>
   );
 };
