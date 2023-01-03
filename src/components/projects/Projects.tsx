@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "../sidebar/Sidebar";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import Category from "@/components/projects/Category";
 
 type Props = {};
 
@@ -16,11 +17,7 @@ const Projects = (props: Props) => {
         </div>
 
         {/* Favorites */}
-        <ul className="mt-8 flex w-full flex-col">
-          <li className="flex items-center py-1 text-xs uppercase text-grey-550">
-            <ChevronDownIcon className="mr-1 h-4 w-4" />
-            Favorites
-          </li>
+        <Category title="favorites">
           <li className="ml-2 flex items-center py-1 text-xs text-grey-550">
             <div className="mr-1 h-2 w-2 rounded-full bg-red-450"></div>
             Project 1
@@ -33,7 +30,7 @@ const Projects = (props: Props) => {
             <div className="mr-1 h-2 w-2 rounded-full bg-green-450"></div>
             Project 3
           </li>
-        </ul>
+        </Category>
 
         {/* All Projects */}
         <ul className="mt-8 flex w-full flex-col">
