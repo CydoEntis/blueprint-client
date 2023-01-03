@@ -30,8 +30,8 @@ const TaskCard = ({ title, description }: Props) => {
           <Tag color="green" text="Front End" />
         </div>
         <div className="w-full py-3">
-          <h3>{title}</h3>
-          <p>{description}</p>
+          <h3 className="font-bold text-gray-70">{title}</h3>
+          <p className="text-sm text-gray-60">{description}</p>
         </div>
         {/* Subtasks */}
       </div>

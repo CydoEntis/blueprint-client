@@ -26,6 +26,7 @@ module.exports = {
         "orange-450": "#DA9B65",
         "gray-50": "#F4F6F8",
         "gray-60": "#8B8B8B",
+        "gray-70": "#2B2C32",
       },
     },
   },
