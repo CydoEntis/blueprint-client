@@ -26,7 +26,7 @@ const Dashboard = (props: Props) => {
         <TaskCard type="uiux" />
         <TaskCard type="bug" />
       </main>
-      <Sidebar className="mx-auto flex h-4/5  flex-col flex-wrap items-center justify-center gap-3 p-3 md:w-2/12">
+      {/* <Sidebar className="mx-auto flex h-4/5  flex-col flex-wrap items-center justify-center gap-3 p-3 md:w-2/12">
         <StatsContainer title="Stats">
           <StatsBlock count={550} text="Total Tasks" />
           <StatsBlock isFocused count={390} text="Upcoming" />
@@ -54,7 +54,7 @@ const Dashboard = (props: Props) => {
             date="2 hours ago"
           />
         </RecentActivitesFeed>
-      </Sidebar>
+      </Sidebar> */}
     </section>
   );
 };

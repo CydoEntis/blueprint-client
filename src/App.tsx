@@ -6,6 +6,8 @@ import Navbar from "@/components/nav/Navbar";
 import Nav from "@/components/nav/Nav";
 import Header from "@/components/header/Header";
 import { PlusIcon } from "@heroicons/react/24/solid";
+import Sidebar from "./components/sidebar/Sidebar";
+import Projects from "./components/projects/Projects";
 
 const router = createBrowserRouter([
   {
@@ -27,14 +29,8 @@ const App = (props: Props) => {
     <div className="h-full w-full bg-white-600">
       <Nav />
       <Layout>
-        <Header
-          text="Create Task"
-          icon={plusIcon}
-          onClick={() => {}}
-          styles="flex items-center justify-center rounded-full bg-indigo-500 px-5 py-2 text-white drop-shadow-md"
-        />
-        <Navbar />
-        <RouterProvider router={router} />
+        <Projects />
+        {/* <RouterProvider router={router} /> */}
       </Layout>
     </div>
   );
