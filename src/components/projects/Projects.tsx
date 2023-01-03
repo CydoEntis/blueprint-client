@@ -4,6 +4,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/solid";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import Category from "@/components/projects/Category";
 import Project from "./Project";
+import Task from "../task/Task";
 
 type Props = {};
 
@@ -24,19 +25,19 @@ const Projects = (props: Props) => {
         {/* Favorites */}
         <Category title="favorites">
           <Project iconColor="red" title="Project 1">
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
+            <Task iconColor="red" title="Task 1" />
+            <Task iconColor="yellow" title="Task 2" />
+            <Task iconColor="green" title="Task 3" />
           </Project>
           <Project iconColor="yellow" title="Project 2">
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
+            <Task iconColor="red" title="Task 1" />
+            <Task iconColor="yellow" title="Task 2" />
+            <Task iconColor="green" title="Task 3" />
           </Project>
           <Project iconColor="green" title="Project 3">
-            <li>Test</li>
-            <li>Test</li>
-            <li>Test</li>
+            <Task iconColor="red" title="Task 1" />
+            <Task iconColor="yellow" title="Task 2" />
+            <Task iconColor="green" title="Task 3" />
           </Project>
         </Category>
 
