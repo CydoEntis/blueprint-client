@@ -1,5 +1,4 @@
 import React from "react";
-import TaskCard from "@/components/cards/TaskCard";
 
 import Freddy from "@/assets/freddy.jpg";
 import James from "@/assets/james.jpg";
@@ -9,7 +8,8 @@ import StatsContainer from "@/components/stats/StatsContainer";
 import StatsBlock from "@/components/stats/StatsBlock";
 import RecentActivitesFeed from "@/components/recent/RecentActivitesFeed";
 import RecentActivity from "@/components/recent/RecentActivity";
-import TaskCategory from "../task/TaskCategory";
+import TaskCategory from "@/components/task/TaskCategory";
+import TaskCard from "@/components/task/TaskCard";
 
 type Props = {};
 
@@ -18,21 +18,24 @@ const Dashboard = (props: Props) => {
     <section className="flex py-5">
       <main className="flex px-8 py-5">
         <TaskCategory title="New" iconColor="blue" count={6}>
-          <TaskCard type="backend" />
-          <TaskCard type="testing" />
-          <TaskCard type="frontend" />
+          <TaskCard
+            title="Test 1"
+            description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni"
+          />
         </TaskCategory>
 
         <TaskCategory title="In Progress" iconColor="yellow" count={6}>
-          <TaskCard type="backend" />
-          <TaskCard type="testing" />
-          <TaskCard type="frontend" />
+          <TaskCard
+            title="Test 1"
+            description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni"
+          />
         </TaskCategory>
 
         <TaskCategory title="Complete" iconColor="green" count={6}>
-          <TaskCard type="backend" />
-          <TaskCard type="testing" />
-          <TaskCard type="frontend" />
+          <TaskCard
+            title="Test 1"
+            description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni"
+          />
         </TaskCategory>
       </main>
       {/* <Sidebar className="mx-auto flex h-4/5  flex-col flex-wrap items-center justify-center gap-3 p-3 md:w-2/12">
