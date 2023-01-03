@@ -9,22 +9,31 @@ import StatsContainer from "@/components/stats/StatsContainer";
 import StatsBlock from "@/components/stats/StatsBlock";
 import RecentActivitesFeed from "@/components/recent/RecentActivitesFeed";
 import RecentActivity from "@/components/recent/RecentActivity";
+import TaskCategory from "../task/TaskCategory";
 
 type Props = {};
 
 const Dashboard = (props: Props) => {
   return (
     <section className="flex py-5">
-      <main className="flex h-4/5 flex-wrap items-center gap-3 p-3 md:w-11/12">
-        <TaskCard type="backend" />
-        <TaskCard type="testing" />
-        <TaskCard type="frontend" />
-        <TaskCard type="uiux" />
-        <TaskCard type="security" />
-        <TaskCard type="bug" />
-        <TaskCard type="backend" />
-        <TaskCard type="uiux" />
-        <TaskCard type="bug" />
+      <main className="flex px-8 py-5">
+        <TaskCategory title="New" iconColor="blue" count={6}>
+          <TaskCard type="backend" />
+          <TaskCard type="testing" />
+          <TaskCard type="frontend" />
+        </TaskCategory>
+
+        <TaskCategory title="In Progress" iconColor="yellow" count={6}>
+          <TaskCard type="backend" />
+          <TaskCard type="testing" />
+          <TaskCard type="frontend" />
+        </TaskCategory>
+
+        <TaskCategory title="Complete" iconColor="green" count={6}>
+          <TaskCard type="backend" />
+          <TaskCard type="testing" />
+          <TaskCard type="frontend" />
+        </TaskCategory>
       </main>
       {/* <Sidebar className="mx-auto flex h-4/5  flex-col flex-wrap items-center justify-center gap-3 p-3 md:w-2/12">
         <StatsContainer title="Stats">
