@@ -13,29 +13,69 @@ const Projects = (props: Props) => {
       <nav className="w-full">
         {/* Search */}
         <div className="mb-5 flex w-full items-center">
-          <MagnifyingGlassIcon className="mr-1 h-4 w-4" />
-          <input type="text" placeholder="Search..." />
+          <MagnifyingGlassIcon className="mr-2 h-4 w-1/12 text-grey-550" />
+          <input
+            className="w-10/12 bg-transparent text-sm"
+            type="text"
+            placeholder="Search..."
+          />
         </div>
 
         {/* Favorites */}
         <Category title="favorites">
-          <Project iconColor="red" title="Project 1" />
-          <Project iconColor="yellow" title="Project 2" />
-          <Project iconColor="green" title="Project 3" />
+          <Project iconColor="red" title="Project 1">
+            <li>Test</li>
+            <li>Test</li>
+            <li>Test</li>
+          </Project>
+          <Project iconColor="yellow" title="Project 2">
+            <li>Test</li>
+            <li>Test</li>
+            <li>Test</li>
+          </Project>
+          <Project iconColor="green" title="Project 3">
+            <li>Test</li>
+            <li>Test</li>
+            <li>Test</li>
+          </Project>
         </Category>
 
         {/* All Projects */}
         <Category title="all projects">
-          <Project iconColor="red" title="Project 1" />
-          <Project iconColor="yellow" title="Project 2" />
-          <Project iconColor="green" title="Project 3" />
+          <Project iconColor="red" title="Project 1">
+            <li>Test</li>
+            <li>Test</li>
+            <li>Test</li>
+          </Project>
+          <Project iconColor="yellow" title="Project 2">
+            <li>Test</li>
+            <li>Test</li>
+            <li>Test</li>
+          </Project>
+          <Project iconColor="green" title="Project 3">
+            <li>Test</li>
+            <li>Test</li>
+            <li>Test</li>
+          </Project>
         </Category>
 
         {/* Archived */}
         <Category title="archived">
-          <Project iconColor="red" title="Project 1" />
-          <Project iconColor="yellow" title="Project 2" />
-          <Project iconColor="green" title="Project 3" />
+          <Project iconColor="red" title="Project 1">
+            <li>Test</li>
+            <li>Test</li>
+            <li>Test</li>
+          </Project>
+          <Project iconColor="yellow" title="Project 2">
+            <li>Test</li>
+            <li>Test</li>
+            <li>Test</li>
+          </Project>
+          <Project iconColor="green" title="Project 3">
+            <li>Test</li>
+            <li>Test</li>
+            <li>Test</li>
+          </Project>
         </Category>
       </nav>
     </Sidebar>

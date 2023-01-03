@@ -1,16 +1,33 @@
-import React from "react";
+import { ChildrenProps } from "@/types/layout-types";
+import React, { useState } from "react";
 
-type Props = {
+type ProjectProps = {
   iconColor: string;
   title: string;
 };
 
-const Project = ({ iconColor, title }: Props) => {
+type Props = ProjectProps & ChildrenProps;
+
+const Project = ({ iconColor, title, children }: Props) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const onClickHandler = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
   return (
-    <li className="ml-2 flex items-center py-1 text-xs text-grey-550">
-      <div className={`mr-1 h-2 w-2 rounded-full bg-${iconColor}-450`}></div>
-      {title}
-    </li>
+    <ul className="ml-2 text-xs text-grey-550">
+      <div className="flex items-center py-1">
+        <div className={`mr-1 h-2 w-2 rounded-full bg-${iconColor}-450`}></div>
+        <h4
+          className="cursor-pointer hover:text-slate-600"
+          onClick={onClickHandler}
+        >
+          {title}
+        </h4>
+      </div>
+      {isOpen && children}
+    </ul>
   );
 };
 
