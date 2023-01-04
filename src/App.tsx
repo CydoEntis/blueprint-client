@@ -1,5 +1,11 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  Route,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
 import Dashboard from "@/pages/dashboard";
 import Layout from "@/components/ui/Layout";
 import Navbar from "@/components/nav/ProjectNav";
@@ -8,6 +14,7 @@ import Header from "@/components/header/Header";
 import { PlusIcon } from "@heroicons/react/24/solid";
 import Sidebar from "./components/sidebar/Sidebar";
 import Projects from "./components/projects/Projects";
+import MobileNav from "./components/nav/MobileNav";
 
 const router = createBrowserRouter([
   {
@@ -27,11 +34,26 @@ type Props = {};
 const App = (props: Props) => {
   return (
     <div className="h-full w-full bg-white">
-      <Nav />
-      <Projects />
-      <Layout>
-        <RouterProvider router={router} />
-      </Layout>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              // <ProtectedRoute>
+              <Layout />
+              // </ProtectedRoute>
+            }
+          >
+            <Route index element={<Dashboard />} />
+            {/* <Route path="all-jobs" element={<Stats />} /> */}
+            {/* <Route path="add-job" element={<AddJob />} /> */}
+            {/* <Route path="profile" element={<Profile />} /> */}
+          </Route>
+          {/* <Route path="/register" element={<Register />} />
+          <Route path="/landing" element={<Landing />} />
+          <Route path="*" element={<Error />} /> */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };

@@ -18,8 +18,3 @@ body,
   width: 100%;
   font-family: "DM-Sans", sans-serif;
 }
-
-.layout {
-  height: calc(100vh - 106px);
-  overflow: hidden;
-}
