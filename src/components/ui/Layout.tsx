@@ -11,18 +11,18 @@ const Layout = () => {
   return (
     <main className="w-fulll flex flex-col">
       <Nav />
-      {/* <MobileNav /> */}
-      <Projects />
+      <MobileNav />
+      {/* <Projects /> */}
       <div className=" bg-gray-50 md:ml-[335px]">
         <div className="w-full bg-white">
-          <Header
+          {/* <Header
             title="Project 1"
             iconColor="red"
             icon={<StarIcon className="h-6 w-6 text-gray-60" />}
-          />
+          /> */}
           <ProjectNav />
         </div>
-        <Outlet />
+        {/* <Outlet /> */}
       </div>
     </main>
   );
