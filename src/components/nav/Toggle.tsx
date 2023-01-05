@@ -14,9 +14,9 @@ const Toggle = ({ isOpen, onClick }: Props) => {
       onClick={onClick}
     >
       {isOpen ? (
-        <XMarkIcon className="text-gray-60 hover:text-red-400" />
+        <XMarkIcon className="text-blue-10 hover:text-red-400" />
       ) : (
-        <Bars3BottomRightIcon className=" text-gray-60" />
+        <Bars3BottomRightIcon className=" text-blue-10" />
       )}
     </div>
   );

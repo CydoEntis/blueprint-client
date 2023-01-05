@@ -21,11 +21,13 @@ const MobileNavItem = ({ to, icon, text }: Props) => {
         to={to}
         className={({ isActive }) =>
           isActive
-            ? "flex w-full items-center justify-between rounded-md bg-gray-55 py-2 text-left text-xl text-blue-50 hover:bg-gray-55 hover:text-blue-50"
-            : "flex w-full items-center justify-between rounded-md py-2 text-left text-xl text-gray-70 hover:bg-gray-55 hover:text-blue-50"
+            ? "flex w-3/4 items-center justify-between rounded-md py-2 text-left text-xl text-white-60 hover:text-white-60"
+            : "flex w-3/4 items-center justify-between rounded-md py-2 text-left text-xl text-blue-10 hover:text-white-60"
         }
       >
-        <div className="flex w-1/4 items-center justify-center">{icon}</div>
+        <div className="border-1 border-blue-40 flex w-1/4 items-center justify-center">
+          {icon}
+        </div>
         <div className="w-3/4">{text}</div>
       </NavLink>
     </motion.li>

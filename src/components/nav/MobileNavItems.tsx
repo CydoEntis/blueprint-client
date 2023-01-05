@@ -5,6 +5,8 @@ import {
 } from "@heroicons/react/24/solid";
 import React from "react";
 import MobileNavItem from "./MobileNavItem";
+import { MdDashboard } from "react-icons/md";
+import { IoStatsChart, IoMoon } from "react-icons/io5";
 
 import { motion } from "framer-motion";
 import { staggerVariants } from "@/animation-variants/variants";
@@ -17,19 +19,19 @@ const MobileNavItems = () => {
     >
       <MobileNavItem
         to="/stats"
-        icon={<ChartBarIcon className="h-8 w-8 cursor-pointer" />}
+        icon={<IoStatsChart className="h-8 w-8 cursor-pointer" />}
         text="Stats"
       />
 
       <MobileNavItem
         to="/"
-        icon={<ClipboardDocumentIcon className="h-8 w-8 cursor-pointer" />}
+        icon={<MdDashboard className="h-8 w-8 cursor-pointer" />}
         text="Dashboard"
       />
 
       <MobileNavItem
         to="/theme"
-        icon={<MoonIcon className="h-8 w-8 cursor-pointer" />}
+        icon={<IoMoon className="h-8 w-8 cursor-pointer" />}
         text="Theme"
       />
     </motion.ul>

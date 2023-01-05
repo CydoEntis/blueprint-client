@@ -21,7 +21,8 @@ const MobileNav = ({ isOpen }: Props) => {
       initial={false}
       animate={isOpen ? "open" : "closed"}
       variants={slideVariants}
-      className="fixed z-40 flex h-screen flex-col justify-between bg-white p-5 md:hidden"
+      // className="fixed z-40 flex h-screen flex-col justify-between bg-white p-5 md:hidden"
+      className="fixed z-40 flex h-screen flex-col justify-between bg-blue-70 p-2 md:hidden"
     >
       <Logo />
       <MobileNavItems />

@@ -12,8 +12,10 @@ module.exports = {
         "gradient-custom": "linear-gradient(90deg, #111 0%, #555 100%",
       }),
       colors: {
-        "blue-40": "#3783BD",
-        "blue-50": "rgb(5,110,168)",
+        "blue-10": "#6A8594",
+        "blue-50": "#425D6B",
+        "blue-70": "#355161",
+        "white-60": "#C3CAD7",
         "white-500": "#F2F7FD",
         // "white-600": "#E0E4FD",
         "white-600": "#E7EAF9",
