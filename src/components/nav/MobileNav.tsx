@@ -17,17 +17,19 @@ type Props = {
 
 const MobileNav = ({ isOpen }: Props) => {
   return (
-    <motion.nav
+    <motion.div
       initial={false}
       animate={isOpen ? "open" : "closed"}
       variants={slideVariants}
       // className="fixed z-40 flex h-screen flex-col justify-between bg-white p-5 md:hidden"
-      className="fixed z-40 flex h-screen flex-col justify-between bg-blue-70 p-2 md:hidden"
+      className="fixed z-40 flex h-screen items-center bg-blue-70 p-2 md:hidden"
     >
-      <Logo />
-      <MobileNavItems />
-      <MobileNavActions />
-    </motion.nav>
+      <nav className="flex h-5/6 w-full flex-col justify-between">
+        <Logo />
+        <MobileNavItems />
+        <MobileNavActions />
+      </nav>
+    </motion.div>
   );
 };
 
