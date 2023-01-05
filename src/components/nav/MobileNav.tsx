@@ -13,7 +13,7 @@ type Props = {};
 const MobileNav = (props: Props) => {
   return (
     <nav className="flex h-screen w-full flex-col justify-between p-5">
-      <h1 className="text-grey-70 text-center text-2xl">Ontrack</h1>
+      <h1 className="ml-5 text-[3rem] text-gray-70">Ontrack</h1>
       <ul className="flex w-full flex-col items-center">
         <MobileNavItem
           to="/stats"
