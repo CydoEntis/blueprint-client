@@ -6,11 +6,10 @@ type Props = {
   count: number;
   children: React.ReactNode;
 };
-
 const TaskCategory = ({ title, children, iconColor, count }: Props) => {
   return (
-    <div className="mr-3 flex h-full w-72 flex-col gap-3">
-      <div className="flex items-center">
+    <div className="flex w-full flex-col gap-3  lg:mr-3 lg:h-full lg:w-72">
+      <div className="flex flex-row items-center ">
         <div className={`mr-1 h-2 w-2 rounded-full bg-${iconColor}-450`}></div>
         <h1>
           {title} {count}

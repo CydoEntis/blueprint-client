@@ -14,12 +14,12 @@ type Props = {};
 
 const Dashboard = (props: Props) => {
   return (
-    <main className="flex">
+    <main className="flex flex-col lg:flex-row">
       <section className="flex flex-col px-8 py-5">
         <TaskActions />
         <Tasks />
       </section>
-      <Sidebar className="mx-auto flex h-screen w-full flex-col flex-wrap  gap-3 bg-white px-8">
+      <Sidebar className="mx-auto flex h-screen w-full flex-col flex-wrap  bg-white px-8">
         <StatsContainer title="Stats">
           <StatsBlock count={550} text="Total Tasks" />
           <StatsBlock isFocused count={390} text="Upcoming" />

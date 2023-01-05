@@ -12,22 +12,22 @@ const Layout = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <main className="w-fulll relative flex flex-col">
+    <main className="relative flex h-screen flex-col border-2 bg-white">
       <Nav />
       <MobileNav isOpen={isOpen} />
       <Toggle isOpen={isOpen} onClick={() => setIsOpen((isOpen) => !isOpen)} />
 
-      {/* <Projects /> */}
-      <div className=" bg-gray-50 md:ml-[335px]">
+      <Projects />
+      <div className="h-screen overflow-hidden bg-gray-50 md:ml-[335px]">
         <div className="w-full bg-white">
-          {/* <Header
+          <Header
             title="Project 1"
             iconColor="red"
             icon={<StarIcon className="h-6 w-6 text-gray-60" />}
-          /> */}
+          />
           <ProjectNav />
         </div>
-        {/* <Outlet /> */}
+        <Outlet />
       </div>
     </main>
   );

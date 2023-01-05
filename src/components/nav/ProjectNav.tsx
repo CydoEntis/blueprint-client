@@ -7,7 +7,7 @@ type Props = {};
 
 const ProjectNav = (props: Props) => {
   return (
-    <div className="z-30 hidden w-full gap-10 pl-5 md:flex">
+    <div className="z-30 hidden w-full gap-10 pl-5 md:flex ">
       <ActionButton
         className="border-b-2 border-transparent pb-3 text-sm font-bold text-gray-60 hover:border-blue-50"
         onClick={() => console.log("Discussion Clicked")}
