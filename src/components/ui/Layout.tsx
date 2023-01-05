@@ -8,19 +8,11 @@ import Nav from "../nav/Nav";
 import Projects from "../projects/Projects";
 
 const Layout = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const onCloseHandler = () => setIsOpen(false);
-  const onOpenHandler = () => setIsOpen(true);
-
   return (
     <main className="w-fulll relative flex flex-col">
       <Nav />
-      {isOpen && <MobileNav onClose={onCloseHandler} />}
-      <Bars3BottomRightIcon
-        className="absolute top-5 right-5 h-8 w-8 text-gray-60"
-        onClick={onOpenHandler}
-      />
+      <MobileNav />
+
       {/* <Projects /> */}
       <div className=" bg-gray-50 md:ml-[335px]">
         <div className="w-full bg-white">
