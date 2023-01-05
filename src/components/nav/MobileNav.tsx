@@ -4,6 +4,7 @@ import {
   MoonIcon,
   SunIcon,
 } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 import { Link, NavLink } from "react-router-dom";
 import ActionButton from "../buttons/ActionButton";
 import MobileNavItem from "./MobileNavItem";
@@ -12,8 +13,9 @@ type Props = {};
 
 const MobileNav = (props: Props) => {
   return (
-    <nav className="flex h-screen w-full flex-col justify-between p-5">
+    <nav className="relative flex h-screen w-full flex-col justify-between p-5">
       <h1 className="ml-5 text-[3rem] text-gray-70">Ontrack</h1>
+      <XMarkIcon className="text-gray-0 absolute right-5 top-5 h-8 w-8 text-gray-60 hover:text-red-400" />
       <ul className="flex w-full flex-col items-center">
         <MobileNavItem
           to="/stats"
