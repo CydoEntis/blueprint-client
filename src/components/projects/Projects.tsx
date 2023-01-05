@@ -21,7 +21,7 @@ const Projects = (props: Props) => {
         <div className="mb-5 flex w-full items-center">
           <MagnifyingGlassIcon className="text-grey-60 mr-2 h-4 w-1/12" />
           <input
-            className="text-grey-60 w-10/12 border-indigo-500 bg-transparent text-sm focus:border-b-2 focus:outline-none"
+            className="text-grey-60 w-10/12 border-blue-50 bg-transparent text-sm focus:border-b-2 focus:outline-none"
             type="text"
             placeholder="Search..."
           />
@@ -86,7 +86,7 @@ const Projects = (props: Props) => {
       </nav>
 
       <ActionButton
-        className="flex w-full items-center justify-center rounded-md bg-indigo-500 py-2 text-white drop-shadow-lg"
+        className="flex w-full items-center justify-center rounded-md bg-blue-50 py-2 text-white drop-shadow-lg"
         onClick={() => console.log("Clicked")}
       >
         <PlusIcon className="mr-1 h-5 w-5" />

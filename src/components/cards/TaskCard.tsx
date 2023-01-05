@@ -43,7 +43,7 @@ const TaskCard = ({ type }: Props) => {
     typeIcon = <ClipboardDocumentCheckIcon className="h-10 w-10 text-white" />;
   }
   return (
-    <div className="relative h-72 w-11/12 max-w-md rounded-tr-2xl rounded-br-2xl border-l-8 border-indigo-500 bg-white  drop-shadow-xl">
+    <div className="relative h-72 w-11/12 max-w-md rounded-tr-2xl rounded-br-2xl border-l-8 border-blue-50 bg-white  drop-shadow-xl">
       <div className="flex h-10 w-full rounded-t-2xl">
         <div className="h-full w-1/2 rounded-tl-2xl"></div>
         <div className="flex h-full w-1/2 items-center justify-center rounded-tr-2xl bg-[#f1f1f1]">

@@ -6,12 +6,16 @@ import { Outlet } from "react-router-dom";
 import MobileNav from "../nav/MobileNav";
 import Nav from "../nav/Nav";
 import Projects from "../projects/Projects";
+import Toggle from "../nav/Toggle";
 
 const Layout = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
     <main className="w-fulll relative flex flex-col">
       <Nav />
-      <MobileNav />
+      <MobileNav isOpen={isOpen} />
+      <Toggle isOpen={isOpen} onClick={() => setIsOpen((isOpen) => !isOpen)} />
 
       {/* <Projects /> */}
       <div className=" bg-gray-50 md:ml-[335px]">

@@ -1,10 +1,18 @@
+import { fadeInVariants } from "@/animation-variants/variants";
 import { ButtonProps } from "@/types/button-types";
+import { motion } from "framer-motion";
 
 const ActionButton = ({ onClick, className, children }: ButtonProps) => {
   return (
-    <button className={className} onClick={onClick}>
+    <motion.button
+      variants={fadeInVariants}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.95 }}
+      className={className}
+      onClick={onClick}
+    >
       {children}
-    </button>
+    </motion.button>
   );
 };
 
