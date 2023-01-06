@@ -1,8 +1,11 @@
+import { Project } from "@/types/project-types";
 import React from "react";
 
-type Props = {};
+type ProjectListProps = {
+  projects: Project[];
+};
 
-const ProjectList = (props: Props) => {
+const ProjectList = ({ projects }: ProjectListProps) => {
   return <div>ProjectList</div>;
 };
 
