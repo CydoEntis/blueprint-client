@@ -23,14 +23,14 @@ const MobileNavActions = () => {
         Log out
       </ActionButton> */}
       <ActionButton
-        className="mr-3 flex w-1/2 items-center justify-center border-r border-blue-10 px-5 text-blue-10"
+        className="mr-3 flex w-1/2 items-center justify-center border-r border-grey-40 px-5 text-grey-40"
         onClick={() => console.log("Clicked")}
       >
         <MdLogin className="mr-2 h-7 w-7" />
         Log in
       </ActionButton>
       <ActionButton
-        className="mr-3 flex w-1/2 items-center justify-center px-5 text-blue-10"
+        className="mr-3 flex w-1/2 items-center justify-center px-5 text-grey-40"
         onClick={() => console.log("Clicked")}
       >
         <BiUserPlus className="mr-2 h-7 w-7" />

@@ -23,9 +23,9 @@ module.exports = {
         "accent-10": "#DCEFF5",
         "accent-30": "#7ED5E9",
         "accent-50": "#00B0D6",
-
-        "text-40": "#6B6F7C",
-        "text-50": "#4E4F4F",
+        "grey-30": "#838796",
+        "grey-40": "#6B6F7C",
+        "grey-50": "#4E4F4F",
 
         "off-white": "#F5F7FA",
 

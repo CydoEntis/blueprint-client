@@ -9,7 +9,7 @@ type Props = {
   text: string;
 };
 
-const MobileNavItem = ({ to, icon, text }: Props) => {
+const NavItem = ({ to, icon, text }: Props) => {
   return (
     <motion.li
       variants={fadeInVariants}
@@ -21,17 +21,15 @@ const MobileNavItem = ({ to, icon, text }: Props) => {
         to={to}
         className={({ isActive }) =>
           isActive
-            ? "flex w-3/4 items-center justify-between rounded-md py-2 text-left text-xl text-white-60 hover:text-white-60"
-            : "flex w-3/4 items-center justify-between rounded-md py-2 text-left text-xl text-blue-10 hover:text-white-60"
+            ? "flex w-full items-center justify-center rounded-md bg-accent-50 py-2 text-left text-xl text-white hover:text-white"
+            : "flex w-full items-center justify-center rounded-md py-2 text-left text-xl text-grey-40  hover:text-white"
         }
       >
-        <div className="border-1 border-blue-40 flex w-1/4 items-center justify-center">
-          {icon}
-        </div>
-        <div className="w-3/4">{text}</div>
+        <div className="flex w-2/12 items-center justify-center">{icon}</div>
+        <div className="flex w-5/12 items-center justify-start">{text}</div>
       </NavLink>
     </motion.li>
   );
 };
 
-export default MobileNavItem;
+export default NavItem;

@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import ActionButton from "../buttons/ActionButton";
 import Toggle from "./Toggle";
 import MobileNavActions from "./MobileNavActions";
-import Logo from "../logo/Logo";
-import MobileNavItems from "./MobileNavItems";
+import User from "../user/User";
+import NavItems from "./NavItems";
 
 const slideVariants = {
   open: { width: "100vw", opacity: 1, x: 0 },
@@ -21,12 +21,11 @@ const MobileNav = ({ isOpen }: Props) => {
       initial={false}
       animate={isOpen ? "open" : "closed"}
       variants={slideVariants}
-      // className="fixed z-40 flex h-screen flex-col justify-between bg-white p-5 md:hidden"
-      className="fixed z-40 flex h-screen items-center bg-blue-70 p-2 lg:hidden"
+      className="fixed z-40 flex h-screen items-center bg-white p-2 lg:hidden"
     >
-      <nav className="flex h-5/6 w-full flex-col justify-between">
-        <Logo />
-        <MobileNavItems />
+      <nav className="flex h-full w-full flex-col justify-evenly">
+        <User />
+        <NavItems />
         <MobileNavActions />
       </nav>
     </motion.div>

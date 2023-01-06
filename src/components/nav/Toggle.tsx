@@ -10,7 +10,7 @@ const Toggle = ({ isOpen, onClick }: Props) => {
   console.log(isOpen);
   return (
     <div
-      className="fixed top-5 right-5 z-40 rounded-md bg-white p-1.5 drop-shadow-lg lg:hidden"
+      className="fixed top-5 right-5 z-40 rounded-md border border-accent-30 bg-white p-1.5 drop-shadow-lg hover:bg-accent-10 lg:hidden"
       onClick={onClick}
     >
       {isOpen ? (

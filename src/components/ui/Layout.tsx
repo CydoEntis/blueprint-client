@@ -17,8 +17,8 @@ const Layout = () => {
       <MobileNav isOpen={isOpen} />
       <Toggle isOpen={isOpen} onClick={() => setIsOpen((isOpen) => !isOpen)} />
 
-      <Projects />
-      <div className="bg-gray-50 lg:ml-[335px] lg:h-screen lg:overflow-hidden">
+      {/* <Projects /> */}
+      <div className="bg-gray-50 lg:ml-80 lg:h-screen lg:overflow-hidden">
         <div className="w-full bg-white">
           <Header
             title="Project 1"

@@ -1,19 +1,16 @@
-import React from "react";
-import {
-  ChartBarIcon,
-  ClipboardDocumentIcon,
-  MoonIcon,
-  SunIcon,
-} from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
+import NavItems from "./NavItems";
 
 type Props = {};
 
 const Nav = (props: Props) => {
   return (
-    <div className="fixed z-40 hidden h-screen w-28 flex-col items-center gap-16 border-r-2 border-gray-50 pt-24 lg:flex ">
-      <ChartBarIcon className="h-8 w-8 cursor-pointer text-[#727177] hover:text-blue-50" />
-      <ClipboardDocumentIcon className="h-8 w-8 cursor-pointer text-[#727177] hover:text-blue-50" />
-      <MoonIcon className="h-8 w-8 cursor-pointer text-[#727177] hover:text-blue-50" />
+    <div className="fixed hidden h-screen w-80 border-r border-gray-60 lg:flex">
+      <motion.div className="items-centerp-2 flex h-screen w-full">
+        <nav className="flex h-4/6  w-full flex-col justify-between border-2 border-red-500">
+          <NavItems />
+        </nav>
+      </motion.div>
     </div>
   );
 };

@@ -1,35 +1,27 @@
-import {
-  ChartBarIcon,
-  ClipboardDocumentIcon,
-  MoonIcon,
-} from "@heroicons/react/24/solid";
-import React from "react";
-import MobileNavItem from "./MobileNavItem";
+import NavItem from "./NavItem";
 import { MdDashboard } from "react-icons/md";
 import { IoStatsChart, IoMoon } from "react-icons/io5";
 
 import { motion } from "framer-motion";
 import { staggerVariants } from "@/animation-variants/variants";
 
-const MobileNavItems = () => {
+const NavItems = () => {
   return (
     <motion.ul
-      className="flex w-full flex-col items-center"
       variants={staggerVariants}
+      className="flex w-full flex-col items-center justify-center"
     >
-      <MobileNavItem
-        to="/stats"
-        icon={<IoStatsChart className="h-8 w-8 cursor-pointer" />}
-        text="Stats"
-      />
-
-      <MobileNavItem
+      <NavItem
         to="/"
         icon={<MdDashboard className="h-8 w-8 cursor-pointer" />}
         text="Dashboard"
       />
-
-      <MobileNavItem
+      <NavItem
+        to="/stats"
+        icon={<IoStatsChart className="h-8 w-8 cursor-pointer" />}
+        text="Stats"
+      />
+      <NavItem
         to="/theme"
         icon={<IoMoon className="h-8 w-8 cursor-pointer" />}
         text="Theme"
@@ -38,4 +30,4 @@ const MobileNavItems = () => {
   );
 };
 
-export default MobileNavItems;
+export default NavItems;
