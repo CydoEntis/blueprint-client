@@ -38,7 +38,13 @@ const Dashboard = (props: Props) => {
   return (
     <main className="flex flex-col lg:flex-row">
       <section className="flex flex-col px-8 py-5">
-        <ProjectCard title="text" overview="12321321321" users={users} />
+        <ProjectCard
+          color="blue"
+          title="Blueprint API"
+          team="Backend Developers"
+          dueDate="1 week"
+          users={users}
+        />
         {/* <TaskActions /> */}
         <Tasks />
       </section>
