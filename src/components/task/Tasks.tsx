@@ -6,7 +6,7 @@ import TaskActions from "./TaskActions";
 
 const Tasks = () => {
   return (
-    <section className="flex-collg:flex-row flex lg:overflow-auto lg:pb-5">
+    <section className="flex flex-col lg:flex-row lg:overflow-auto lg:pb-5">
       <TaskCategory title="New" iconColor="blue" count={6}>
         <TaskCard
           title="Test 1"

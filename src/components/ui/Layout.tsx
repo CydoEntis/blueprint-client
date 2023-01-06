@@ -12,13 +12,13 @@ const Layout = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <main className="relative flex h-screen flex-col border-2 bg-white">
+    <main className="relative flex h-screen flex-col bg-white">
       <Nav />
       <MobileNav isOpen={isOpen} />
       <Toggle isOpen={isOpen} onClick={() => setIsOpen((isOpen) => !isOpen)} />
 
       <Projects />
-      <div className="h-screen overflow-hidden bg-gray-50 md:ml-[335px]">
+      <div className="bg-gray-50 lg:ml-[335px] lg:h-screen lg:overflow-hidden">
         <div className="w-full bg-white">
           <Header
             title="Project 1"

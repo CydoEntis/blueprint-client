@@ -10,13 +10,13 @@ const Toggle = ({ isOpen, onClick }: Props) => {
   console.log(isOpen);
   return (
     <div
-      className="border-3 borer-cyan-400 absolute top-5 right-5 z-40 h-8 w-8"
+      className="fixed top-5 right-5 z-40 rounded-md bg-white p-1.5 drop-shadow-lg lg:hidden"
       onClick={onClick}
     >
       {isOpen ? (
-        <XMarkIcon className="text-blue-10 hover:text-red-400" />
+        <XMarkIcon className="h-8 w-8 text-blue-10" />
       ) : (
-        <Bars3BottomRightIcon className=" text-blue-10" />
+        <Bars3BottomRightIcon className="h-8 w-8 text-blue-10" />
       )}
     </div>
   );

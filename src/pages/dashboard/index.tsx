@@ -1,5 +1,5 @@
 import React from "react";
-
+import Rachelle from "@/assets/rachelle.jpg";
 import Freddy from "@/assets/freddy.jpg";
 import James from "@/assets/james.jpg";
 import Tasks from "@/components/task/Tasks";
@@ -9,14 +9,37 @@ import StatsBlock from "@/components/stats/StatsBlock";
 import Sidebar from "@/components/sidebar/Sidebar";
 import RecentActivitesFeed from "@/components/recent/RecentActivitesFeed";
 import RecentActivity from "@/components/recent/RecentActivity";
+import ProjectCard from "@/components/projects/ProjectCard";
 
 type Props = {};
+
+const users = [
+  {
+    name: "Freddy",
+    username: "fredster",
+    profilePicture: Freddy,
+    role: "user",
+  },
+  {
+    name: "James",
+    username: "jamester",
+    profilePicture: James,
+    role: "user",
+  },
+  {
+    name: "Rachelle",
+    username: "rach",
+    profilePicture: Rachelle,
+    role: "user",
+  },
+];
 
 const Dashboard = (props: Props) => {
   return (
     <main className="flex flex-col lg:flex-row">
       <section className="flex flex-col px-8 py-5">
-        <TaskActions />
+        <ProjectCard title="text" overview="12321321321" users={users} />
+        {/* <TaskActions /> */}
         <Tasks />
       </section>
       <Sidebar className="mx-auto flex h-screen w-full flex-col flex-wrap  bg-white px-8">
