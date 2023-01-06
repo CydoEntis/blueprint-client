@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import ActionButton from "../buttons/ActionButton";
 import Toggle from "./Toggle";
-import MobileNavActions from "./MobileNavActions";
+import NavActions from "./NavActions";
 import User from "../user/User";
 import NavItems from "./NavItems";
 
@@ -26,7 +26,7 @@ const MobileNav = ({ isOpen }: Props) => {
       <nav className="flex h-full w-full flex-col justify-evenly">
         <User />
         <NavItems />
-        <MobileNavActions />
+        <NavActions />
       </nav>
     </motion.div>
   );
