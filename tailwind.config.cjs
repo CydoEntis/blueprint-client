@@ -12,6 +12,23 @@ module.exports = {
         "gradient-custom": "linear-gradient(90deg, #111 0%, #555 100%",
       }),
       colors: {
+        "cyan-50": "#4098FE",
+        "green-50": "#55BC39",
+        "yellow-50": "#E7B200",
+        "orange-50": "#FF9805",
+        "purple-50": "#B684F4",
+        "pink-50": "#FD66BF",
+        "red-50": "#FF8485",
+
+        "accent-10": "#DCEFF5",
+        "accent-30": "#7ED5E9",
+        "accent-50": "#00B0D6",
+
+        "text-40": "#6B6F7C",
+        "text-50": "#4E4F4F",
+
+        "off-white": "#F5F7FA",
+
         "blue-10": "#6BB4D1",
         "blue-50": "#2D728D",
         "blue-70": "#176284",
