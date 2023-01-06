@@ -15,14 +15,14 @@ const MobileNavActions = () => {
       variants={staggerVariants}
       className="justify-centerpt-8 flex w-full py-5 text-lg"
     >
-      {/* <ActionButton
-        className=" flex items-center text-white"
+      <ActionButton
+        className="mr-3 flex w-full items-center justify-center  px-5 text-grey-40"
         onClick={() => console.log("Clicked")}
       >
         <MdLogout className="mr-2 h-5 w-5" />
         Log out
-      </ActionButton> */}
-      <ActionButton
+      </ActionButton>
+      {/* <ActionButton
         className="mr-3 flex w-1/2 items-center justify-center border-r border-grey-40 px-5 text-grey-40"
         onClick={() => console.log("Clicked")}
       >
@@ -35,7 +35,7 @@ const MobileNavActions = () => {
       >
         <BiUserPlus className="mr-2 h-7 w-7" />
         Register
-      </ActionButton>
+      </ActionButton> */}
     </motion.div>
   );
 };

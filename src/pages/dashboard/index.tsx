@@ -48,7 +48,7 @@ const Dashboard = (props: Props) => {
         {/* <TaskActions /> */}
         <Tasks />
       </section>
-      <Sidebar className="mx-auto flex h-screen w-full flex-col flex-wrap  bg-white px-8">
+      {/* <Sidebar className="mx-auto flex h-screen w-full flex-col flex-wrap  bg-white px-8">
         <StatsContainer title="Stats">
           <StatsBlock count={550} text="Total Tasks" />
           <StatsBlock isFocused count={390} text="Upcoming" />
@@ -76,7 +76,7 @@ const Dashboard = (props: Props) => {
             date="2 hours ago"
           />
         </RecentActivitesFeed>
-      </Sidebar>
+      </Sidebar> */}
     </main>
   );
 };

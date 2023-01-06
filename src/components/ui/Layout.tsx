@@ -16,17 +16,17 @@ const Layout = () => {
       <Nav />
       <MobileNav isOpen={isOpen} />
       <Toggle isOpen={isOpen} onClick={() => setIsOpen((isOpen) => !isOpen)} />
-
+      <Header
+        title="Project 1"
+        iconColor="red"
+        icon={<StarIcon className="h-6 w-6 text-gray-60" />}
+      />
       {/* <Projects /> */}
-      <div className="bg-gray-50 lg:ml-80 lg:h-screen lg:overflow-hidden">
-        <div className="w-full bg-white">
-          <Header
-            title="Project 1"
-            iconColor="red"
-            icon={<StarIcon className="h-6 w-6 text-gray-60" />}
-          />
+      <div className="rounded-tl-[5rem] bg-gray-50 lg:ml-80 lg:h-screen lg:overflow-hidden">
+        {/* <div className="w-full bg-white">
+
           <ProjectNav />
-        </div>
+        </div> */}
         <Outlet />
       </div>
     </main>
