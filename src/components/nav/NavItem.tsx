@@ -21,8 +21,8 @@ const NavItem = ({ to, icon, text }: Props) => {
         to={to}
         className={({ isActive }) =>
           isActive
-            ? "flex w-full items-center justify-center rounded-2xl bg-accent-40 py-3 text-left text-xl text-white hover:text-white"
-            : "flex w-full items-center justify-center rounded-2xl py-3 text-left text-xl text-grey-40  hover:bg-accent-40 hover:text-white"
+            ? "text-md flex w-full items-center justify-center rounded-2xl bg-accent-40 py-3 text-lg text-white hover:text-white"
+            : "flex w-full items-center justify-center rounded-2xl py-3 text-left text-lg text-grey-40  hover:bg-accent-40 hover:text-white"
         }
       >
         <div className="flex h-full w-full items-center justify-center ">

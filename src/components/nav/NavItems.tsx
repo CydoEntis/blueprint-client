@@ -13,17 +13,17 @@ const NavItems = () => {
     >
       <NavItem
         to="/"
-        icon={<MdDashboard className="h-8 w-8 cursor-pointer" />}
+        icon={<MdDashboard className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />}
         text="Dashboard"
       />
       <NavItem
         to="/stats"
-        icon={<IoStatsChart className="h-8 w-8 cursor-pointer" />}
+        icon={<IoStatsChart className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />}
         text="Stats"
       />
       <NavItem
         to="/theme"
-        icon={<IoMoon className="h-8 w-8 cursor-pointer" />}
+        icon={<IoMoon className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />}
         text="Theme"
       />
     </motion.ul>
