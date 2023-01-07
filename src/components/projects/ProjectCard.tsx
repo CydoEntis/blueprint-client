@@ -17,30 +17,31 @@ const ProjectCard = ({
   dueDate,
   users,
 }: ProjectProps) => {
+  console.log(typeof color);
   return (
     <Card key={id}>
-      <div className={`bg-${color}-50 h-8 w-full rounded-t-2xl`} />
+      <div className={`h-8 w-full rounded-t-2xl bg-${color}-40`} />
       <div className="p-3">
         <div className="flex w-full flex-col justify-between">
-          <h1 className="py-1 text-lg font-bold  text-gray-70">{title}</h1>
-          <div className="flex items-center py-1 text-gray-60">
+          <h1 className="py-1 text-lg font-bold  text-grey-40">{title}</h1>
+          <div className="flex items-center py-1 text-grey-30">
             <RiTeamLine className="mr-2 h-5 w-5" />
             <p className="text-sm ">{team}</p>
           </div>
-          <div className="flex items-center py-1 text-gray-60">
+          <div className="flex items-center py-1 text-grey-30">
             <GiAlarmClock className="mr-2 h-5 w-5" />
-            <p className="text-sm text-gray-60">{dueDate}</p>
+            <p className="text-sm text-grey-30">{dueDate}</p>
           </div>
         </div>
-        <div className="flex w-full items-center  border-t border-grey-50 py-3">
+        <div className="flex w-full items-center  border-t border-grey-30 py-3">
           <div className="w-3/4">
-            <h3 className="py-1 text-xs font-bold text-gray-70">
+            <h3 className="py-1 text-xs font-bold text-grey-40">
               Team Members
             </h3>
             <Users users={users} />
           </div>
           <div className="w-1/4">
-            <h3 className="py-1 text-xs font-bold text-gray-70">Progress</h3>
+            <h3 className="py-1 text-xs font-bold text-grey-40">Progress</h3>
             <p>34%</p>
           </div>
         </div>

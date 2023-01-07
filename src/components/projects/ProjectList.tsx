@@ -8,7 +8,7 @@ type ProjectListProps = {
 
 const ProjectList = ({ projects }: ProjectListProps) => {
   return (
-    <div className="flex flex-wrap gap-5">
+    <div className="flex flex-wrap gap-x-8 gap-y-16">
       {projects.map((project) => (
         <ProjectCard key={project.id} {...project} />
       ))}

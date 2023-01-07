@@ -19,10 +19,10 @@ const Layout = () => {
       <Header
         title="Project 1"
         iconColor="red"
-        icon={<StarIcon className="h-6 w-6 text-gray-60" />}
+        icon={<StarIcon className="text-gray-60 h-6 w-6" />}
       />
       {/* <Projects /> */}
-      <div className="rounded-tl-[5rem] bg-gray-50 lg:ml-80 lg:h-screen lg:overflow-hidden">
+      <div className="rounded-tl-[5rem] bg-off-white lg:ml-80 lg:h-screen lg:overflow-hidden">
         {/* <div className="w-full bg-white">
 
           <ProjectNav />

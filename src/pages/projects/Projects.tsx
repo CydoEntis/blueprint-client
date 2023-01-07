@@ -5,7 +5,7 @@ type Props = {};
 
 const Projects = (props: Props) => {
   return (
-    <div>
+    <div className="p-8">
       <ProjectList projects={data} />
     </div>
   );

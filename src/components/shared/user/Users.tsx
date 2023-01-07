@@ -19,7 +19,7 @@ const Users = ({ users }: Props) => {
         );
       })}
       <div className="absolute ml-9 h-8 w-8 rounded-full border-2 border-white">
-        <div className="flex h-full w-full items-center justify-center rounded-full bg-blue-50">
+        <div className="flex h-full w-full items-center justify-center rounded-full bg-blue-40">
           <h3 className="text-center text-sm text-white">7+</h3>
         </div>
       </div>
