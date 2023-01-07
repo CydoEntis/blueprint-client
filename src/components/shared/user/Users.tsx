@@ -12,6 +12,7 @@ const Users = ({ users }: Props) => {
         let margin = index * 3;
         return (
           <Avatar
+            key={user.id}
             className={`absolute ml-${margin}`}
             src={user.profilePicture}
           />

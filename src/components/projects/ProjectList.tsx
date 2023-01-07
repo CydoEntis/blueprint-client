@@ -1,16 +1,16 @@
-import { Project } from "@/types/project-types";
+import { ProjectProps } from "@/types/project-types";
 import React from "react";
 import ProjectCard from "./ProjectCard";
 
 type ProjectListProps = {
-  projects: Project[];
+  projects: ProjectProps[];
 };
 
 const ProjectList = ({ projects }: ProjectListProps) => {
   return (
     <div className="flex flex-wrap gap-5">
       {projects.map((project) => (
-        <ProjectCard {...project} />
+        <ProjectCard key={project.id} {...project} />
       ))}
     </div>
   );

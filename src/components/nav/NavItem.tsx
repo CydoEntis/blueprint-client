@@ -25,8 +25,12 @@ const NavItem = ({ to, icon, text }: Props) => {
             : "flex w-full items-center justify-center rounded-2xl py-3 text-left text-xl text-grey-40  hover:bg-accent-50 hover:text-white"
         }
       >
-        <div className="flex w-2/12 items-center justify-center">{icon}</div>
-        <div className="flex w-5/12 items-center justify-start">{text}</div>
+        <div className="flex h-full w-full items-center justify-center ">
+          <div className="pr flex w-1/6 items-center justify-end px-2">
+            {icon}
+          </div>
+          <div className="flex w-1/3 items-center px-3">{text}</div>
+        </div>
       </NavLink>
     </motion.li>
   );

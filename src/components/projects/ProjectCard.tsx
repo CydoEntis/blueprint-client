@@ -7,17 +7,18 @@ import { User } from "@/types/user-types";
 import Users from "../shared/user/Users";
 import { RiTeamLine } from "react-icons/ri";
 import { GiAlarmClock } from "react-icons/gi";
-type Props = {
-  color: string;
-  title: string;
-  team: string;
-  dueDate: string;
-  users: User[];
-};
+import { ProjectProps } from "@/types/project-types";
 
-const ProjectCard = ({ color, title, team, dueDate, users }: Props) => {
+const ProjectCard = ({
+  id,
+  color,
+  title,
+  team,
+  dueDate,
+  users,
+}: ProjectProps) => {
   return (
-    <Card>
+    <Card key={id}>
       <div className={`bg-${color}-50 h-8 w-full rounded-t-2xl`} />
       <div className="p-3">
         <div className="flex w-full flex-col justify-between">
@@ -31,7 +32,7 @@ const ProjectCard = ({ color, title, team, dueDate, users }: Props) => {
             <p className="text-sm text-gray-60">{dueDate}</p>
           </div>
         </div>
-        <div className="border-grey-50 flex w-full  items-center border-t py-3">
+        <div className="flex w-full items-center  border-t border-grey-50 py-3">
           <div className="w-3/4">
             <h3 className="py-1 text-xs font-bold text-gray-70">
               Team Members

@@ -12,7 +12,7 @@ const Layout = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <main className="relative flex h-screen flex-col bg-white">
+    <main className="relative flex h-screen w-screen flex-col bg-white">
       <Nav />
       <MobileNav isOpen={isOpen} />
       <Toggle isOpen={isOpen} onClick={() => setIsOpen((isOpen) => !isOpen)} />

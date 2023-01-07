@@ -10,26 +10,30 @@
         "id": 1,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
+
         "progress": 34,
         "comments": []
       },
@@ -37,23 +41,26 @@
         "id": 2,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -64,23 +71,26 @@
         "id": 3,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -91,23 +101,26 @@
         "id": 4,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -118,23 +131,26 @@
         "id": 5,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -145,23 +161,26 @@
         "id": 6,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -171,21 +190,24 @@
     ],
     "users": [
       {
+        "id": 1,
         "name": "Freddy",
         "username": "fredster",
-        "profilePicture": "Freddy",
+        "profilePicture": "@/assets/freddy.jpg",
         "role": "user"
       },
       {
+        "id": 2,
         "name": "James",
         "username": "jamester",
-        "profilePicture": "James",
+        "profilePicture": "@/assets/james.jpg",
         "role": "user"
       },
       {
+        "id": 3,
         "name": "Rachelle",
         "username": "rach",
-        "profilePicture": "Rachelle",
+        "profilePicture": "@/assets/rachelle.jpg",
         "role": "user"
       }
     ]
@@ -201,50 +223,79 @@
         "id": 1,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
         "progress": 34,
-        "comments": []
+        "comments": [],
+        "users": [
+          {
+            "id": 1,
+            "name": "Freddy",
+            "username": "fredster",
+            "profilePicture": "@/assets/freddy.jpg",
+            "role": "user"
+          },
+          {
+            "id": 2,
+            "name": "James",
+            "username": "jamester",
+            "profilePicture": "@/assets/james.jpg",
+            "role": "user"
+          },
+          {
+            "id": 3,
+            "name": "Rachelle",
+            "username": "rach",
+            "profilePicture": "@/assets/rachelle.jpg",
+            "role": "user"
+          }
+        ]
       },
       {
         "id": 2,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -255,23 +306,26 @@
         "id": 3,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -282,23 +336,26 @@
         "id": 4,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -309,23 +366,26 @@
         "id": 5,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -336,23 +396,26 @@
         "id": 6,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -362,21 +425,24 @@
     ],
     "users": [
       {
+        "id": 1,
         "name": "Freddy",
         "username": "fredster",
-        "profilePicture": "Freddy",
+        "profilePicture": "@/assets/freddy.jpg",
         "role": "user"
       },
       {
+        "id": 2,
         "name": "James",
         "username": "jamester",
-        "profilePicture": "James",
+        "profilePicture": "@/assets/james.jpg",
         "role": "user"
       },
       {
+        "id": 3,
         "name": "Rachelle",
         "username": "rach",
-        "profilePicture": "Rachelle",
+        "profilePicture": "@/assets/rachelle.jpg",
         "role": "user"
       }
     ]
@@ -392,23 +458,26 @@
         "id": 1,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -419,23 +488,26 @@
         "id": 2,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -446,23 +518,26 @@
         "id": 3,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -473,23 +548,26 @@
         "id": 4,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -500,23 +578,26 @@
         "id": 5,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -527,23 +608,26 @@
         "id": 6,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -553,21 +637,24 @@
     ],
     "users": [
       {
+        "id": 1,
         "name": "Freddy",
         "username": "fredster",
-        "profilePicture": "Freddy",
+        "profilePicture": "@/assets/freddy.jpg",
         "role": "user"
       },
       {
+        "id": 2,
         "name": "James",
         "username": "jamester",
-        "profilePicture": "James",
+        "profilePicture": "@/assets/james.jpg",
         "role": "user"
       },
       {
+        "id": 3,
         "name": "Rachelle",
         "username": "rach",
-        "profilePicture": "Rachelle",
+        "profilePicture": "@/assets/rachelle.jpg",
         "role": "user"
       }
     ]
@@ -583,23 +670,26 @@
         "id": 1,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -610,23 +700,26 @@
         "id": 2,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -637,23 +730,26 @@
         "id": 3,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -664,23 +760,26 @@
         "id": 4,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -691,23 +790,26 @@
         "id": 5,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -718,23 +820,26 @@
         "id": 6,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -744,21 +849,24 @@
     ],
     "users": [
       {
+        "id": 1,
         "name": "Freddy",
         "username": "fredster",
-        "profilePicture": "Freddy",
+        "profilePicture": "@/assets/freddy.jpg",
         "role": "user"
       },
       {
+        "id": 2,
         "name": "James",
         "username": "jamester",
-        "profilePicture": "James",
+        "profilePicture": "@/assets/james.jpg",
         "role": "user"
       },
       {
+        "id": 3,
         "name": "Rachelle",
         "username": "rach",
-        "profilePicture": "Rachelle",
+        "profilePicture": "@/assets/rachelle.jpg",
         "role": "user"
       }
     ]
@@ -774,23 +882,26 @@
         "id": 1,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -801,23 +912,26 @@
         "id": 2,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -828,23 +942,26 @@
         "id": 3,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -855,23 +972,26 @@
         "id": 4,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -882,23 +1002,26 @@
         "id": 5,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -909,23 +1032,26 @@
         "id": 6,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -935,21 +1061,24 @@
     ],
     "users": [
       {
+        "id": 1,
         "name": "Freddy",
         "username": "fredster",
-        "profilePicture": "Freddy",
+        "profilePicture": "@/assets/freddy.jpg",
         "role": "user"
       },
       {
+        "id": 2,
         "name": "James",
         "username": "jamester",
-        "profilePicture": "James",
+        "profilePicture": "@/assets/james.jpg",
         "role": "user"
       },
       {
+        "id": 3,
         "name": "Rachelle",
         "username": "rach",
-        "profilePicture": "Rachelle",
+        "profilePicture": "@/assets/rachelle.jpg",
         "role": "user"
       }
     ]
@@ -965,23 +1094,26 @@
         "id": 1,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -992,23 +1124,26 @@
         "id": 2,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -1019,23 +1154,26 @@
         "id": 3,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -1046,23 +1184,26 @@
         "id": 4,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -1073,23 +1214,26 @@
         "id": 5,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -1100,23 +1244,26 @@
         "id": 6,
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
-        "members": [
+        "users": [
           {
+            "id": 1,
             "name": "Freddy",
             "username": "fredster",
-            "profilePicture": "Freddy",
+            "profilePicture": "@/assets/freddy.jpg",
             "role": "user"
           },
           {
+            "id": 2,
             "name": "James",
             "username": "jamester",
-            "profilePicture": "James",
+            "profilePicture": "@/assets/james.jpg",
             "role": "user"
           },
           {
+            "id": 3,
             "name": "Rachelle",
             "username": "rach",
-            "profilePicture": "Rachelle",
+            "profilePicture": "@/assets/rachelle.jpg",
             "role": "user"
           }
         ],
@@ -1126,21 +1273,24 @@
     ],
     "users": [
       {
+        "id": 1,
         "name": "Freddy",
         "username": "fredster",
-        "profilePicture": "Freddy",
+        "profilePicture": "@/assets/freddy.jpg",
         "role": "user"
       },
       {
+        "id": 2,
         "name": "James",
         "username": "jamester",
-        "profilePicture": "James",
+        "profilePicture": "@/assets/james.jpg",
         "role": "user"
       },
       {
+        "id": 3,
         "name": "Rachelle",
         "username": "rach",
-        "profilePicture": "Rachelle",
+        "profilePicture": "@/assets/rachelle.jpg",
         "role": "user"
       }
     ]

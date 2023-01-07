@@ -13,19 +13,9 @@ import Nav from "@/components/nav/Nav";
 import Header from "@/components/header/Header";
 import { PlusIcon } from "@heroicons/react/24/solid";
 import Sidebar from "./components/sidebar/Sidebar";
-import Projects from "./components/projects/Projects";
 import MobileNav from "./components/nav/MobileNav";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Dashboard />,
-  },
-  {
-    path: "/test",
-    element: <div>Hello World</div>,
-  },
-]);
+import Project from "./components/projects/Category";
+import Projects from "./pages/projects/Projects";
 
 const plusIcon = <PlusIcon className="mr-2 h-5 w-5" />;
 
@@ -44,7 +34,7 @@ const App = (props: Props) => {
               // </ProtectedRoute>
             }
           >
-            <Route index element={<Dashboard />} />
+            <Route index element={<Projects />} />
             {/* <Route path="all-jobs" element={<Stats />} /> */}
             {/* <Route path="add-job" element={<AddJob />} /> */}
             {/* <Route path="profile" element={<Profile />} /> */}
