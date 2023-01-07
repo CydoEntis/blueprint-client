@@ -22,6 +22,7 @@ module.exports = {
         "grey-40": "#4E4F4F",
 
         "off-white": "#F5F7FA",
+        "off-white-20": "#E9EAEA",
 
         "blue-40": "#4098FE",
         "green-40": "#55BC39",

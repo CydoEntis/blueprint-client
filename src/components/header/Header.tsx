@@ -1,26 +1,26 @@
-import { HiMagnifyingGlass } from "react-icons/hi2";
-import Avatar from "../shared/avatars/Avatar";
-import Freddy from "@/assets/freddy.jpg";
+import React from "react";
 
 type Props = {
   title: string;
-  iconColor: string;
-  icon?: React.ReactNode;
+  description: string;
+  onClick: () => void;
+  buttonText: string;
 };
 
-const Header = ({ title, iconColor, icon }: Props) => {
+const Header = ({ title, description, onClick, buttonText }: Props) => {
   return (
-    <header className="flex items-center justify-between p-8 lg:ml-80">
-      <div className="flex items-center">
-        <HiMagnifyingGlass className="mr-3 h-6 w-6 text-grey-40" />
-        <input
-          type="text"
-          placeholder="Search..."
-          className="border-grey-40 text-lg text-grey-40 outline-none focus:border-b"
-        />
+    <div className="flex items-center justify-between border-b-2 border-off-white-20 pt-5 pb-8">
+      <div>
+        <h1 className="text-2xl font-bold text-grey-40 ">{title}</h1>
+        <p className="py-1 text-xs text-grey-20">{description}</p>
       </div>
-      <Avatar className="h-12 w-12" src={Freddy} />
-    </header>
+      <button
+        className="rounded-xl bg-accent-40 px-5 py-3 text-sm font-bold text-white"
+        onClick={onClick}
+      >
+        {buttonText}
+      </button>
+    </div>
   );
 };
 

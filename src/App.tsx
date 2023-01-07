@@ -10,7 +10,7 @@ import Dashboard from "@/pages/dashboard";
 import Layout from "@/components/ui/Layout";
 import Navbar from "@/components/nav/ProjectNav";
 import Nav from "@/components/nav/Nav";
-import Header from "@/components/header/Header";
+import Header from "@/components/header/MainHeader";
 import { PlusIcon } from "@heroicons/react/24/solid";
 import Sidebar from "./components/sidebar/Sidebar";
 import MobileNav from "./components/nav/MobileNav";
