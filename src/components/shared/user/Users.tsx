@@ -13,7 +13,7 @@ const Users = ({ users }: Props) => {
         return (
           <Avatar
             key={user.id}
-            className={`absolute ml-${margin}`}
+            className={`absolute ml-${margin} h-8 w-8`}
             src={user.profilePicture}
           />
         );

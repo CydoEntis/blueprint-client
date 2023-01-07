@@ -21,19 +21,22 @@ const ProjectCard = ({
   return (
     <Card key={id}>
       <div className={`h-8 w-full rounded-t-2xl bg-${color}-40`} />
-      <div className="p-3">
-        <div className="flex w-full flex-col justify-between">
-          <h1 className="py-1 text-lg font-bold  text-grey-40">{title}</h1>
+      {/* Card Content Wrapper */}
+      <div className="flex  flex-col justify-between bg-white px-7">
+        {/* Card Top  */}
+        <div className="flex w-full flex-col py-5">
+          <h1 className="py-1 text-2xl font-bold  text-grey-40">{title}</h1>
           <div className="flex items-center py-1 text-grey-30">
             <RiTeamLine className="mr-2 h-5 w-5" />
-            <p className="text-sm ">{team}</p>
+            <p className="text-md">{team}</p>
           </div>
           <div className="flex items-center py-1 text-grey-30">
             <GiAlarmClock className="mr-2 h-5 w-5" />
             <p className="text-sm text-grey-30">{dueDate}</p>
           </div>
         </div>
-        <div className="flex w-full items-center  border-t border-grey-30 py-3">
+        {/* Card bottom  */}
+        <div className="flex w-full  items-center  border-t border-off-white py-5">
           <div className="w-3/4">
             <h3 className="py-1 text-xs font-bold text-grey-40">
               Team Members
