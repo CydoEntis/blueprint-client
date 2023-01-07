@@ -6,7 +6,7 @@ type Props = {};
 
 const Projects = (props: Props) => {
   return (
-    <div className="p-8">
+    <div className="lg:px-4 xl:px-12">
       <Header
         title="Projects"
         description="Overview of all projects"

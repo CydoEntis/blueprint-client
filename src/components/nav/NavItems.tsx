@@ -12,7 +12,7 @@ const NavItems = () => {
       className="flex w-full flex-col items-center justify-center"
     >
       <NavItem
-        to="/"
+        to="/projects"
         icon={<MdDashboard className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />}
         text="Dashboard"
       />

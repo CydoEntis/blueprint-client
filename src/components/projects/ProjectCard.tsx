@@ -17,10 +17,8 @@ const ProjectCard = ({
   dueDate,
   users,
 }: ProjectProps) => {
-  console.log(typeof color);
   return (
-    <Card key={id}>
-      <div className={`h-8 w-full rounded-t-2xl bg-${color}-40`} />
+    <Card to={`${id}`} key={id}>
       {/* Card Content Wrapper */}
       <div className="flex  flex-col justify-between bg-white px-7">
         {/* Card Top  */}
