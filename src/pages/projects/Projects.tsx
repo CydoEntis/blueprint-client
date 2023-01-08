@@ -2,6 +2,7 @@ import data from "@/data/fake-data.json";
 import ProjectList from "@/components/projects/ProjectList";
 import { ProjectProps } from "@/types/project-types";
 import Header from "@/components/header/Header";
+import { Outlet } from "react-router-dom";
 type Props = {};
 
 const Projects = (props: Props) => {

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import Header from "../header/MainHeader";
-import ProjectNav from "../nav/ProjectNav";
+import Header from "../components/header/MainHeader";
+import ProjectNav from "../components/nav/ProjectNav";
 import { Bars3BottomRightIcon, StarIcon } from "@heroicons/react/24/outline";
 import { Outlet } from "react-router-dom";
-import MobileNav from "../nav/MobileNav";
-import Nav from "../nav/Nav";
-import Toggle from "../nav/Toggle";
+import MobileNav from "../components/nav/MobileNav";
+import Nav from "../components/nav/Nav";
+import Toggle from "../components/nav/Toggle";
 import MainHeader from "@/components/header/MainHeader";
 
-const Layout = () => {
+const Root = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
@@ -33,4 +33,4 @@ const Layout = () => {
   );
 };
 
-export default Layout;
+export default Root;

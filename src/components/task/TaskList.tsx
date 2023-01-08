@@ -1,14 +1,16 @@
 import React from "react";
-import data from "@/data/task-data.json";
 import TaskCard from "./TaskCard";
 import List from "../shared/list/List";
+import { Task } from "@/types/task-type";
 
-type Props = {};
+type Props = {
+  tasks: Task[];
+};
 
-const TaskList = (props: Props) => {
+const TaskList = ({ tasks }: Props) => {
   return (
     <List>
-      {data.map((task) => (
+      {tasks.map((task) => (
         <TaskCard task={task} />
       ))}
     </List>

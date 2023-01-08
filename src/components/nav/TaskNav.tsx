@@ -1,50 +1,22 @@
 import React from "react";
+import TaskLink from "./TaskLink";
 
 type Props = {
+  id: number;
   onClick: () => void;
   count: number;
 };
 
-const TaskNav = ({ onClick, count }: Props) => {
+const TaskNav = ({ id, onClick, count }: Props) => {
   return (
     <nav className="w-full px-5">
       <ul className="flex h-full w-1/3 justify-between text-grey-40">
-        <li className="flex items-center" onClick={onClick}>
-          All{" "}
-          <span className="ml-2 rounded-lg border border-accent-30 bg-accent-10 px-3 py-1 text-xs">
-            {count}
-          </span>
-        </li>
-        <li className="flex items-center" onClick={onClick}>
-          In Progress{" "}
-          <span className="ml-2 rounded-lg border border-accent-30 bg-accent-10 px-3 py-1 text-xs">
-            {count}
-          </span>
-        </li>
-        <li onClick={() => console.log("first")}>
-          In Review{" "}
-          <span className="ml-2 rounded-lg border border-accent-30 bg-accent-10 px-3 py-1 text-xs">
-            {count}
-          </span>
-        </li>
-        <li className="flex items-center" onClick={onClick}>
-          Completed{" "}
-          <span className="ml-2 rounded-lg border border-accent-30 bg-accent-10 px-3 py-1 text-xs">
-            {count}
-          </span>
-        </li>
-        <li className="flex items-center" onClick={onClick}>
-          Bugs{" "}
-          <span className="ml-2 rounded-lg border border-accent-30 bg-accent-10 px-3 py-1 text-xs">
-            {count}
-          </span>
-        </li>
-        <li className="flex items-center" onClick={onClick}>
-          Overdue{" "}
-          <span className="ml-2 rounded-lg border border-accent-30 bg-accent-10 px-3 py-1 text-xs">
-            {count}
-          </span>
-        </li>
+        <TaskLink to={`tasks/all`} text="All" count={50} />
+        <TaskLink to={`tasks/in-progress`} text="In Progress" count={22} />
+        <TaskLink to={`tasks/in-review`} text="In Review" count={10} />
+        <TaskLink to={`tasks/completed`} text="Completed" count={5} />
+        <TaskLink to={`tasks/bugs`} text="Bugs" count={3} />
+        <TaskLink to={`tasks/past-due`} text="Past Due" count={1} />
       </ul>
     </nav>
   );
