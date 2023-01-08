@@ -7,23 +7,16 @@ module.exports = {
         dmsans: ["DM Sans", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
       },
-      backgroundImage: (theme) => ({
-        // "gradient-white": "linear-gradient(90deg, #F2F7FD 0%, #E0E4FD 100%",
-        "gradient-custom": "linear-gradient(90deg, #111 0%, #555 100%",
-      }),
       colors: {
         "accent-10": "#DCEFF5",
         "accent-30": "#7ED5E9",
         "accent-40": "#00B0D6",
-
         "grey-10": "#F8F8F8",
         "grey-20": "#838796",
         "grey-30": "#6B6F7C",
         "grey-40": "#4E4F4F",
-
         "off-white": "#F5F7FA",
         "off-white-20": "#E9EAEA",
-
         "blue-40": "#4098FE",
         "green-40": "#55BC39",
         "yellow-40": "#E7B200",
@@ -34,5 +27,11 @@ module.exports = {
       },
     },
   },
+  safelist: [
+    {
+      pattern:
+        /(bg|text|border|)-(blue|green|yellow|orange|purple|pink|red|grey|accent|off-white)-(10|20|30|40)/,
+    },
+  ],
   plugins: [],
 };

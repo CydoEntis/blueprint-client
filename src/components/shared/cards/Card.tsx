@@ -10,7 +10,7 @@ const Card = ({ to, children }: Props) => {
     <NavLink
       end
       to={to}
-      className={`h-60 w-80 overflow-hidden rounded-2xl  bg-white drop-shadow-xl`}
+      className={`w-80 overflow-hidden rounded-2xl  bg-white drop-shadow-xl`}
     >
       {children}
     </NavLink>

@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "tag": "backend",
     "title": "Lorem ipsum",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
     "users": [
@@ -31,6 +32,7 @@
   },
   {
     "id": 2,
+    "tag": "mobile",
     "title": "Lorem ipsum",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
     "users": [
@@ -61,6 +63,7 @@
   },
   {
     "id": 3,
+    "tag": "ui/ux",
     "title": "Lorem ipsum",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
     "users": [
@@ -91,6 +94,7 @@
   },
   {
     "id": 4,
+    "tag": "frontend",
     "title": "Lorem ipsum",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
     "users": [
@@ -121,6 +125,7 @@
   },
   {
     "id": 5,
+    "tag": "security",
     "title": "Lorem ipsum",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
     "users": [
@@ -151,6 +156,7 @@
   },
   {
     "id": 6,
+    "tag": "testing",
     "title": "Lorem ipsum",
     "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
     "users": [

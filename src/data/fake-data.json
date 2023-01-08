@@ -8,6 +8,7 @@
     "tasks": [
       {
         "id": 1,
+        "tag": "backend",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -33,12 +34,12 @@
             "role": "user"
           }
         ],
-
         "progress": 34,
         "comments": []
       },
       {
         "id": 2,
+        "tag": "mobile",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -69,6 +70,7 @@
       },
       {
         "id": 3,
+        "tag": "ui/ux",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -99,6 +101,7 @@
       },
       {
         "id": 4,
+        "tag": "frontend",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -129,6 +132,7 @@
       },
       {
         "id": 5,
+        "tag": "security",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -159,6 +163,7 @@
       },
       {
         "id": 6,
+        "tag": "testing",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -221,6 +226,7 @@
     "tasks": [
       {
         "id": 1,
+        "tag": "backend",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -247,33 +253,11 @@
           }
         ],
         "progress": 34,
-        "comments": [],
-        "users": [
-          {
-            "id": 1,
-            "name": "Freddy",
-            "username": "fredster",
-            "profilePicture": "@/assets/freddy.jpg",
-            "role": "user"
-          },
-          {
-            "id": 2,
-            "name": "James",
-            "username": "jamester",
-            "profilePicture": "@/assets/james.jpg",
-            "role": "user"
-          },
-          {
-            "id": 3,
-            "name": "Rachelle",
-            "username": "rach",
-            "profilePicture": "@/assets/rachelle.jpg",
-            "role": "user"
-          }
-        ]
+        "comments": []
       },
       {
         "id": 2,
+        "tag": "mobile",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -304,6 +288,7 @@
       },
       {
         "id": 3,
+        "tag": "ui/ux",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -334,6 +319,7 @@
       },
       {
         "id": 4,
+        "tag": "frontend",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -364,6 +350,7 @@
       },
       {
         "id": 5,
+        "tag": "security",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -394,6 +381,7 @@
       },
       {
         "id": 6,
+        "tag": "testing",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -456,6 +444,7 @@
     "tasks": [
       {
         "id": 1,
+        "tag": "backend",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -486,6 +475,7 @@
       },
       {
         "id": 2,
+        "tag": "mobile",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -516,6 +506,7 @@
       },
       {
         "id": 3,
+        "tag": "ui/ux",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -546,6 +537,7 @@
       },
       {
         "id": 4,
+        "tag": "frontend",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -576,6 +568,7 @@
       },
       {
         "id": 5,
+        "tag": "security",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -606,6 +599,7 @@
       },
       {
         "id": 6,
+        "tag": "testing",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -668,6 +662,7 @@
     "tasks": [
       {
         "id": 1,
+        "tag": "backend",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -698,6 +693,7 @@
       },
       {
         "id": 2,
+        "tag": "mobile",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -728,6 +724,7 @@
       },
       {
         "id": 3,
+        "tag": "ui/ux",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -758,6 +755,7 @@
       },
       {
         "id": 4,
+        "tag": "frontend",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -788,6 +786,7 @@
       },
       {
         "id": 5,
+        "tag": "security",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -818,6 +817,7 @@
       },
       {
         "id": 6,
+        "tag": "testing",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -880,6 +880,7 @@
     "tasks": [
       {
         "id": 1,
+        "tag": "backend",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -910,6 +911,7 @@
       },
       {
         "id": 2,
+        "tag": "mobile",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -940,6 +942,7 @@
       },
       {
         "id": 3,
+        "tag": "ui/ux",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -970,6 +973,7 @@
       },
       {
         "id": 4,
+        "tag": "frontend",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -1000,6 +1004,7 @@
       },
       {
         "id": 5,
+        "tag": "security",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -1030,6 +1035,7 @@
       },
       {
         "id": 6,
+        "tag": "testing",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -1092,6 +1098,7 @@
     "tasks": [
       {
         "id": 1,
+        "tag": "backend",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -1122,6 +1129,7 @@
       },
       {
         "id": 2,
+        "tag": "mobile",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -1152,6 +1160,7 @@
       },
       {
         "id": 3,
+        "tag": "ui/ux",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -1182,6 +1191,7 @@
       },
       {
         "id": 4,
+        "tag": "frontend",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -1212,6 +1222,7 @@
       },
       {
         "id": 5,
+        "tag": "security",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [
@@ -1242,6 +1253,7 @@
       },
       {
         "id": 6,
+        "tag": "testing",
         "title": "Lorem ipsum",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste ducimus ex, reprehenderit nostrum dolore magni",
         "users": [

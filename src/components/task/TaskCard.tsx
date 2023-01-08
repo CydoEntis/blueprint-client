@@ -27,10 +27,10 @@ type Props = {
 const TaskCard = ({ task }: Props) => {
   return (
     <Card to={`/tasks/${task.id}`} key={task.id}>
-      <div className="p-3">
+      <div className=" p-3">
         {/* Tags */}
         <div className="flex items-center">
-          <Tag color="green" text="Front End" />
+          <Tag text={task.tag} />
         </div>
         <div className="w-full py-3">
           <h3 className="text-gray-70 font-bold">{task.title}</h3>
@@ -38,7 +38,7 @@ const TaskCard = ({ task }: Props) => {
         </div>
         {/* Subtasks */}
       </div>
-      <div className="border-grey-50 flex w-full items-center justify-between border-t p-3">
+      <div className="border-grey-50 flex w-full items-center justify-between border-t  p-3">
         <Users users={task.users} />
         <div className="flex items-center justify-center">
           <TaskIcon
