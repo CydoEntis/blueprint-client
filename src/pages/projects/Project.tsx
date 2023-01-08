@@ -16,21 +16,14 @@ type Props = {};
 const Project = (props: Props) => {
   const [isAddTaskOpen, setIsAddTaskOpen] = useState<boolean>(false);
   return (
-    <div>
-      {/* <Header
-        title="Projects"
-        description="Overview of all projects"
-        onClick={() => console.log("Button Clicked")}
-        buttonText="Create Project"
-      />
-      <ProjectList projects={data} /> */}
+    <div className="relative">
       <Header
         title="Project 1"
         description="this is project numbeer one"
         onClick={() => setIsAddTaskOpen(true)}
         buttonText="Add Task"
       />
-      {isAddTaskOpen && <AddTask />}
+      {isAddTaskOpen && <AddTask onClick={() => setIsAddTaskOpen(false)} />}
       <TaskNav id={1} count={10} onClick={() => console.log("first")} />
       <Tasks tasks={tasks} />
     </div>
