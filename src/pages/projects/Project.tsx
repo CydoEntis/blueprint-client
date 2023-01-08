@@ -1,4 +1,5 @@
 import Header from "@/components/header/Header";
+import TaskNav from "@/components/nav/TaskNav";
 import Tasks from "@/components/task/Tasks";
 import React from "react";
 
@@ -13,6 +14,7 @@ const Project = (props: Props) => {
         onClick={() => console.log("Add A task")}
         buttonText="Add Task"
       />
+      <TaskNav count={10} onClick={() => console.log("first")} />
       <Tasks />
     </div>
   );
