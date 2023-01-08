@@ -8,7 +8,6 @@ type Props = {
 };
 
 const TaskLink = ({ to, text, count }: Props) => {
-  const params = useParams();
   const location = useLocation();
   const pathParts = location.pathname.split("/");
   const matchedPath = "tasks/" + pathParts[pathParts.length - 1];
@@ -27,7 +26,7 @@ const TaskLink = ({ to, text, count }: Props) => {
   }
   // console.log(params);
   return (
-    <li>
+    <li className="mr-5">
       <Link className={textClasses} to={to}>
         {text}
         <span className={countClasses}>{count}</span>

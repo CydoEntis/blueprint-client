@@ -12,7 +12,7 @@ const AddTask = ({ onClick }: Props) => {
         className="text-grey-30: absolute top-3 right-3 h-8 w-8 cursor-pointer hover:text-red-400"
         onClick={onClick}
       />
-      <h1 className="text-center">Create Task</h1>
+      <h1 className="mb-5 text-2xl text-grey-30">Create Task</h1>
       <div className="flex flex-col">
         <input
           className="mb-3 rounded-lg bg-off-white p-3"
