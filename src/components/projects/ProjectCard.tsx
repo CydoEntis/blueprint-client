@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../cards/Card";
+import Card from "../shared/cards/Card";
 import Freddy from "@/assets/freddy.jpg";
 import James from "@/assets/james.jpg";
 import Rachelle from "@/assets/rachelle.jpg";

@@ -15,43 +15,35 @@ import James from "@/assets/james.jpg";
 import Rachelle from "@/assets/rachelle.jpg";
 import Tag from "../tags/Tag";
 import TaskIcon from "@/components/task/TaskIcon";
+import Card from "../shared/cards/Card";
+import { Task } from "@/types/task-type";
+import Users from "../shared/user/Users";
 
 // Change type to use enums
 type Props = {
-  title: string;
-  description: string;
+  task: Task;
 };
 
-const TaskCard = ({ title, description }: Props) => {
+const TaskCard = ({ task }: Props) => {
   return (
-    <div className="rounded-lg bg-white  drop-shadow-xl">
+    <Card to={`/tasks/${task.id}`} key={task.id}>
       <div className="p-3">
         {/* Tags */}
         <div className="flex items-center">
           <Tag color="green" text="Front End" />
         </div>
         <div className="w-full py-3">
-          <h3 className="font-bold text-gray-70">{title}</h3>
-          <p className="text-sm text-gray-60">{description}</p>
+          <h3 className="text-gray-70 font-bold">{task.title}</h3>
+          <p className="text-gray-60 text-sm">{task.description}</p>
         </div>
         {/* Subtasks */}
       </div>
       <div className="border-grey-50 flex w-full items-center justify-between border-t p-3">
-        <div className="relative mx-auto ml-4 flex h-8 items-center justify-center">
-          <div className="absolute ml-16 h-8 w-8 rounded-full border-2 border-white">
-            <img className="rounded-full" src={Freddy} alt="" />
-          </div>
-          <div className="absolute ml-8 h-8 w-8 rounded-full border-2 border-white ">
-            <img className="rounded-full" src={Rachelle} alt="" />
-          </div>
-          <div className="border-whit absolute h-8 w-8 rounded-full border-2">
-            <img className="rounded-full" src={James} alt="" />
-          </div>
-        </div>
+        <Users users={task.users} />
         <div className="flex items-center justify-center">
           <TaskIcon
             count={3}
-            icon={<PhotoIcon className="mr-2 h-6 w-6 text-gray-60" />}
+            icon={<PhotoIcon className="text-gray-60 mr-2 h-6 w-6" />}
           />
           <TaskIcon
             count={5}
@@ -59,7 +51,7 @@ const TaskCard = ({ title, description }: Props) => {
           />
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 
