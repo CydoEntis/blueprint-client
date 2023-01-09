@@ -15,7 +15,6 @@ const TaskLink = ({ to, text, count }: Props) => {
   let textClasses = "flex items-center text-sm font-bold ";
   let countClasses =
     "ml-2 flex h-8 w-8 items-center justify-center rounded-lg   text-xs";
-  console.log(to === matchedPath);
 
   if (to === matchedPath) {
     textClasses += " text-accent-40";
@@ -24,7 +23,6 @@ const TaskLink = ({ to, text, count }: Props) => {
     textClasses += "text-grey-40";
     countClasses += "border-white bg-white";
   }
-  // console.log(params);
   return (
     <li className="mr-5">
       <Link className={textClasses} to={to}>

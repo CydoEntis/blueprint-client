@@ -23,7 +23,7 @@ const Project = (props: Props) => {
         onClick={() => setIsAddTaskOpen(true)}
         buttonText="Add Task"
       />
-      {isAddTaskOpen && <AddTask onClick={() => setIsAddTaskOpen(false)} />}
+      {isAddTaskOpen && <AddTask onClose={() => setIsAddTaskOpen(false)} />}
       <TaskNav id={1} count={10} onClick={() => console.log("first")} />
       <Tasks tasks={tasks} />
     </div>
