@@ -8,6 +8,7 @@ import Tasks from "./pages/task/Tasks";
 import Root from "@/routes/Root";
 import Error from "./pages/error/Error";
 import Project from "./pages/projects/Project";
+import Task from "./pages/task/Task";
 
 type Props = {};
 
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
           {
             path: "tasks/past-due",
             element: <Project />,
+          },
+          {
+            path: "tasks/:id",
+            element: <Task />,
           },
         ],
       },

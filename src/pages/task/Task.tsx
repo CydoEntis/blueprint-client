@@ -1,12 +1,5 @@
-import React from "react";
-
-type Props = {};
-
-const Task = (props: Props) => {
-  return (
-    // TODO: Implement the individual task page
-    <div>Task</div>
-  );
+const Task = () => {
+  return <div className="mx-auto p-5"></div>;
 };
 
 export default Task;
