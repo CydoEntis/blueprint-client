@@ -50,11 +50,11 @@ const router = createBrowserRouter([
             path: "tasks/past-due",
             element: <Project />,
           },
-          {
-            path: "tasks/:id",
-            element: <Task />,
-          },
         ],
+      },
+      {
+        path: "projects/:id/tasks/:id",
+        element: <Task />,
       },
     ],
   },
