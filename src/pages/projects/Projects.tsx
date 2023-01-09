@@ -1,19 +1,24 @@
 import data from "@/data/fake-data.json";
 import ProjectList from "@/components/projects/ProjectList";
-import { ProjectProps } from "@/types/project-types";
 import Header from "@/components/header/Header";
-import { Outlet } from "react-router-dom";
+import AddProject from "@/components/projects/AddProject";
+import { useState } from "react";
 type Props = {};
 
 const Projects = (props: Props) => {
+  const [isAddProjectOpen, setIsAddProjectOpen] = useState<boolean>(false);
+
   return (
-    <div className="lg:px-4 xl:px-12">
+    <div className="relative lg:px-4 xl:px-12">
       <Header
         title="Projects"
         description="Overview of all projects"
-        onClick={() => console.log("Button Clicked")}
+        onClick={() => setIsAddProjectOpen(true)}
         buttonText="Create Project"
       />
+      {isAddProjectOpen && (
+        <AddProject onClose={() => setIsAddProjectOpen(false)} />
+      )}
       <ProjectList projects={data} />
     </div>
   );
