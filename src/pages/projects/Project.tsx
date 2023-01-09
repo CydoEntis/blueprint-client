@@ -16,7 +16,7 @@ type Props = {};
 const Project = (props: Props) => {
   const [isAddTaskOpen, setIsAddTaskOpen] = useState<boolean>(false);
   return (
-    <div className="relative">
+    <div className="relative lg:px-4 xl:px-12">
       <Header
         title="Project 1"
         description="this is project numbeer one"
