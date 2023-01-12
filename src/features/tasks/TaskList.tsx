@@ -1,7 +1,6 @@
-import React from "react";
 import TaskCard from "./TaskCard";
-import List from "../shared/list/List";
 import { Task } from "@/types/task-type";
+import List from "@/components/shared/list/List";
 
 type Props = {
   tasks: Task[];

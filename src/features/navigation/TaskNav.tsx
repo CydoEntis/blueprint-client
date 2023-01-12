@@ -1,4 +1,3 @@
-import React from "react";
 import TaskLink from "./TaskLink";
 
 type Props = {

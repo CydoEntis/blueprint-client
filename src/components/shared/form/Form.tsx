@@ -27,6 +27,12 @@ const Form = ({ onSubmit, title, btnText }: Props) => {
         cols={30}
         rows={10}
       ></textarea>
+      <select>
+        <option>Joe</option>
+        <option>Jane</option>
+        <option>Jack</option>
+      </select>
+      <input type="date" />
       <div>
         <button className="rounded-xl border border-accent-30 bg-accent-10 py-2 px-5 text-accent-40 hover:bg-accent-40 hover:text-white">
           {btnText}

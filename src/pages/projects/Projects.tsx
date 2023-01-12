@@ -1,7 +1,7 @@
 import data from "@/data/fake-data.json";
-import ProjectList from "@/components/projects/ProjectList";
+import ProjectList from "@/features/projects/ProjectList";
 import Header from "@/components/header/Header";
-import AddProject from "@/components/projects/AddProject";
+import AddProject from "@/features/projects/AddProject";
 import { useState } from "react";
 type Props = {};
 

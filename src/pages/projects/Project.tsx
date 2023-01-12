@@ -1,15 +1,11 @@
 // import Header from "@/components/header/Header";
-import TaskNav from "@/components/nav/TaskNav";
-import Tasks from "@/components/task/Tasks";
 import React, { useState } from "react";
 
-import data from "@/data/fake-data.json";
-import ProjectList from "@/components/projects/ProjectList";
-import { ProjectProps } from "@/types/project-types";
 import Header from "@/components/header/Header";
-import { Outlet } from "react-router-dom";
 import tasks from "@/data/task-data.json";
-import AddTask from "@/components/task/AddTask";
+import AddTask from "@/features/tasks/AddTask";
+import TaskNav from "@/features/navigation/TaskNav";
+import Tasks from "@/features/tasks/Tasks";
 
 type Props = {};
 

@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-import Header from "../components/header/MainHeader";
-import ProjectNav from "../components/nav/ProjectNav";
-import { Bars3BottomRightIcon, StarIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import MobileNav from "../components/nav/MobileNav";
-import Nav from "../components/nav/Nav";
-import Toggle from "../components/nav/Toggle";
+import MobileNav from "../features/navigation/MobileNav";
 import MainHeader from "@/components/header/MainHeader";
+import Nav from "@/features/navigation/Nav";
+import Toggle from "@/features/navigation/Toggle";
+import { StarIcon } from "@heroicons/react/24/solid";
 
 const Root = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

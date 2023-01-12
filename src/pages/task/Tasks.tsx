@@ -1,6 +1,5 @@
 import Header from "@/components/header/Header";
-import TaskNav from "@/components/nav/TaskNav";
-import TaskList from "@/components/task/TaskList";
+import TaskNav from "@/features/navigation/TaskNav";
 import React from "react";
 import { Outlet } from "react-router-dom";
 

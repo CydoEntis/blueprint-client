@@ -9,7 +9,7 @@ import StatsBlock from "@/components/stats/StatsBlock";
 import Sidebar from "@/components/sidebar/Sidebar";
 import RecentActivitesFeed from "@/components/recent/RecentActivitesFeed";
 import RecentActivity from "@/components/recent/RecentActivity";
-import ProjectCard from "@/components/projects/ProjectCard";
+import ProjectCard from "@/features/projects/ProjectCard";
 
 type Props = {};
 

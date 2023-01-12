@@ -1,6 +1,6 @@
 import { ProjectProps } from "@/types/project-types";
 import React from "react";
-import List from "../shared/list/List";
+import List from "../../components/shared/list/List";
 import ProjectCard from "./ProjectCard";
 
 type ProjectListProps = {

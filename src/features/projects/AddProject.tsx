@@ -1,7 +1,7 @@
 import React from "react";
-import ActionButton from "../buttons/ActionButton";
-import Form from "../shared/form/Form";
-import Modal from "../shared/modal/Modal";
+import ActionButton from "../../components/buttons/ActionButton";
+import Form from "../../components/shared/form/Form";
+import Modal from "../../components/shared/modal/Modal";
 
 type Props = {
   onClose: () => void;

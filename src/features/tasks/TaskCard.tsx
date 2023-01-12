@@ -1,23 +1,12 @@
-import React from "react";
+import Card from "@/components/shared/cards/Card";
+import Users from "@/components/shared/user/Users";
+import Tag from "@/components/tags/Tag";
+import { Task } from "@/types/task-type";
 import {
   ChatBubbleOvalLeftEllipsisIcon,
   PhotoIcon,
-  ClockIcon,
-  PaintBrushIcon,
-  LightBulbIcon,
-  ServerIcon,
-  FingerPrintIcon,
-  ClipboardDocumentCheckIcon,
-  BugAntIcon,
 } from "@heroicons/react/24/outline";
-import Freddy from "@/assets/freddy.jpg";
-import James from "@/assets/james.jpg";
-import Rachelle from "@/assets/rachelle.jpg";
-import Tag from "../tags/Tag";
-import TaskIcon from "@/components/task/TaskIcon";
-import Card from "../shared/cards/Card";
-import { Task } from "@/types/task-type";
-import Users from "../shared/user/Users";
+import TaskIcon from "./TaskIcon";
 
 // Change type to use enums
 type Props = {

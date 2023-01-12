@@ -1,5 +1,4 @@
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import React, { useState } from "react";
 
 type Props = {
   isOpen: boolean;
@@ -14,9 +13,9 @@ const Toggle = ({ isOpen, onClick }: Props) => {
       onClick={onClick}
     >
       {isOpen ? (
-        <XMarkIcon className="h-8 w-8 text-blue-10" />
+        <XMarkIcon className="text-blue-10 h-8 w-8" />
       ) : (
-        <Bars3BottomRightIcon className="h-8 w-8 text-blue-10" />
+        <Bars3BottomRightIcon className="text-blue-10 h-8 w-8" />
       )}
     </div>
   );

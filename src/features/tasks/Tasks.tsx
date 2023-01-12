@@ -1,10 +1,5 @@
-import React from "react";
-import TaskCategory from "@/components/task/TaskCategory";
-import TaskCard from "@/components/task/TaskCard";
-import ActionButton from "../buttons/ActionButton";
-import TaskActions from "./TaskActions";
-import TaskList from "./TaskList";
 import { Task } from "@/types/task-type";
+import TaskList from "./TaskList";
 
 type Props = {
   tasks: Task[];

@@ -1,14 +1,10 @@
-import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Dashboard from "@/pages/dashboard";
-import Layout from "@/routes/Root";
 
-import Projects from "./pages/projects/Projects";
-import Tasks from "./pages/task/Tasks";
 import Root from "@/routes/Root";
 import Error from "./pages/error/Error";
+import Tasks from "./pages/task/Tasks";
 import Project from "./pages/projects/Project";
-import Task from "./pages/task/Task";
+import Projects from "./pages/projects/Projects";
 
 type Props = {};
 
@@ -54,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: "projects/:id/tasks/:id",
-        element: <Task />,
+        element: <Tasks />,
       },
     ],
   },

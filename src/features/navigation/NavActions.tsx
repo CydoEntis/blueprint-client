@@ -7,7 +7,7 @@ import {
 import { BiUserPlus } from "react-icons/bi";
 import { MdLogin, MdLogout } from "react-icons/md";
 import { motion } from "framer-motion";
-import ActionButton from "../buttons/ActionButton";
+import ActionButton from "@/components/buttons/ActionButton";
 
 const MobileNavActions = () => {
   return (

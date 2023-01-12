@@ -1,5 +1,5 @@
+import Logo from "@/components/logo/Logo";
 import { motion } from "framer-motion";
-import Logo from "../logo/Logo";
 import MobileNavActions from "./NavActions";
 import NavItems from "./NavItems";
 

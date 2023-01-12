@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import ActionButton from "../buttons/ActionButton";
+import ActionButton from "../../components/buttons/ActionButton";
 import Toggle from "./Toggle";
 import NavActions from "./NavActions";
-import User from "../user/User";
+import User from "../../components/user/User";
 import NavItems from "./NavItems";
 
 const slideVariants = {
