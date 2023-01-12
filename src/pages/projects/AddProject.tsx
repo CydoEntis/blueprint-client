@@ -1,5 +1,9 @@
 import Form from "@/components/shared/form/Form";
 import FormBtn from "@/components/shared/form/FormBtn";
+import FormControl from "@/components/shared/form/FormControl";
+import Input from "@/components/shared/form/Input";
+import Label from "@/components/shared/form/Label";
+import TextArea from "@/components/shared/form/TextArea";
 import React from "react";
 
 type Props = {};
@@ -8,27 +12,33 @@ const AddProject = (props: Props) => {
   return (
     <Form onSubmit={() => console.log("Submitted")}>
       <h1 className="mb-5 text-2xl text-grey-30">New Project</h1>
-      <label className="text-grey-30" htmlFor="title">
-        Title
-      </label>
-      <input
-        id="title"
-        className="mb-3 rounded-lg bg-off-white p-3 outline-accent-30"
-        type="text"
-      />
-      <label className="text-grey-30" htmlFor="description">
-        Description
-      </label>
+      <FormControl>
+        <Label htmlFor="title">Text</Label>
+        <Input id="title" type="text" />
+      </FormControl>
 
-      <select>
-        <option>Joe</option>
-        <option>Jane</option>
-        <option>Jack</option>
-      </select>
-      <input type="date" />
-      <div>
+      <FormControl>
+        <Label htmlFor="description">Description</Label>
+        <TextArea id="description" numCols={20} numRows={10} />
+      </FormControl>
+
+      <FormControl>
+        <Label htmlFor="users">Assigned Users</Label>
+        <select multiple id="users">
+          <option>Joe</option>
+          <option>Jane</option>
+          <option>Jack</option>
+        </select>
+      </FormControl>
+
+      <FormControl>
+        <Label htmlFor="date">Due Date</Label>
+        <Input id="date" type="date" />
+      </FormControl>
+
+      <FormControl>
         <FormBtn type="submit" text="Add Project" />
-      </div>
+      </FormControl>
     </Form>
   );
 };

@@ -2,13 +2,13 @@ import React, { DetailedHTMLProps, LabelHTMLAttributes } from "react";
 
 type Props = {
   className?: string;
-  id: string;
+  htmlFor: string;
   children: React.ReactNode;
 };
 
-const Label = ({ className, id, children }: Props) => {
+const Label = ({ className, htmlFor, children }: Props) => {
   return (
-    <label className={`${className} text-grey-30`} htmlFor={id}>
+    <label className={`${className} text-grey-30`} htmlFor={htmlFor}>
       {children}
     </label>
   );
