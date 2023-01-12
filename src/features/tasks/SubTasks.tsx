@@ -16,7 +16,7 @@ type Props = {
 
 const SubTasks = ({ tasks, deleteTaskHandler }: Props) => {
   return (
-    <div className="flex h-40 flex-col overflow-y-scroll py-2">
+    <div className="flex h-40 flex-col overflow-y-auto py-2">
       {tasks.map((task) => (
         <SubTask
           completed={task.completed}
