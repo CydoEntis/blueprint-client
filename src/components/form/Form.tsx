@@ -1,7 +1,7 @@
 import React from "react";
 
 type Props = {
-  onSubmit: () => void;
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   children: React.ReactNode;
 };
 

@@ -1,6 +1,6 @@
 import TaskCard from "./TaskCard";
 import { Task } from "@/types/task-type";
-import List from "@/components/shared/list/List";
+import List from "@/components/list/List";
 
 type Props = {
   tasks: Task[];
@@ -10,7 +10,7 @@ const TaskList = ({ tasks }: Props) => {
   return (
     <List>
       {tasks.map((task) => (
-        <TaskCard task={task} />
+        <TaskCard key={task.id} task={task} />
       ))}
     </List>
   );

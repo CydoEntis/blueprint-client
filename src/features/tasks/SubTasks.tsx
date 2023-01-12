@@ -3,19 +3,20 @@ import React, { useState } from "react";
 import TaskLink from "../navigation/TaskLink";
 import SubTask from "./SubTask";
 
-type Props = {};
+type TaskProp = {
+  id: string;
+  description: string;
+  completed: boolean;
+};
 
-const SubTasks = (props: Props) => {
-  const [tasks, setTasks] = useState(taskList);
+type Props = {
+  tasks: TaskProp[];
+  deleteTaskHandler: (id: string) => void;
+};
 
-  const deleteTaskHandler = (id: string) => {
-    let newTasks = tasks.filter((task) => task.id !== id);
-    setTasks(newTasks);
-    console.log(tasks);
-  };
-
+const SubTasks = ({ tasks, deleteTaskHandler }: Props) => {
   return (
-    <div className="flex h-40 flex-col py-2">
+    <div className="flex h-40 flex-col overflow-y-scroll py-2">
       {tasks.map((task) => (
         <SubTask
           completed={task.completed}

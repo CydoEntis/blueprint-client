@@ -5,7 +5,7 @@ type Props = {
 };
 
 const FormControl = ({ children }: Props) => {
-  return <div className="flex  flex-col p-3">{children}</div>;
+  return <div className="flex flex-col p-3">{children}</div>;
 };
 
 export default FormControl;
