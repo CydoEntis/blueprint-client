@@ -1,6 +1,7 @@
 import NavItem from "./NavItem";
 import { MdDashboard } from "react-icons/md";
 import { IoStatsChart, IoMoon } from "react-icons/io5";
+import { HiOutlineClipboardList } from "react-icons/hi";
 
 import { motion } from "framer-motion";
 import { staggerVariants } from "@/animation-variants/variants";
@@ -12,9 +13,16 @@ const NavItems = () => {
       className="flex w-full flex-col items-center justify-center"
     >
       <NavItem
-        to="/projects"
+        to="/"
         icon={<MdDashboard className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />}
         text="Dashboard"
+      />
+      <NavItem
+        to="/projects"
+        icon={
+          <HiOutlineClipboardList className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />
+        }
+        text="Projects"
       />
       <NavItem
         to="/stats"
