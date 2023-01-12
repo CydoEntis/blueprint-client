@@ -1,5 +1,5 @@
 import { HiMagnifyingGlass } from "react-icons/hi2";
-import Avatar from "../shared/avatars/Avatar";
+import Avatar from "../avatars/Avatar";
 import Freddy from "@/assets/freddy.jpg";
 
 type Props = {

@@ -1,5 +1,5 @@
-import Card from "@/components/shared/cards/Card";
-import Users from "@/components/shared/user/Users";
+import Card from "@/components//cards/Card";
+import Users from "@/components/user/Users";
 import Tag from "@/components/tags/Tag";
 import { Task } from "@/types/task-type";
 import {

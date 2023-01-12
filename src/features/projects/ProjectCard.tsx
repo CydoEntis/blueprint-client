@@ -1,10 +1,10 @@
 import React from "react";
-import Card from "../../components/shared/cards/Card";
+import Card from "../../components/cards/Card";
 import Freddy from "@/assets/freddy.jpg";
 import James from "@/assets/james.jpg";
 import Rachelle from "@/assets/rachelle.jpg";
 import { User } from "@/types/user-types";
-import Users from "../../components/shared/user/Users";
+import Users from "../../components/user/Users";
 import { RiTeamLine } from "react-icons/ri";
 import { GiAlarmClock } from "react-icons/gi";
 import { ProjectProps } from "@/types/project-types";

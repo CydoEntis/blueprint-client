@@ -1,10 +1,10 @@
-import FormBtn from "@/components/shared/form/FormBtn";
-import FormControl from "@/components/shared/form/FormControl";
-import Input from "@/components/shared/form/Input";
-import Label from "@/components/shared/form/Label";
-import TextArea from "@/components/shared/form/TextArea";
-import Form from "../../components/shared/form/Form";
-import Modal from "../../components/shared/modal/Modal";
+import FormBtn from "@/components/form/FormBtn";
+import FormControl from "@/components/form/FormControl";
+import Input from "@/components/form/Input";
+import Label from "@/components/form/Label";
+import TextArea from "@/components/form/TextArea";
+import Form from "../../components/form/Form";
+import Modal from "../../components/modal/Modal";
 
 type Props = {
   onClose: () => void;
