@@ -9,9 +9,16 @@ type Props = {
   description: string;
   deleteTaskHandler: (id: string) => void;
   id: string;
+  completeTaskHandler: (id: string) => void;
 };
 
-const SubTask = ({ completed, description, deleteTaskHandler, id }: Props) => {
+const SubTask = ({
+  completed,
+  description,
+  deleteTaskHandler,
+  id,
+  completeTaskHandler,
+}: Props) => {
   let completedClasses = "";
   if (completed) {
     completedClasses = "bg-green-500  border-green-40";
@@ -19,7 +26,10 @@ const SubTask = ({ completed, description, deleteTaskHandler, id }: Props) => {
     completedClasses = "bg-transparent border-red-40";
   }
   return (
-    <div className="flex items-center border-b border-gray-200 py-2 text-grey-40 ">
+    <div
+      className="flex items-center border-b border-gray-200 py-2 text-grey-40 "
+      onClick={() => completeTaskHandler(id)}
+    >
       <div
         className={`${
           completed ? "line-through" : ""

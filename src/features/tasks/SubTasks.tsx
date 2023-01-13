@@ -12,9 +12,10 @@ type TaskProp = {
 type Props = {
   tasks: TaskProp[];
   deleteTaskHandler: (id: string) => void;
+  completeTaskHandler: (id: string) => void;
 };
 
-const SubTasks = ({ tasks, deleteTaskHandler }: Props) => {
+const SubTasks = ({ tasks, deleteTaskHandler, completeTaskHandler }: Props) => {
   return (
     <div className="flex h-40 flex-col overflow-y-auto py-2">
       {tasks.map((task) => (
@@ -24,6 +25,7 @@ const SubTasks = ({ tasks, deleteTaskHandler }: Props) => {
           description={task.description}
           id={task.id}
           deleteTaskHandler={deleteTaskHandler}
+          completeTaskHandler={completeTaskHandler}
         />
       ))}
     </div>

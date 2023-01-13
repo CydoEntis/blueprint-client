@@ -34,10 +34,23 @@ const AddTask = ({ onClose }: Props) => {
   const [tasks, setTasks] = useState(taskList);
   const [subtask, setSubtask] = useState<string>("");
 
+  // console.log(tasks);
+
   const deleteTaskHandler = (id: string) => {
     let newTasks = tasks.filter((task) => task.id !== id);
     setTasks(newTasks);
     console.log(tasks);
+  };
+
+  const completeTaskHandler = (id: string) => {
+    let index = tasks.findIndex((task) => task.id === id);
+    let updatedTasks = [...tasks];
+    let updatedTask = {
+      ...tasks[index],
+      completed: !tasks[index].completed,
+    };
+    updatedTasks[index] = updatedTask;
+    setTasks(updatedTasks);
   };
 
   const addSubTaskHandler = () => {
@@ -70,7 +83,11 @@ const AddTask = ({ onClose }: Props) => {
           <TextArea id="description" numCols={10} numRows={3} />
         </FormControl>
         <FormControl>
-          <SubTasks tasks={tasks} deleteTaskHandler={deleteTaskHandler} />
+          <SubTasks
+            tasks={tasks}
+            deleteTaskHandler={deleteTaskHandler}
+            completeTaskHandler={completeTaskHandler}
+          />
           <div className="flex w-1/2 items-center">
             <Input
               id="new-task"
@@ -102,7 +119,8 @@ const AddTask = ({ onClose }: Props) => {
           <Input id="date" type="date" />
         </FormControl>
         <FormControl>
-          <FormBtn type="submit" text="Add Project" />
+          <FormBtn type="submit" text="Add Task" />
+          {/* <FormBtn type="submit" text="Cancel Task" /> */}
         </FormControl>
       </Form>
     </Modal>
