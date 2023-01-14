@@ -24,7 +24,7 @@ const AddProject = ({ onClose }: Props) => {
           <Label htmlFor="description">Description</Label>
           <TextArea id="description" numCols={20} numRows={10} />
         </FormControl>
-        <FormControl className="w-1/4 flex-col">
+        <FormControl className="flex-col lg:w-1/4">
           <Label htmlFor="users">Assigned Users</Label>
           <select multiple id="users">
             <option>Joe</option>
@@ -32,7 +32,7 @@ const AddProject = ({ onClose }: Props) => {
             <option>Jack</option>
           </select>
         </FormControl>
-        <FormControl className="w-1/4 flex-col">
+        <FormControl className="flex-col lg:w-1/4">
           <Label htmlFor="date">Due Date</Label>
           <Input id="date" type="date" />
         </FormControl>

@@ -106,7 +106,7 @@ const AddTask = ({ onClose }: Props) => {
             </Button>
           </div>
         </FormControl>
-        <FormControl className="flex-col">
+        <FormControl className="flex-col lg:w-1/4">
           <Label htmlFor="users">Assigned Users</Label>
           <select multiple id="users">
             <option>Joe</option>
@@ -114,7 +114,7 @@ const AddTask = ({ onClose }: Props) => {
             <option>Jack</option>
           </select>
         </FormControl>
-        <FormControl className="flex-col">
+        <FormControl className="flex-col lg:w-1/4">
           <Label htmlFor="date">Due Date</Label>
           <Input id="date" type="date" />
         </FormControl>
