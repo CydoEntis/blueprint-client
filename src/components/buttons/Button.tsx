@@ -10,7 +10,7 @@ type Props = {
 const Button = ({ className, type, onClick, children }: Props) => {
   return (
     <button
-      className={`${className} rounded-xl border`}
+      className={`${className} rounded-xl border transition-all duration-300 ease-in-out`}
       type={type}
       onClick={onClick}
     >

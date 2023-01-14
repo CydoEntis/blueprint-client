@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../buttons/Button";
 
 type Props = {
   title: string;
@@ -15,12 +16,13 @@ const Header = ({ title, description, onClick, buttonText }: Props) => {
           <h1 className="text-2xl font-bold text-grey-40 ">{title}</h1>
           <p className="py-1 text-xs text-grey-20">{description}</p>
         </div>
-        <button
-          className="rounded-xl bg-accent-40 px-5 py-3 text-sm font-bold text-white"
+        <Button
+          type="button"
+          className="border-accent-30 bg-accent-10 py-2 px-5 text-accent-40  hover:bg-accent-40 hover:text-white"
           onClick={onClick}
         >
           {buttonText}
-        </button>
+        </Button>
       </div>
     </div>
   );
