@@ -1,3 +1,4 @@
+import Button from "@/components/buttons/Button";
 import FormBtn from "@/components/form/FormBtn";
 import FormControl from "@/components/form/FormControl";
 import Input from "@/components/form/Input";
@@ -97,13 +98,13 @@ const AddTask = ({ onClose }: Props) => {
                 setSubtask(e.target.value)
               }
             />
-            <button
+            <Button
+              className="w-48  border-accent-30 bg-accent-10 py-2 px-5 text-accent-40 hover:bg-accent-40 hover:text-white"
               type="button"
               onClick={addSubTaskHandler}
-              className="w-48 rounded-xl border border-accent-30 bg-accent-10 py-2 px-5 text-accent-40 hover:bg-accent-40 hover:text-white"
             >
               Add Sub Task
-            </button>
+            </Button>
           </div>
         </FormControl>
         <FormControl>
@@ -119,8 +120,18 @@ const AddTask = ({ onClose }: Props) => {
           <Input id="date" type="date" />
         </FormControl>
         <FormControl>
-          <FormBtn type="submit" text="Add Task" />
-          {/* <FormBtn type="submit" text="Cancel Task" /> */}
+          <Button
+            type="submit"
+            className="w-48  border-accent-30 bg-accent-10 py-2 px-5 text-accent-40 hover:bg-accent-40 hover:text-white"
+          >
+            Add
+          </Button>
+          <Button
+            type="button"
+            className="w-48  border-red-40 bg-red-100 py-2 px-5 text-red-40 hover:bg-red-40 hover:text-white"
+          >
+            Cancel
+          </Button>
         </FormControl>
       </Form>
     </Modal>
