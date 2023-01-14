@@ -1,4 +1,4 @@
-import ActionButton from "@/components/buttons/ActionButton";
+import ActionButton from "@/features/navigation/NavBtn";
 import { PlusIcon } from "@heroicons/react/24/solid";
 
 type Props = {};

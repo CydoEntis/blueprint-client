@@ -2,7 +2,7 @@ import { fadeInVariants } from "@/animation-variants/variants";
 import { ButtonProps } from "@/types/button-types";
 import { motion } from "framer-motion";
 
-const ActionButton = ({ onClick, className, children }: ButtonProps) => {
+const NavBtn = ({ onClick, className, children }: ButtonProps) => {
   return (
     <motion.button
       variants={fadeInVariants}
@@ -16,4 +16,4 @@ const ActionButton = ({ onClick, className, children }: ButtonProps) => {
   );
 };
 
-export default ActionButton;
+export default NavBtn;

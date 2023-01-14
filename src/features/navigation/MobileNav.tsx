@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import ActionButton from "../../components/buttons/ActionButton";
+import ActionButton from "./NavBtn";
 import Toggle from "./Toggle";
 import NavActions from "./NavActions";
 import User from "../../components/user/User";

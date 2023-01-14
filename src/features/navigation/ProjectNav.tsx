@@ -1,4 +1,4 @@
-import ActionButton from "@/components/buttons/ActionButton";
+import ActionButton from "@/features/navigation/NavBtn";
 
 type Props = {};
 
