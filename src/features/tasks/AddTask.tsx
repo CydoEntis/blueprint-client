@@ -1,5 +1,4 @@
 import Button from "@/components/buttons/Button";
-import FormBtn from "@/components/form/FormBtn";
 import FormControl from "@/components/form/FormControl";
 import Input from "@/components/form/Input";
 import Label from "@/components/form/Label";
@@ -75,15 +74,15 @@ const AddTask = ({ onClose }: Props) => {
     <Modal onClose={onClose}>
       <Form onSubmit={handleSubmit}>
         <h1 className="mb-5 text-2xl text-grey-30">New Task</h1>
-        <FormControl>
+        <FormControl className="flex-col">
           <Label htmlFor="title">Title</Label>
           <Input id="title" type="text" />
         </FormControl>
-        <FormControl>
+        <FormControl className="flex-col">
           <Label htmlFor="description">Description</Label>
           <TextArea id="description" numCols={10} numRows={3} />
         </FormControl>
-        <FormControl>
+        <FormControl className="flex-col">
           <SubTasks
             tasks={tasks}
             deleteTaskHandler={deleteTaskHandler}
@@ -107,7 +106,7 @@ const AddTask = ({ onClose }: Props) => {
             </Button>
           </div>
         </FormControl>
-        <FormControl>
+        <FormControl className="flex-col">
           <Label htmlFor="users">Assigned Users</Label>
           <select multiple id="users">
             <option>Joe</option>
@@ -115,14 +114,14 @@ const AddTask = ({ onClose }: Props) => {
             <option>Jack</option>
           </select>
         </FormControl>
-        <FormControl>
+        <FormControl className="flex-col">
           <Label htmlFor="date">Due Date</Label>
           <Input id="date" type="date" />
         </FormControl>
-        <FormControl>
+        <FormControl className="w-1/2">
           <Button
             type="submit"
-            className="w-48  border-accent-30 bg-accent-10 py-2 px-5 text-accent-40 hover:bg-accent-40 hover:text-white"
+            className="mr-2  w-48 border-accent-30 bg-accent-10 py-2 px-5 text-accent-40 hover:bg-accent-40 hover:text-white"
           >
             Add
           </Button>

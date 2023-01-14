@@ -1,11 +1,12 @@
 import React from "react";
 
 type Props = {
+  className?: string;
   children: React.ReactNode;
 };
 
-const FormControl = ({ children }: Props) => {
-  return <div className="flex flex-col p-3">{children}</div>;
+const FormControl = ({ className, children }: Props) => {
+  return <div className={`${className} flex p-3`}>{children}</div>;
 };
 
 export default FormControl;
