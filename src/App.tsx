@@ -2,9 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Root from "@/routes/Root";
 import Error from "./pages/error/Error";
-import Task from "./pages/task/Task";
-// import Tasks from "./pages/task/TasksPage";
-import Project from "./pages/projects/Project";
+import TaskPage from "./pages/task/TaskPage";
 import ProjectsPage from "./pages/projects/ProjectsPage";
 import TasksPage from "./pages/task/TasksPage";
 
@@ -26,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "projects/:id/tasks/:id",
-        element: <Task />,
+        element: <TaskPage />,
       },
     ],
   },
