@@ -18,7 +18,7 @@ const ProjectCard = ({
   users,
 }: ProjectProps) => {
   return (
-    <Card to={`${id}/tasks`} key={id}>
+    <Card to={`${id}/tasks?sort=all`} key={id}>
       {/* Card Content Wrapper */}
       <div className="flex  flex-col justify-between bg-white px-7">
         {/* Card Top  */}
