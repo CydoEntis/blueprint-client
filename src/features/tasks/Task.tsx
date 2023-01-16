@@ -7,6 +7,8 @@ import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
 import SubTasks from "./SubTasks";
 import { AiTwotoneCalendar } from "react-icons/ai";
+import Comments from "../comments/Comments";
+import AddComment from "../comments/AddComment";
 
 let taskList = [
   {
@@ -110,83 +112,14 @@ const Task = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className=" mx-auto h-52 w-5/6 overflow-y-auto rounded-2xl bg-white p-3 ">
-        <SubTasks
-          tasks={taskList}
-          deleteTaskHandler={deleteTaskHandler}
-          completeTaskHandler={completeTaskHandler}
-        />
-      </div>
-      <div className="mx-auto flex w-5/6 flex-col  rounded-2xl bg-white p-3">
-        <form
-          className="flex flex-col"
-          onSubmit={() => {
-            console.log("Added comment");
-          }}
-        >
-          <TextArea id="new-comment" numCols={50} numRows={5} />
-          <Button
-            type="submit"
-            className="flex w-40 items-center justify-center rounded-xl border border-accent-30 bg-accent-10 py-2  px-5   text-accent-40 transition-all  duration-300 ease-in-out"
-          >
-            Add Comment
-          </Button>
-        </form>
-        <div className="py-3">
-          <div className=" flex-col border-b border-off-white py-3">
-            <div className="flex items-center">
-              <Avatar
-                className="mr-2 h-10 w-10"
-                src="https://www.fakepersongenerator.com/Face/female/female20171026234465515.jpg"
-              />
-              <h3 className="mr-2 text-grey-40 ">Kathleen Q Mincey</h3>
-              <p className="text-xs text-grey-20">41m ago</p>
-            </div>
-            <p className="p-2 text-sm text-grey-40">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero
-              reiciendis, harum facere aut temporibus nesciunt explicabo iure
-              praesentium beatae placeat? Veniam, dolor labore amet neque omnis
-              nesciunt numquam maxime eligendi.
-            </p>
-          </div>
-        </div>
-        <div className="py-3">
-          <div className=" flex-col border-b border-off-white py-3">
-            <div className="flex items-center">
-              <Avatar
-                className="mr-2 h-10 w-10"
-                src="https://www.fakepersongenerator.com/Face/female/female20171026234465515.jpg"
-              />
-              <h3 className="mr-2 text-grey-40 ">Kathleen Q Mincey</h3>
-              <p className="text-xs text-grey-20">41m ago</p>
-            </div>
-            <p className="p-2 text-sm text-grey-40">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero
-              reiciendis, harum facere aut temporibus nesciunt explicabo iure
-              praesentium beatae placeat? Veniam, dolor labore amet neque omnis
-              nesciunt numquam maxime eligendi.
-            </p>
-          </div>
-        </div>
-        <div className="py-3">
-          <div className=" flex-col border-b border-off-white py-3">
-            <div className="flex items-center">
-              <Avatar
-                className="mr-2 h-10 w-10"
-                src="https://www.fakepersongenerator.com/Face/female/female20171026234465515.jpg"
-              />
-              <h3 className="mr-2 text-grey-40 ">Kathleen Q Mincey</h3>
-              <p className="text-xs text-grey-20">41m ago</p>
-            </div>
-            <p className="p-2 text-sm text-grey-40">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero
-              reiciendis, harum facere aut temporibus nesciunt explicabo iure
-              praesentium beatae placeat? Veniam, dolor labore amet neque omnis
-              nesciunt numquam maxime eligendi.
-            </p>
-          </div>
-        </div>
-      </div>
+      <SubTasks
+        className="mx-auto h-52 w-5/6 overflow-y-auto rounded-2xl bg-white p-3"
+        tasks={taskList}
+        deleteTaskHandler={deleteTaskHandler}
+        completeTaskHandler={completeTaskHandler}
+      />
+      <AddComment />
+      <Comments />
     </div>
   );
 };
