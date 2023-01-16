@@ -84,6 +84,7 @@ const AddTask = ({ onClose }: Props) => {
         </FormControl>
         <FormControl className="flex-col">
           <SubTasks
+            className="h-40 overflow-y-auto"
             tasks={tasks}
             deleteTaskHandler={deleteTaskHandler}
             completeTaskHandler={completeTaskHandler}
