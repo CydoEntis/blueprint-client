@@ -23,7 +23,7 @@ const Tag = ({ text }: Props) => {
 
   return (
     <span
-      className={`rounded-full py-1 px-3 bg-${color}-40 border border-${color}-40 text-xs text-white`}
+      className={`rounded-full py-1 px-3 bg-${color}-10 border border-${color}-30 text-xs text-${color}-40`}
     >
       {text}
     </span>

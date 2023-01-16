@@ -15,7 +15,7 @@ type Props = {
 
 const TaskCard = ({ task }: Props) => {
   return (
-    <Card to={`tasks/${task.id}`} key={task.id}>
+    <Card to={`${task.id}`} key={task.id}>
       <div className=" p-3">
         {/* Tags */}
         <div className="flex items-center">

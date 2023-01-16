@@ -2,9 +2,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Root from "@/routes/Root";
 import Error from "./pages/error/Error";
-import Tasks from "./pages/task/Tasks";
+import Task from "./pages/task/Task";
+// import Tasks from "./pages/task/TasksPage";
 import Project from "./pages/projects/Project";
-import Projects from "./pages/projects/Projects";
+import ProjectsPage from "./pages/projects/ProjectsPage";
+import TasksPage from "./pages/task/TasksPage";
 
 type Props = {};
 
@@ -16,41 +18,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "projects",
-        element: <Projects />,
+        element: <ProjectsPage />,
       },
       {
-        path: "projects/:id",
-        element: <Project />,
-        children: [
-          {
-            path: "tasks/all",
-            element: <Project />,
-          },
-          {
-            path: "tasks/in-progress",
-            element: <Project />,
-          },
-          {
-            path: "tasks/in-review",
-            element: <Project />,
-          },
-          {
-            path: "tasks/completed",
-            element: <Project />,
-          },
-          {
-            path: "tasks/bugs",
-            element: <Project />,
-          },
-          {
-            path: "tasks/past-due",
-            element: <Project />,
-          },
-        ],
+        path: "projects/:id/tasks",
+        element: <TasksPage />,
       },
       {
         path: "projects/:id/tasks/:id",
-        element: <Tasks />,
+        element: <Task />,
       },
     ],
   },
