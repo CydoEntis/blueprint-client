@@ -118,7 +118,12 @@ const Task = (props: Props) => {
         />
       </div>
       <div className="mx-auto flex w-5/6 flex-col  rounded-2xl bg-white p-3">
-        <div className="flex flex-col">
+        <form
+          className="flex flex-col"
+          onSubmit={() => {
+            console.log("Added comment");
+          }}
+        >
           <TextArea id="new-comment" numCols={50} numRows={5} />
           <Button
             type="submit"
@@ -126,7 +131,7 @@ const Task = (props: Props) => {
           >
             Add Comment
           </Button>
-        </div>
+        </form>
         <div className="py-3">
           <div className=" flex-col border-b border-off-white py-3">
             <div className="flex items-center">
