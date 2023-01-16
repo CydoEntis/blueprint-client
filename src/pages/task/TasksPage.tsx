@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Header from "@/components/header/Header";
 import tasks from "@/data/task-data.json";
 import AddTask from "@/features/tasks/AddTask";
-import TaskNav from "@/features/navigation/TaskNav";
+import TaskFilter from "@/features/tasks/TaskFilter";
 import Tasks from "@/features/tasks/Tasks";
 
 type Props = {};
@@ -19,7 +19,7 @@ const TasksPage = (props: Props) => {
         buttonText="Add Task"
       />
       {isAddTaskOpen && <AddTask onClose={() => setIsAddTaskOpen(false)} />}
-      <TaskNav id={1} count={10} onClick={() => console.log("first")} />
+      <TaskFilter id={1} count={10} onClick={() => console.log("first")} />
       <Tasks tasks={tasks} />
     </div>
   );

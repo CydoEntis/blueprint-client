@@ -1,6 +1,6 @@
 import List from "@/components/list/List";
 import React, { useState } from "react";
-import TaskLink from "../navigation/TaskLink";
+import TaskLink from "./TaskLink";
 import SubTask from "./SubTask";
 
 type TaskProp = {
