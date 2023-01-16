@@ -42,7 +42,7 @@ const SubTask = ({
         </div>
         <h4>{description}</h4>
       </div>
-      <div className="flex w-1/6 items-center justify-center">
+      <div className="flex w-1/6 items-center justify-end">
         <button
           className="mr-2 rounded-lg border border-accent-30 bg-accent-10 p-1 text-accent-40 transition duration-200 ease-in-out hover:bg-accent-40 hover:text-white"
           type="button"
