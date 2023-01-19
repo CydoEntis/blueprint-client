@@ -5,6 +5,7 @@ import Error from "./pages/error/Error";
 import TaskPage from "./pages/task/TaskPage";
 import ProjectsPage from "./pages/projects/ProjectsPage";
 import TasksPage from "./pages/task/TasksPage";
+import Dashboard from "./pages/dashboard";
 
 type Props = {};
 
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <Error />,
     children: [
+      {
+        path: "/",
+        element: <Dashboard />,
+      },
       {
         path: "projects",
         element: <ProjectsPage />,

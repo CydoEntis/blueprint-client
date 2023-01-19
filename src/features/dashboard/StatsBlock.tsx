@@ -1,24 +1,14 @@
 import React from "react";
 
 type Props = {
+  className?: string;
   count: number;
   text: string;
-  isFocused?: boolean;
 };
 
-const StatsBlock = ({ count, text, isFocused = false }: Props) => {
-  let appliedClass: string = "";
-
-  if (isFocused) {
-    appliedClass =
-      "flex h-32 w-5/12 flex-col items-center justify-center rounded-lg bg-blue-50 font-bold text-white drop-shadow-md";
-  } else {
-    appliedClass =
-      "flex h-32 w-5/12 flex-col items-center justify-center rounded-lg bg-blue-10 text-white font-bold drop-shadow-md";
-  }
-
+const StatsBlock = ({ className, count, text }: Props) => {
   return (
-    <div className={appliedClass}>
+    <div className={className}>
       <h1>{count}</h1>
       <p>{text}</p>
     </div>
