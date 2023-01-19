@@ -1,11 +1,12 @@
 import React from "react";
 
 type Props = {
+  className?: string;
   children: React.ReactNode;
 };
 
-const StatsContainer = ({ children }: Props) => {
-  return <div className="flex flex-wrap gap-2">{children}</div>;
+const StatsContainer = ({ className, children }: Props) => {
+  return <div className={className}>{children}</div>;
 };
 
 export default StatsContainer;

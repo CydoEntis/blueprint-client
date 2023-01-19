@@ -4,13 +4,16 @@ import TaskList from "@/features/tasks/TaskList";
 import ProjectList from "@/features/projects/ProjectList";
 import tasks from "@/data/recent-tasks-data.json";
 import projects from "@/data/recent-projects-data.json";
+import RecentItems from "@/features/dashboard/RecentItems";
+import Title from "@/components/title/title";
 
 type Props = {};
 
 const index = (props: Props) => {
   return (
     <div className=" w-full p-5">
-      <StatsContainer>
+      <Title className="p-5 text-[2rem]" text="Good afternoon, John Doe" />
+      <StatsContainer className="flex w-full flex-wrap gap-5 p-5">
         <StatsBlock
           className="flex h-40 w-40 flex-col items-center justify-center rounded-xl border border-accent-30 bg-accent-10 py-2 px-5  text-xl text-accent-40  transition-all  duration-300 ease-in-out  "
           count={150}
@@ -32,14 +35,14 @@ const index = (props: Props) => {
           text="Past Due"
         />
       </StatsContainer>
-      <div>
-        <h1>Recent Projects</h1>
+      <RecentItems>
+        <Title className="ml-5 text-2xl" text="Recent Projects" />
         <ProjectList projects={projects} />
-      </div>
-      <div>
-        <h1>Recent Tasks</h1>
+      </RecentItems>
+      <RecentItems>
+        <Title className="ml-5 text-2xl" text="Recent Tasks" />
         <TaskList tasks={tasks} />
-      </div>
+      </RecentItems>
     </div>
   );
 };
