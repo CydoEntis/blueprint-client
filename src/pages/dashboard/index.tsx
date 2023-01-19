@@ -7,8 +7,8 @@ import TaskActions from "@/components/task/TaskActions";
 import StatsContainer from "@/features/dashboard/StatsContainer";
 import StatsBlock from "@/features/dashboard/StatsBlock";
 import Sidebar from "@/components/sidebar/Sidebar";
-import RecentActivitesFeed from "@/components/recent/RecentActivitesFeed";
-import RecentActivity from "@/components/recent/RecentActivity";
+import RecentActivitesFeed from "@/features/dashboard/RecentActivitesFeed";
+import RecentActivity from "@/features/dashboard/RecentActivity";
 import ProjectCard from "@/features/projects/ProjectCard";
 
 type Props = {};
