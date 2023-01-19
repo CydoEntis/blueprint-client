@@ -1,8 +1,9 @@
 import StatsBlock from "@/features/dashboard/StatsBlock";
 import StatsContainer from "@/features/dashboard/StatsContainer";
 import TaskList from "@/features/tasks/TaskList";
-import tasks from "@/data/task-data.json";
-import React from "react";
+import ProjectList from "@/features/projects/ProjectList";
+import tasks from "@/data/recent-tasks-data.json";
+import projects from "@/data/recent-projects-data.json";
 
 type Props = {};
 
@@ -32,7 +33,11 @@ const index = (props: Props) => {
         />
       </StatsContainer>
       <div>
-        <h1>Most Recent Tasks</h1>
+        <h1>Recent Projects</h1>
+        <ProjectList projects={projects} />
+      </div>
+      <div>
+        <h1>Recent Tasks</h1>
         <TaskList tasks={tasks} />
       </div>
     </div>
