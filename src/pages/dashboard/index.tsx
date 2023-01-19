@@ -5,7 +5,7 @@ import ProjectList from "@/features/projects/ProjectList";
 import tasks from "@/data/recent-tasks-data.json";
 import projects from "@/data/recent-projects-data.json";
 import RecentItems from "@/features/dashboard/RecentItems";
-import Title from "@/components/title/title";
+import Title from "@/components/typography/Typography";
 
 type Props = {};
 
