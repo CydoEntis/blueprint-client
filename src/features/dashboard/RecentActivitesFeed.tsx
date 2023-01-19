@@ -8,7 +8,7 @@ type Props = {
 
 const RecentActivitesFeed = ({ title, date, children }: Props) => {
   return (
-    <div className="my-2 w-full text-gray-70">
+    <div className="text-gray-70 my-2 w-full">
       <h1 className="text-2xl font-bold">{title}</h1>
       <p className="">{date}</p>
       <div className=" flex flex-col">{children}</div>
