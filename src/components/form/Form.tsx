@@ -1,13 +1,14 @@
 import React from "react";
 
 type Props = {
+  className?: string;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   children: React.ReactNode;
 };
 
-const Form = ({ onSubmit, children }: Props) => {
+const Form = ({ className, onSubmit, children }: Props) => {
   return (
-    <form className="flex flex-col" onSubmit={onSubmit}>
+    <form className={`${className} flex flex-col`} onSubmit={onSubmit}>
       {children}
     </form>
   );
