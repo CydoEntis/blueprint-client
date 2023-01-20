@@ -1,15 +1,20 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Root from "@/routes/Root";
-import Error from "./pages/error/Error";
-import TaskPage from "./pages/task/TaskPage";
-import ProjectsPage from "./pages/projects/ProjectsPage";
-import TasksPage from "./pages/task/TasksPage";
-import Dashboard from "./pages/dashboard";
+import Error from "@/pages/error/Error";
+import TaskPage from "@/pages/task/TaskPage";
+import ProjectsPage from "@/pages/projects/ProjectsPage";
+import TasksPage from "@/pages/task/TasksPage";
+import Dashboard from "@/pages/dashboard";
+import Authentication from "@/pages/authentication";
 
 type Props = {};
 
 const router = createBrowserRouter([
+  {
+    path: "/login",
+    element: <Authentication />,
+  },
   {
     path: "/",
     element: <Root />,
