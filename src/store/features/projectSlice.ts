@@ -16,7 +16,7 @@ export interface IProject {
   createdBy: string;
 }
 
-interface IProjectState {
+export interface IProjectState {
   projects: IProject[];
 }
 

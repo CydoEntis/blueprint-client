@@ -7,6 +7,7 @@ import Input from "@/components/form/Input";
 import Label from "@/components/form/Label";
 import Modal from "@/components/modal/Modal";
 import TextArea from "@/components/form/TextArea";
+import { addProject } from "@/store/features/projectSlice";
 import { useAppDispatch } from "@/store/store";
 
 type Props = {
@@ -18,11 +19,24 @@ const AddProject = ({ onClose }: Props) => {
   const [description, setDescription] = useState<string>("");
   const [users, setUsers] = useState<string[]>([]);
   const [date, setDate] = useState<string>("");
-  // const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   function addProjectHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log(title, description, date, users);
+    dispatch(
+      addProject({
+        projectId: "1234",
+        title,
+        type: "Test",
+        description,
+        subTasks: [],
+        dueDate: new Date("2023-03-22"),
+        comments: [],
+        users,
+        createdBy: "123456",
+      })
+    );
   }
 
   return (

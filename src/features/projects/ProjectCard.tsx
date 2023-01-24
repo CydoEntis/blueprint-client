@@ -1,24 +1,28 @@
-import React from "react";
 import Card from "../../components/cards/Card";
 import Freddy from "@/assets/freddy.jpg";
+import { GiAlarmClock } from "react-icons/gi";
+import { IProject } from "@/store/features/projectSlice";
 import James from "@/assets/james.jpg";
+import { ProjectProps } from "@/types/project-types";
 import Rachelle from "@/assets/rachelle.jpg";
+import React from "react";
+import { RiTeamLine } from "react-icons/ri";
 import { User } from "@/types/user-types";
 import Users from "../../components/user/Users";
-import { RiTeamLine } from "react-icons/ri";
-import { GiAlarmClock } from "react-icons/gi";
-import { ProjectProps } from "@/types/project-types";
 
 const ProjectCard = ({
-  id,
-  color,
+  projectId,
   title,
-  team,
+  type,
+  description,
+  subTasks,
   dueDate,
+  comments,
   users,
-}: ProjectProps) => {
+  createdBy,
+}: IProject) => {
   return (
-    <Card to={`${id}/tasks?sort=all`} key={id}>
+    <Card to={`${projectId}/tasks?sort=all`} key={projectId}>
       {/* Card Content Wrapper */}
       <div className="flex  flex-col justify-between bg-white px-7">
         {/* Card Top  */}
@@ -26,11 +30,11 @@ const ProjectCard = ({
           <h1 className="py-1 text-2xl font-bold  text-grey-40">{title}</h1>
           <div className="flex items-center py-1 text-grey-30">
             <RiTeamLine className="mr-2 h-5 w-5" />
-            <p className="text-md">{team}</p>
+            <p className="text-md">{type}</p>
           </div>
           <div className="flex items-center py-1 text-grey-30">
             <GiAlarmClock className="mr-2 h-5 w-5" />
-            <p className="text-sm text-grey-30">{dueDate}</p>
+            {/* <p className="text-sm text-grey-30">{dueDate}</p> */}
           </div>
         </div>
         {/* Card bottom  */}
@@ -39,7 +43,7 @@ const ProjectCard = ({
             <h3 className="py-1 text-xs font-bold text-grey-40">
               Team Members
             </h3>
-            <Users users={users} />
+            {/* <Users users={users} /> */}
           </div>
           <div className="w-1/4">
             <h3 className="py-1 text-xs font-bold text-grey-40">Progress</h3>
