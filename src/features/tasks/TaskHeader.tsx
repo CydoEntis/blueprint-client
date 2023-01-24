@@ -1,11 +1,11 @@
-import Tag from "@/components/tags/Tag";
 import { AiTwotoneCalendar } from "react-icons/ai";
+import Tag from "@/components/tags/Tag";
 
 type Props = {};
 
 const TaskHeader = (props: Props) => {
   return (
-    <div className="mx-auto w-5/6 rounded-2xl bg-white py-5">
+    <div className="py-5">
       <h1 className="text-[2.15rem] font-bold text-grey-40">
         Mobile App Design
       </h1>

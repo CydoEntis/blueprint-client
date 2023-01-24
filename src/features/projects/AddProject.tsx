@@ -1,32 +1,66 @@
+import React, { useState } from "react";
+
 import Button from "@/components/buttons/Button";
 import Form from "@/components/form/Form";
 import FormControl from "@/components/form/FormControl";
 import Input from "@/components/form/Input";
 import Label from "@/components/form/Label";
-import TextArea from "@/components/form/TextArea";
 import Modal from "@/components/modal/Modal";
-import React from "react";
+import TextArea from "@/components/form/TextArea";
+import { useAppDispatch } from "@/store/store";
 
 type Props = {
   onClose: () => void;
 };
 
 const AddProject = ({ onClose }: Props) => {
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [users, setUsers] = useState<string[]>([]);
+  const [date, setDate] = useState<string>("");
+  // const dispatch = useAppDispatch();
+
+  function addProjectHandler(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log(title, description, date, users);
+  }
+
   return (
     <Modal onClose={onClose}>
-      <Form onSubmit={() => console.log("Submit")}>
+      <Form onSubmit={addProjectHandler}>
         <h1 className="mb-5 text-2xl text-grey-30">New Project</h1>
         <FormControl className="flex-col">
           <Label htmlFor="title">Text</Label>
-          <Input id="title" type="text" />
+          <Input
+            id="title"
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
         </FormControl>
         <FormControl className="flex-col">
           <Label htmlFor="description">Description</Label>
-          <TextArea id="description" numCols={20} numRows={10} />
+          <TextArea
+            className="bg-off-white"
+            id="description"
+            numCols={20}
+            numRows={10}
+            onChange={(e) => setDescription(e.target.value)}
+          />
         </FormControl>
         <FormControl className="flex-col lg:w-1/4">
           <Label htmlFor="users">Assigned Users</Label>
-          <select multiple id="users">
+          <select
+            multiple
+            id="users"
+            onChange={(e) => {
+              let values = Array.from(
+                e.target.selectedOptions,
+                (option) => option.value
+              );
+              setUsers(values);
+            }}
+          >
             <option>Joe</option>
             <option>Jane</option>
             <option>Jack</option>
@@ -34,7 +68,12 @@ const AddProject = ({ onClose }: Props) => {
         </FormControl>
         <FormControl className="flex-col lg:w-1/4">
           <Label htmlFor="date">Due Date</Label>
-          <Input id="date" type="date" />
+          <Input
+            id="date"
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
         </FormControl>
         <FormControl>
           <Button

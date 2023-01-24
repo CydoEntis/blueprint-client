@@ -1,15 +1,15 @@
+import AddComment from "../comments/AddComment";
+import { AiTwotoneCalendar } from "react-icons/ai";
 import Avatar from "@/components/avatars/Avatar";
 import Button from "@/components/buttons/Button";
-import TextArea from "@/components/form/TextArea";
-import Tag from "@/components/tags/Tag";
-import { useState } from "react";
-import { MdClose } from "react-icons/md";
-import { Link } from "react-router-dom";
-import SubTasks from "./SubTasks";
-import { AiTwotoneCalendar } from "react-icons/ai";
 import Comments from "../comments/Comments";
-import AddComment from "../comments/AddComment";
+import { Link } from "react-router-dom";
+import { MdClose } from "react-icons/md";
+import SubTasks from "./SubTasks";
+import Tag from "@/components/tags/Tag";
 import TaskHeader from "./TaskHeader";
+import TextArea from "@/components/form/TextArea";
+import { useState } from "react";
 
 let taskList = [
   {
@@ -84,7 +84,7 @@ const Task = (props: Props) => {
   };
 
   return (
-    <div className="relative mx-auto flex w-3/4 flex-wrap gap-3 rounded-2xl bg-white">
+    <div className="relative flex flex-col flex-wrap gap-3 ">
       <Link
         className="absolute top-5 right-5 flex w-10 items-center justify-center rounded-lg border border-red-30 bg-red-10 py-1 px-2 text-xs text-red-40"
         to={`/projects/${1}/tasks?sort=all`}
@@ -93,7 +93,7 @@ const Task = (props: Props) => {
       </Link>
       <TaskHeader />
       <SubTasks
-        className="mx-auto h-52 w-5/6 overflow-y-auto rounded-2xl bg-white p-3"
+        className="h-52 w-5/6 overflow-y-auto p-3"
         tasks={taskList}
         deleteTaskHandler={deleteTaskHandler}
         completeTaskHandler={completeTaskHandler}
