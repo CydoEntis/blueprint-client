@@ -1,16 +1,22 @@
+import { IProject, getProjects } from "@/store/features/projectSlice";
+import { useAppDispatch, useAppSelector } from "@/store/store";
+import { useEffect, useState } from "react";
+
 import AddProject from "@/features/projects/AddProject";
 import Header from "@/components/header/Header";
-import { IProject } from "@/store/features/projectSlice";
 import ProjectList from "@/features/projects/ProjectList";
 import data from "@/data/fake-data.json";
-import { useAppSelector } from "@/store/store";
-import { useState } from "react";
 
 type Props = {};
 
 const Projects = (props: Props) => {
   const [isAddProjectOpen, setIsAddProjectOpen] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
   const projects = useAppSelector((state) => state.project.projects);
+
+  useEffect(() => {
+    dispatch(getProjects);
+  }, []);
 
   return (
     <div className="relative lg:px-4 xl:px-12">

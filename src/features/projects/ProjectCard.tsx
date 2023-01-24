@@ -15,9 +15,7 @@ const ProjectCard = ({
   title,
   type,
   description,
-  subTasks,
   dueDate,
-  comments,
   users,
   createdBy,
 }: IProject) => {

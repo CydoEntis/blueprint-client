@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { addProject, createProject } from "@/store/features/projectSlice";
 
 import Button from "@/components/buttons/Button";
 import Form from "@/components/form/Form";
@@ -7,7 +8,6 @@ import Input from "@/components/form/Input";
 import Label from "@/components/form/Label";
 import Modal from "@/components/modal/Modal";
 import TextArea from "@/components/form/TextArea";
-import { addProject } from "@/store/features/projectSlice";
 import { useAppDispatch } from "@/store/store";
 
 type Props = {
@@ -25,16 +25,13 @@ const AddProject = ({ onClose }: Props) => {
     e.preventDefault();
     console.log(title, description, date, users);
     dispatch(
-      addProject({
-        projectId: "1234",
+      createProject({
         title,
         type: "Test",
         description,
-        subTasks: [],
         dueDate: new Date("2023-03-22"),
-        comments: [],
         users,
-        createdBy: "123456",
+        createdBy: "Some user",
       })
     );
   }
