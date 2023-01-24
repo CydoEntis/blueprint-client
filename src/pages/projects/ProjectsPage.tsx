@@ -12,10 +12,9 @@ type Props = {};
 const Projects = (props: Props) => {
   const [isAddProjectOpen, setIsAddProjectOpen] = useState<boolean>(false);
   const dispatch = useAppDispatch();
-  const projects = useAppSelector((state) => state.project.projects);
 
   useEffect(() => {
-    dispatch(getProjects);
+    dispatch(getProjects());
   }, []);
 
   return (
@@ -23,13 +22,14 @@ const Projects = (props: Props) => {
       <Header
         title="Projects"
         description="Overview of all projects"
+        // onClick={() => setIsAddProjectOpen(true)}
         onClick={() => setIsAddProjectOpen(true)}
         buttonText="Create Project"
       />
       {isAddProjectOpen && (
         <AddProject onClose={() => setIsAddProjectOpen(false)} />
       )}
-      <ProjectList projects={projects} />
+      <ProjectList />
     </div>
   );
 };

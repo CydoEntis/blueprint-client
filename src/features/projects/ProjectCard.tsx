@@ -11,7 +11,7 @@ import { User } from "@/types/user-types";
 import Users from "../../components/user/Users";
 
 const ProjectCard = ({
-  projectId,
+  _id,
   title,
   type,
   description,
@@ -20,7 +20,7 @@ const ProjectCard = ({
   createdBy,
 }: IProject) => {
   return (
-    <Card to={`${projectId}/tasks?sort=all`} key={projectId}>
+    <Card to={`${_id}/tasks?sort=all`}>
       {/* Card Content Wrapper */}
       <div className="flex  flex-col justify-between bg-white px-7">
         {/* Card Top  */}

@@ -5,7 +5,7 @@ import axios from "axios";
 const url = "http://localhost:8000/";
 
 export interface IProject {
-  projectId?: string;
+  _id?: string;
   title: string;
   type: string;
   description: string;
@@ -16,16 +16,17 @@ export interface IProject {
 
 export interface IProjectState {
   projects: IProject[];
+  isLoading: boolean;
 }
 
 const initialState: IProjectState = {
   projects: [],
+  isLoading: false,
 };
 
 export const getProjects = createAsyncThunk("project/get", async () => {
   try {
     const res = await axios(url + "project/get");
-    console.log(res.data);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -35,7 +36,6 @@ export const getProjects = createAsyncThunk("project/get", async () => {
 export const createProject = createAsyncThunk(
   "project/create",
   async (project: IProject) => {
-    console.log(project);
     try {
       const res = await axios.post(url + "project/create", project);
       return res.data;
@@ -59,6 +59,11 @@ const ProjectSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getProjects.fulfilled, (state, action) => {
       state.projects = action.payload;
+      state.isLoading = false;
+    });
+
+    builder.addCase(getProjects.pending, (state) => {
+      state.isLoading = true;
     });
 
     builder.addCase(createProject.fulfilled, (state, action) => {
