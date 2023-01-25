@@ -47,3 +47,30 @@ export const createTask = createAsyncThunk(
     }
   }
 );
+
+const TaskSlice = createSlice({
+  name: "task",
+  initialState,
+  reducers: {
+    addTask: (state, action: PayloadAction<ITask>) => {
+      state.tasks.push(action.payload);
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getTasks.fulfilled, (state, action) => {
+      state.tasks = action.payload;
+      state.isLoading = false;
+    });
+
+    builder.addCase(getTasks.pending, (state) => {
+      state.isLoading = true;
+    });
+
+    builder.addCase(createTask.fulfilled, (state, action) => {
+      state.tasks.push(action.payload);
+    });
+  },
+});
+
+export default TaskSlice.reducer;
+export const { addTask } = TaskSlice.actions;
