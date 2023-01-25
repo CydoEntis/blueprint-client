@@ -26,3 +26,24 @@ const initialState: ITaskState = {
   tasks: [],
   isLoading: false,
 };
+
+export const getTasks = createAsyncThunk("task/get", async () => {
+  try {
+    const res = await axios(url + "/get");
+    return res.data;
+  } catch (error: any) {
+    console.log(error);
+  }
+});
+
+export const createTask = createAsyncThunk(
+  "task/create",
+  async (task: ITask) => {
+    try {
+      const res = await axios.post(url + "/create", task);
+      return res.data;
+    } catch (error: any) {
+      console.log(error);
+    }
+  }
+);
