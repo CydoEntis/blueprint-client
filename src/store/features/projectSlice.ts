@@ -2,7 +2,7 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import axios from "axios";
 
-const url = "http://localhost:8000/";
+const url = "http://localhost:8000/project";
 
 export interface IProject {
   _id?: string;
@@ -26,7 +26,7 @@ const initialState: IProjectState = {
 
 export const getProjects = createAsyncThunk("project/get", async () => {
   try {
-    const res = await axios(url + "project/get");
+    const res = await axios(url + "/get");
     return res.data;
   } catch (error) {
     console.log(error);
