@@ -37,7 +37,7 @@ export const createProject = createAsyncThunk(
   "project/create",
   async (project: IProject) => {
     try {
-      const res = await axios.post(url + "project/create", project);
+      const res = await axios.post(url + "/create", project);
       return res.data;
     } catch (error) {
       console.log(error);
