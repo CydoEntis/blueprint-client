@@ -39,13 +39,12 @@ export const createUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk(
   "user/login",
-  async (user: Omit<IUser, "username">, { rejectWithValue }) => {
+  async (user: Omit<IUser, "username">) => {
     try {
       const res = await axios.post(url + "/login", user);
       return res.data;
     } catch (error: any) {
       throw Error(error.response.data.message);
-      // return rejectWithValue(error.response.data.message);
     }
   }
 );

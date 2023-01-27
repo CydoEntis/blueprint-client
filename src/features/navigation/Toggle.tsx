@@ -13,9 +13,9 @@ const Toggle = ({ isOpen, onClick }: Props) => {
       onClick={onClick}
     >
       {isOpen ? (
-        <XMarkIcon className="text-blue-10 h-8 w-8" />
+        <XMarkIcon className="h-8 w-8 text-blue-30" />
       ) : (
-        <Bars3BottomRightIcon className="text-blue-10 h-8 w-8" />
+        <Bars3BottomRightIcon className="h-8 w-8 text-blue-30" />
       )}
     </div>
   );
