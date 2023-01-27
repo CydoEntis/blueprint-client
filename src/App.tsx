@@ -1,12 +1,13 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import Root from "@/routes/Root";
-import Error from "@/pages/error/Error";
-import TaskPage from "@/pages/task/TaskPage";
-import ProjectsPage from "@/pages/projects/ProjectsPage";
-import TasksPage from "@/pages/task/TasksPage";
-import Dashboard from "@/pages/dashboard";
 import Authentication from "@/pages/authentication";
+import Dashboard from "@/pages/dashboard";
+import Error from "@/pages/error/Error";
+import ProjectsPage from "@/pages/projects/ProjectsPage";
+import ProtectedRoutes from "./routes/ProtectedRoutes";
+import Root from "@/routes/Root";
+import TaskPage from "@/pages/task/TaskPage";
+import TasksPage from "@/pages/task/TasksPage";
 
 type Props = {};
 
@@ -17,7 +18,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Root />,
+    element: (
+      <ProtectedRoutes>
+        <Root />
+      </ProtectedRoutes>
+    ),
     errorElement: <Error />,
     children: [
       {
