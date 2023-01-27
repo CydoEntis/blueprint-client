@@ -17,7 +17,7 @@ export interface IRegisterUser {
   confirmPassword: string;
 }
 
-export interface IInput {
+export interface IAuthInput {
   id: number;
   name: string;
   type: string;
@@ -39,7 +39,7 @@ const RegisterForm = (props: Props) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const inputs: IInput[] = [
+  const inputs: IAuthInput[] = [
     {
       id: 1,
       name: "username",
@@ -98,9 +98,6 @@ const RegisterForm = (props: Props) => {
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {
     setInputValues({ ...inputValues, [e.target.name]: e.target.value });
-    console.log(inputValues);
-    console.log("Name: ", e.target.name);
-    console.log("Value: ", e.target.value);
   }
 
   function registerUserHandler(e: React.FormEvent<HTMLFormElement>) {
@@ -122,7 +119,6 @@ const RegisterForm = (props: Props) => {
 
     dispatch(createUser(inputValues));
     navigate("/login");
-    console.log("user created");
   }
 
   return (

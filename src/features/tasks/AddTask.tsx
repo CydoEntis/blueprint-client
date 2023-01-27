@@ -6,7 +6,6 @@ import Label from "@/components/form/Label";
 import Modal from "../../components/modal/Modal";
 import SubTasks from "./SubTasks";
 import TextArea from "@/components/form/TextArea";
-import { addProject } from "@/store/features/projectSlice";
 import { useAppDispatch } from "@/store/store";
 import { useState } from "react";
 

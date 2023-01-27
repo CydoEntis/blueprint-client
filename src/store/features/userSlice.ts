@@ -5,17 +5,22 @@ import axios from "axios";
 
 const url = "http://localhost:8000/user";
 
-export interface IUserState {
-  user: IRegisterUser;
+export interface IUser {
+  email: string;
+  username: string;
+  password: string;
+}
+
+interface IUserState {
+  user: IUser;
   token: string;
 }
 
 const initialState: IUserState = {
   user: {
-    username: "",
     email: "",
+    username: "",
     password: "",
-    confirmPassword: "",
   },
   token: "",
 };
@@ -32,6 +37,19 @@ export const createUser = createAsyncThunk(
   }
 );
 
+export const loginUser = createAsyncThunk(
+  "user/login",
+  async (user: Omit<IUser, "username">) => {
+    try {
+      console.log("user: ", user);
+      const res = await axios.post(url + "/login", user);
+      return res.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
 const UserSlice = createSlice({
   name: "user",
   initialState,
@@ -40,9 +58,18 @@ const UserSlice = createSlice({
       state.user = action.payload.user;
       state.token = action.payload.token;
     },
+    // login: (state, action: PayloadAction<IUserState>) => {
+    //   state.user = action.payload.user;
+    //   state.token = action.payload.token;
+    // },
   },
   extraReducers: (builder) => {
     builder.addCase(createUser.fulfilled, (state, action) => {
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+    });
+
+    builder.addCase(loginUser.fulfilled, (state, action) => {
       state.user = action.payload.user;
       state.token = action.payload.token;
     });

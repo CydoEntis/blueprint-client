@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { addProject, createProject } from "@/store/features/projectSlice";
 
 import Button from "@/components/buttons/Button";
 import Form from "@/components/form/Form";
@@ -8,6 +7,7 @@ import Input from "@/components/form/Input";
 import Label from "@/components/form/Label";
 import Modal from "@/components/modal/Modal";
 import TextArea from "@/components/form/TextArea";
+import { createProject } from "@/store/features/projectSlice";
 import { useAppDispatch } from "@/store/store";
 
 type Props = {
@@ -23,7 +23,6 @@ const AddProject = ({ onClose }: Props) => {
 
   function addProjectHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(title, description, date, users);
     dispatch(
       createProject({
         title,

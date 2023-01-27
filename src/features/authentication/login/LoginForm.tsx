@@ -1,10 +1,12 @@
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { addUser, loginUser } from "@/store/features/userSlice";
 
 import Button from "@/components/buttons/Button";
 import FormControl from "@/components/form/FormControl";
 import FormInput from "@/components/form/FormInput";
 import Typography from "@/components/typography/Typography";
+import { useAppDispatch } from "@/store/store";
 
 type Props = {};
 
@@ -21,13 +23,16 @@ export interface ILoginInput {
   required: boolean;
 }
 
-const RegisterForm = (props: Props) => {
+const LoginForm = (props: Props) => {
   const [inputValues, setInputValues] = useState<ILoginUser>({
     email: "",
     password: "",
   });
   const [isError, setIsError] = useState<boolean>(false);
   const [errMsg, setErrMsg] = useState<string>("");
+
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const inputs: ILoginInput[] = [
     {
@@ -63,12 +68,9 @@ const RegisterForm = (props: Props) => {
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {
     setInputValues({ ...inputValues, [e.target.name]: e.target.value });
-    console.log(inputValues);
-    console.log("Name: ", e.target.name);
-    console.log("Value: ", e.target.value);
   }
 
-  function registerUserHandler(e: React.FormEvent<HTMLFormElement>) {
+  async function loginUserHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!inputValues.email || !inputValues.password) {
@@ -79,6 +81,9 @@ const RegisterForm = (props: Props) => {
       setIsError(false);
       setErrMsg("");
     }
+
+    await dispatch(loginUser(inputValues));
+    navigate("/");
   }
 
   return (
@@ -118,7 +123,7 @@ const RegisterForm = (props: Props) => {
         </div>
       </div>
 
-      <Form className="h-full w-full lg:pt-10" onSubmit={registerUserHandler}>
+      <Form className="h-full w-full lg:pt-10" onSubmit={loginUserHandler}>
         {isError && (
           <p className="mt-2 rounded-lg border border-red-30 bg-red-10 px-2 py-2 text-sm  text-red-40">
             {errMsg}
@@ -153,4 +158,4 @@ const RegisterForm = (props: Props) => {
   );
 };
 
-export default RegisterForm;
+export default LoginForm;
