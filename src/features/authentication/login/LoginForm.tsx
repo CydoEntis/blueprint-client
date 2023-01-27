@@ -1,12 +1,17 @@
 import { Form, Link, useNavigate } from "react-router-dom";
-import { IUser, addUser, loginUser } from "@/store/features/userSlice";
 import React, { useEffect, useState } from "react";
+import { store, useAppDispatch, useAppSelector } from "@/store/store";
+import userSlice, {
+  IUser,
+  addUser,
+  clearError,
+  loginUser,
+} from "@/store/features/userSlice";
 
 import Button from "@/components/buttons/Button";
 import FormControl from "@/components/form/FormControl";
 import FormInput from "@/components/form/FormInput";
 import Typography from "@/components/typography/Typography";
-import { useAppDispatch } from "@/store/store";
 
 type Props = {};
 
@@ -29,6 +34,7 @@ const LoginForm = (props: Props) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
+  let error = useAppSelector((state) => state.user.errorMsg);
   const inputs: ILoginInput[] = [
     {
       id: 1,
@@ -47,19 +53,15 @@ const LoginForm = (props: Props) => {
   ];
 
   useEffect(() => {
-    if (!errMsg) {
-      setIsError(false);
-      return;
-    }
-
     const timer = setTimeout(() => {
+      dispatch(clearError());
       setIsError(false);
     }, 5000);
 
     return () => {
       clearTimeout(timer);
     };
-  }, [isError]);
+  }, [isError, error]);
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {
     setInputValues({ ...inputValues, [e.target.name]: e.target.value });
@@ -86,11 +88,10 @@ const LoginForm = (props: Props) => {
       <div className="border-b-2 border-blue-30 py-5 px-3 lg:p-8">
         <Typography
           className="p-3 text-center text-2xl text-grey-40 lg:text-[2rem]"
-          text="Sign up to Blueprint"
+          text="Welcome Back!"
         />
         <p className="text-center text-xs text-grey-20 sm:text-sm lg:text-sm">
-          A project management application, work, plan and achieve amazing
-          things together.
+          Sign in to your account to access all your projects/tasks
         </p>
 
         <div className="my-3 rounded-lg border border-blue-40 bg-blue-10 p-3 text-sm font-bold text-blue-40">
@@ -124,6 +125,11 @@ const LoginForm = (props: Props) => {
             {errMsg}
           </p>
         )}
+        {error !== "" ? (
+          <p className="mt-2 rounded-lg border border-red-30 bg-red-10 px-2 py-2 text-sm  text-red-40">
+            {error}
+          </p>
+        ) : null}
         {inputs.map((inputProps) => (
           <FormInput
             key={inputProps.id}

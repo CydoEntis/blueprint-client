@@ -7,11 +7,7 @@ type Props = {
 };
 
 const ProtectedRoutes = ({ children }: Props) => {
-  console.log("Protected route");
-  // const user = useAppSelector((state) => state.user.user);
   const token = useAppSelector((state) => state.user.token);
-  // console.log(user);
-  console.log("Token: ", token);
   if (!token) {
     return <Navigate to="/login" replace />;
   }

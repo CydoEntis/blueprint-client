@@ -14,6 +14,7 @@ export interface IUser {
 interface IUserState {
   user: IUser;
   token: string;
+  errorMsg: string;
 }
 
 const initialState: IUserState = {
@@ -23,6 +24,7 @@ const initialState: IUserState = {
     password: "",
   },
   token: "",
+  errorMsg: "",
 };
 
 export const createUser = createAsyncThunk(
@@ -31,21 +33,19 @@ export const createUser = createAsyncThunk(
     try {
       const res = await axios.post(url + "/create", user);
       return res.data;
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 );
 
 export const loginUser = createAsyncThunk(
   "user/login",
-  async (user: Omit<IUser, "username">) => {
+  async (user: Omit<IUser, "username">, { rejectWithValue }) => {
     try {
-      console.log("user: ", user);
       const res = await axios.post(url + "/login", user);
       return res.data;
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
+      throw Error(error.response.data.message);
+      // return rejectWithValue(error.response.data.message);
     }
   }
 );
@@ -58,6 +58,9 @@ const UserSlice = createSlice({
       state.user = action.payload.user;
       state.token = action.payload.token;
     },
+    clearError: (state) => {
+      state.errorMsg = "";
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(createUser.fulfilled, (state, action) => {
@@ -69,8 +72,12 @@ const UserSlice = createSlice({
       state.user = action.payload.user;
       state.token = action.payload.token;
     });
+
+    builder.addCase(loginUser.rejected, (state, action) => {
+      state.errorMsg = action.error.message || "";
+    });
   },
 });
 
 export default UserSlice.reducer;
-export const { addUser } = UserSlice.actions;
+export const { addUser, clearError } = UserSlice.actions;
