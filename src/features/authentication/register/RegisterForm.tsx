@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import Button from "@/components/buttons/Button";
 import FormControl from "@/components/form/FormControl";
 import FormInput from "@/components/form/FormInput";
-import Input from "@/components/form/Input";
-import Label from "@/components/form/Label";
 import Typography from "@/components/typography/Typography";
+import { createUser } from "@/store/features/userSlice";
+import { useAppDispatch } from "@/store/store";
 
 type Props = {};
 
@@ -21,7 +21,7 @@ export interface IInput {
   id: number;
   name: string;
   type: string;
-  errorMsg: string;
+  errorMsg?: string;
   label: string;
   pattern?: string;
   required: boolean;
@@ -36,6 +36,7 @@ const RegisterForm = (props: Props) => {
   });
   const [isError, setIsError] = useState<boolean>(false);
   const [errMsg, setErrMsg] = useState<string>("");
+  const dispatch = useAppDispatch();
 
   const inputs: IInput[] = [
     {
@@ -92,7 +93,7 @@ const RegisterForm = (props: Props) => {
     return () => {
       clearTimeout(timer);
     };
-  }, [errMsg]);
+  }, [isError]);
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {
     setInputValues({ ...inputValues, [e.target.name]: e.target.value });
@@ -117,22 +118,25 @@ const RegisterForm = (props: Props) => {
       setIsError(false);
       setErrMsg("");
     }
+
+    dispatch(createUser(inputValues));
+    console.log("user created");
   }
 
   return (
-    <div className="w-1/3 rounded-2xl bg-white p-5 drop-shadow-2xl">
-      <div className="border-b-2 border-blue-30 p-8">
+    <div className="flex w-full flex-col bg-white p-5 drop-shadow-2xl md:max-w-[650px] md:items-center md:justify-center md:rounded-2xl">
+      <div className="border-b-2 border-blue-30 py-5 px-3 lg:p-8">
         <Typography
-          className="text-center text-[2rem] text-grey-40"
+          className="p-3 text-center text-2xl text-grey-40 lg:text-[2rem]"
           text="Sign up to Blueprint"
         />
-        <p className="text-center text-sm text-grey-20">
+        <p className="text-center text-xs text-grey-20 sm:text-sm lg:text-sm">
           A project management application, work, plan and achieve amazing
           things together.
         </p>
       </div>
 
-      <Form className="pt-10" onSubmit={registerUserHandler}>
+      <Form className="h-full w-full lg:pt-10" onSubmit={registerUserHandler}>
         {isError && (
           <p className="mt-2 rounded-lg border border-red-30 bg-red-10 px-2 py-2 text-sm  text-red-40">
             {errMsg}

@@ -3,7 +3,7 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { IRegisterUser } from "@/features/authentication/register/RegisterForm";
 import axios from "axios";
 
-const url = "http://localhost:8000/project";
+const url = "http://localhost:8000/user";
 
 export interface IUserState {
   user: IRegisterUser;

@@ -9,7 +9,6 @@ type Props = IInput & {
   className: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
-  errorMsg: string;
 };
 
 const FormInput = ({ className, onChange, value, ...inputProps }: Props) => {
@@ -33,18 +32,20 @@ const FormInput = ({ className, onChange, value, ...inputProps }: Props) => {
   function handleBlur(e: FocusEvent<HTMLInputElement>) {
     setBlur(true);
 
-    if (inputProps.type === "email") {
-      if (!value.includes("@")) {
-        console.log("incorrect email");
-        setIsValid(false);
+    if (inputProps.errorMsg) {
+      if (inputProps.type === "email") {
+        if (!value.includes("@")) {
+          console.log("incorrect email");
+          setIsValid(false);
+        } else {
+          setIsValid(true);
+        }
       } else {
-        setIsValid(true);
-      }
-    } else {
-      if (!value.match(new RegExp(inputProps.pattern!))) {
-        setIsValid(false);
-      } else {
-        setIsValid(true);
+        if (!value.match(new RegExp(inputProps.pattern!))) {
+          setIsValid(false);
+        } else {
+          setIsValid(true);
+        }
       }
     }
   }
