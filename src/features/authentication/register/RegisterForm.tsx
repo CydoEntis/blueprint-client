@@ -1,4 +1,4 @@
-import { Form, Link } from "react-router-dom";
+import { Form, Link, Navigate, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
 import Button from "@/components/buttons/Button";
@@ -37,6 +37,7 @@ const RegisterForm = (props: Props) => {
   const [isError, setIsError] = useState<boolean>(false);
   const [errMsg, setErrMsg] = useState<string>("");
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const inputs: IInput[] = [
     {
@@ -120,6 +121,7 @@ const RegisterForm = (props: Props) => {
     }
 
     dispatch(createUser(inputValues));
+    navigate("/login");
     console.log("user created");
   }
 
