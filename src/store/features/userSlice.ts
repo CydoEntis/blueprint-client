@@ -58,10 +58,6 @@ const UserSlice = createSlice({
       state.user = action.payload.user;
       state.token = action.payload.token;
     },
-    // login: (state, action: PayloadAction<IUserState>) => {
-    //   state.user = action.payload.user;
-    //   state.token = action.payload.token;
-    // },
   },
   extraReducers: (builder) => {
     builder.addCase(createUser.fulfilled, (state, action) => {
@@ -73,10 +69,6 @@ const UserSlice = createSlice({
       state.user = action.payload.user;
       state.token = action.payload.token;
     });
-
-    // builder.addCase(getProjects.pending, (state) => {
-    //   state.isLoading = true;
-    // });
   },
 });
 

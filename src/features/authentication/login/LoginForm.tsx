@@ -1,6 +1,6 @@
 import { Form, Link, useNavigate } from "react-router-dom";
+import { IUser, addUser, loginUser } from "@/store/features/userSlice";
 import React, { useEffect, useState } from "react";
-import { addUser, loginUser } from "@/store/features/userSlice";
 
 import Button from "@/components/buttons/Button";
 import FormControl from "@/components/form/FormControl";
@@ -9,11 +9,6 @@ import Typography from "@/components/typography/Typography";
 import { useAppDispatch } from "@/store/store";
 
 type Props = {};
-
-export interface ILoginUser {
-  email: string;
-  password: string;
-}
 
 export interface ILoginInput {
   id: number;
@@ -24,7 +19,7 @@ export interface ILoginInput {
 }
 
 const LoginForm = (props: Props) => {
-  const [inputValues, setInputValues] = useState<ILoginUser>({
+  const [inputValues, setInputValues] = useState<Omit<IUser, "username">>({
     email: "",
     password: "",
   });
@@ -134,7 +129,9 @@ const LoginForm = (props: Props) => {
             key={inputProps.id}
             className="flex flex-col"
             {...inputProps}
-            value={inputValues[inputProps.name as keyof ILoginUser]}
+            value={
+              inputValues[inputProps.name as keyof Omit<IUser, "username">]
+            }
             onChange={onChange}
           />
         ))}

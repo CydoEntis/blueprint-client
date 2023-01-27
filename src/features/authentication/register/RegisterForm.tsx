@@ -1,23 +1,20 @@
 import { Form, Link, Navigate, useNavigate } from "react-router-dom";
+import { IUser, createUser } from "@/store/features/userSlice";
 import React, { useEffect, useState } from "react";
 
 import Button from "@/components/buttons/Button";
 import FormControl from "@/components/form/FormControl";
 import FormInput from "@/components/form/FormInput";
 import Typography from "@/components/typography/Typography";
-import { createUser } from "@/store/features/userSlice";
 import { useAppDispatch } from "@/store/store";
 
 type Props = {};
 
-export interface IRegisterUser {
-  username: string;
-  email: string;
-  password: string;
+export interface IRegisterUser extends IUser {
   confirmPassword: string;
 }
 
-export interface IAuthInput {
+interface IRegisterInput {
   id: number;
   name: string;
   type: string;
@@ -39,7 +36,7 @@ const RegisterForm = (props: Props) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const inputs: IAuthInput[] = [
+  const inputs: IRegisterInput[] = [
     {
       id: 1,
       name: "username",
