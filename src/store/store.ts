@@ -4,11 +4,13 @@ import projectReducer from "./features/projectSlice";
 import taskReducer from "./features/taskSlice";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux/es/exports";
+import userReducer from "./features/userSlice";
 
 export const store = configureStore({
   reducer: {
     project: projectReducer,
     task: taskReducer,
+    user: userReducer,
   },
 });
 
