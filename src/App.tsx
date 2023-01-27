@@ -1,10 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import Authentication from "@/pages/authentication";
 import Dashboard from "@/pages/dashboard";
 import Error from "@/pages/error/Error";
+import LoginPage from "./pages/login/LoginPage";
 import ProjectsPage from "@/pages/projects/ProjectsPage";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
+import RegisterPage from "./pages/register/RegisterPage";
 import Root from "@/routes/Root";
 import TaskPage from "@/pages/task/TaskPage";
 import TasksPage from "@/pages/task/TasksPage";
@@ -14,7 +15,11 @@ type Props = {};
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <Authentication />,
+    element: <LoginPage />,
+  },
+  {
+    path: "/register",
+    element: <RegisterPage />,
   },
   {
     path: "/",

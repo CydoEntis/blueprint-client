@@ -3,12 +3,12 @@ import Form from "@/components/form/Form";
 import FormControl from "@/components/form/FormControl";
 import Input from "@/components/form/Input";
 import Label from "@/components/form/Label";
-import Typography from "@/components/typography/Typography";
 import React from "react";
+import Typography from "@/components/typography/Typography";
 
 type Props = {};
 
-const AuthForm = (props: Props) => {
+const LoginForm = (props: Props) => {
   return (
     <Form
       className="w-1/3 rounded-2xl bg-white p-5 drop-shadow-2xl"
@@ -25,7 +25,7 @@ const AuthForm = (props: Props) => {
       </p>
       <FormControl className="flex flex-col">
         <Label htmlFor="email">Email</Label>
-        <Input type="email" id="email" />
+        <Input type="email" id="email" value="email" />
       </FormControl>
       {/* <FormControl className="flex flex-col">
         <Label htmlFor="username">Username</Label>
@@ -33,7 +33,7 @@ const AuthForm = (props: Props) => {
       </FormControl> */}
       <FormControl className="flex flex-col">
         <Label htmlFor="password">Password</Label>
-        <Input type="password" id="password" />
+        <Input type="password" id="password" value="password" />
       </FormControl>
       <FormControl>
         <Button
@@ -47,4 +47,4 @@ const AuthForm = (props: Props) => {
   );
 };
 
-export default AuthForm;
+export default LoginForm;
