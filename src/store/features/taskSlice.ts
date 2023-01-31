@@ -5,7 +5,7 @@ import axios from "axios";
 const url = "http://localhost:8000/task";
 
 export interface ITask {
-  _id?: string;
+  _id: string;
   projectId: string;
   title: string;
   type: string;
@@ -38,7 +38,7 @@ export const getTasks = createAsyncThunk("task/get", async () => {
 
 export const createTask = createAsyncThunk(
   "task/create",
-  async (task: ITask) => {
+  async (task: Omit<ITask, "_id">) => {
     try {
       const res = await axios.post(url + "/create", task);
       return res.data;

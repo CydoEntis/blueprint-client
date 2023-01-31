@@ -24,6 +24,7 @@
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "@types/react-anchor-link-smooth-scroll": "^1.0.2",
