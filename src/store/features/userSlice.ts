@@ -3,7 +3,8 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { IRegisterUser } from "@/features/authentication/register/RegisterForm";
 import axios from "axios";
 
-const url = "http://localhost:8000/user";
+// const url = "http://localhost:8000/user";
+const url = "http://localhost:1337/user";
 
 export interface IUser {
   email: string;
@@ -31,6 +32,7 @@ export const createUser = createAsyncThunk(
   "user/create",
   async (user: IRegisterUser) => {
     try {
+      console.log(user);
       const res = await axios.post(url + "/create", user);
       return res.data;
     } catch (error) {}
