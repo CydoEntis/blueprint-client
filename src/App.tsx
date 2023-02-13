@@ -9,6 +9,7 @@ import RegisterPage from "./pages/register/RegisterPage";
 import Root from "@/routes/Root";
 import TaskPage from "@/pages/task/TaskPage";
 import TasksPage from "@/pages/task/TasksPage";
+import CreateProjectPage from "./pages/projects/CreateProjectPage";
 
 type Props = {};
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "projects",
         element: <ProjectsPage />,
+      },
+      {
+        path: "projects/create",
+        element: <CreateProjectPage />
       },
       {
         path: "projects/:id/tasks",

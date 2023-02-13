@@ -4,7 +4,7 @@ type Props = {
   className?: string;
   id: string;
   type: string;
-  value: string;
+  value: string | undefined;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; //TODO Make onChange required.
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   focused?: DetailedHTMLProps<

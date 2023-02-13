@@ -10,7 +10,7 @@ export interface IProject {
   title: string;
   type: string;
   description: string;
-  dueDate: Date;
+  dueDate: Date | null;
   users: string[];
   createdBy: string;
 }

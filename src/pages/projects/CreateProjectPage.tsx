@@ -1,61 +1,61 @@
-import React, { useState } from "react";
+import Button from '@/components/buttons/Button'
+import FormControl from '@/components/form/FormControl'
+import Input from '@/components/form/Input'
+import Label from '@/components/form/Label'
+import TextArea from '@/components/form/TextArea'
+import Header from '@/components/header/Header'
+import { createProject } from '@/store/features/projectSlice'
+import { useAppDispatch, useAppSelector } from '@/store/store'
+import { title } from 'process'
+import React, { useState } from 'react'
+import { Form } from 'react-router-dom'
+import { isError } from 'util'
 
-import Button from "@/components/buttons/Button";
-import Form from "@/components/form/Form";
-import FormControl from "@/components/form/FormControl";
-import Input from "@/components/form/Input";
-import Label from "@/components/form/Label";
-import Modal from "@/components/modal/Modal";
-import TextArea from "@/components/form/TextArea";
-import { createProject, IProject } from "@/store/features/projectSlice";
-import { useAppDispatch, useAppSelector } from "@/store/store";
-import Overlay from "@/components/overlay/Overlay";
+type Props = {}
 
-type Props = {
-  onClose: () => void;
-};
+const CreateProjectPage = (props: Props) => {
+    const [title, setTitle] = useState<string>("");
+    const [description, setDescription] = useState<string>("");
+    const [users, setUsers] = useState<string[]>([]);
+    const [date, setDate] = useState<string>();
+  
+  
+    const [isError, setIsError] = useState<boolean>(false);
+    const [errMsg, setErrMsg] = useState<string>("");
+  
+    const dispatch = useAppDispatch();
+    let user = useAppSelector((state) => state.user.user);
+  
 
-const AddProject = ({ onClose }: Props) => {
-  const [title, setTitle] = useState<string>("");
-  const [description, setDescription] = useState<string>("");
-  const [users, setUsers] = useState<string[]>([]);
-  const [date, setDate] = useState<string>();
-
-
-  const [isError, setIsError] = useState<boolean>(false);
-  const [errMsg, setErrMsg] = useState<string>("");
-
-  const dispatch = useAppDispatch();
-  let user = useAppSelector((state) => state.user.user);
-
-
-
-  function addProjectHandler(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-
-    if(!title || !description || !users || !date) {
-      setIsError(true);
-      setErrMsg("Please Provide All Values")
-      return;
+  
+    function addProjectHandler(e: React.FormEvent<HTMLFormElement>) {
+      e.preventDefault();
+  
+      if(!title || !description || !users || !date) {
+        setIsError(true);
+        setErrMsg("Please Provide All Values")
+        return;
+      }
+  
+      dispatch(
+        createProject({
+          title,
+          type: "Test",
+          description,
+          dueDate: new Date(date),
+          users,
+          createdBy: user.username,
+        })
+      );
     }
 
-    dispatch(
-      createProject({
-        title,
-        type: "Test",
-        description,
-        dueDate: new Date(date),
-        users,
-        createdBy: user.username,
-      })
-    );
-  }
-
   return (
-    <>
-      <Overlay onClose={onClose}/>
-      <Modal onClose={onClose}>
-      <Form onSubmit={addProjectHandler}>
+    <div className="relative lg:px-4 xl:px-12">
+    <Header
+      title="Create A Project"
+      description="Create a new project for your team"
+    />
+          <Form onSubmit={addProjectHandler}>
         <h1 className="mb-5 text-2xl text-grey-30">New Project</h1>
         {isError && <p className="mt-2 rounded-lg border border-red-30 bg-red-10 px-2 py-2 text-sm  text-red-40">{errMsg}</p>}
         <FormControl className="flex-col">
@@ -114,15 +114,13 @@ const AddProject = ({ onClose }: Props) => {
           <Button
             type="button"
             className="w-48  border-red-40 bg-red-100 py-2 px-5 text-red-40 hover:bg-red-40 hover:text-white"
-            onClick={onClose}
           >
             Cancel
           </Button>
         </FormControl>
       </Form>
-    </Modal>
-    </>
-  );
-};
+  </div>
+  )
+}
 
-export default AddProject;
+export default CreateProjectPage
