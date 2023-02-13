@@ -9,6 +9,7 @@ import Modal from "@/components/modal/Modal";
 import TextArea from "@/components/form/TextArea";
 import { createProject } from "@/store/features/projectSlice";
 import { useAppDispatch } from "@/store/store";
+import Overlay from "@/components/overlay/Overlay";
 
 type Props = {
   onClose: () => void;
@@ -36,7 +37,9 @@ const AddProject = ({ onClose }: Props) => {
   }
 
   return (
-    <Modal onClose={onClose}>
+    <>
+      <Overlay onClose={onClose}/>
+      <Modal onClose={onClose}>
       <Form onSubmit={addProjectHandler}>
         <h1 className="mb-5 text-2xl text-grey-30">New Project</h1>
         <FormControl className="flex-col">
@@ -95,12 +98,14 @@ const AddProject = ({ onClose }: Props) => {
           <Button
             type="button"
             className="w-48  border-red-40 bg-red-100 py-2 px-5 text-red-40 hover:bg-red-40 hover:text-white"
+            onClick={onClose}
           >
             Cancel
           </Button>
         </FormControl>
       </Form>
     </Modal>
+    </>
   );
 };
 
