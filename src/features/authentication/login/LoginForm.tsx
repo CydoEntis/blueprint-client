@@ -35,6 +35,7 @@ const LoginForm = (props: Props) => {
   const navigate = useNavigate();
 
   let error = useAppSelector((state) => state.user.errorMsg);
+
   const inputs: ILoginInput[] = [
     {
       id: 1,

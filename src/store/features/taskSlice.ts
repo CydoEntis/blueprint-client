@@ -2,7 +2,8 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 import axios from "axios";
 
-const url = "http://localhost:8000/task";
+// const url = "http://localhost:8000/task";
+const url = "http://localhost:1337/task";
 
 export interface ITask {
   _id: string;

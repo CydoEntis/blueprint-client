@@ -6,6 +6,9 @@ import axios from "axios";
 // const url = "http://localhost:8000/user";
 const url = "http://localhost:1337/user";
 
+const user = localStorage.getItem("user");
+const token = localStorage.getItem("token");
+
 export interface IUser {
   email: string;
   username: string;
@@ -14,17 +17,13 @@ export interface IUser {
 
 interface IUserState {
   user: IUser;
-  token: string;
+  token: string | null;
   errorMsg: string;
 }
 
 const initialState: IUserState = {
-  user: {
-    email: "",
-    username: "",
-    password: "",
-  },
-  token: "",
+  user: user ? JSON.parse(user) : null,
+  token: token,
   errorMsg: "",
 };
 
@@ -44,6 +43,8 @@ export const loginUser = createAsyncThunk(
   async (user: Omit<IUser, "username">) => {
     try {
       const res = await axios.post(url + "/login", user);
+      localStorage.setItem("user", JSON.stringify(res.data.user))
+      localStorage.setItem("token", JSON.stringify(res.data.token))
       return res.data;
     } catch (error: any) {
       throw Error(error.response.data.message);
