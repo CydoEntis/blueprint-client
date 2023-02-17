@@ -1,11 +1,10 @@
 import React, { FocusEvent, useEffect, useState } from "react";
 
 import FormControl from "./FormControl";
-import { IAuthInput } from "@/features/authentication/register/RegisterForm";
 import Input from "./Input";
 import Label from "./Label";
 
-type Props = IAuthInput & {
+type Props =  {
   className: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;

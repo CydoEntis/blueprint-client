@@ -10,6 +10,7 @@ import Root from "@/routes/Root";
 import TaskPage from "@/pages/task/TaskPage";
 import TasksPage from "@/pages/task/TasksPage";
 import CreateProjectPage from "./pages/projects/CreateProjectPage";
+import JobsPage from "./pages/jobs/JobsPage";
 
 type Props = {};
 
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
         path: "projects/:id/tasks/:id",
         element: <TaskPage />,
       },
+      {
+        path: "jobs",
+        element: <JobsPage />,
+      },
+
     ],
   },
 ]);

@@ -26,6 +26,7 @@ module.exports = {
         "green-10": "#E0F5DC",
         "green-30": "#73D501",
         "green-40": "#55BC39",
+        "bright-green-50": "#b2ff80",
 
         "yellow-10": "#F5F1DC",
         "yellow-30": "#E7B200",
