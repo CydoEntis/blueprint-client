@@ -1,6 +1,7 @@
 import FormButton from "@/components/form/button/FormButton";
 import Form from "@/components/form/Form";
 import FormControl from "@/components/form/FormControl";
+import FormTitle from "@/components/form/FormTitle";
 import Input from "@/components/form/input/Input";
 import Label from "@/components/form/label/Label";
 import Select from "@/components/form/select/Select";
@@ -9,67 +10,13 @@ import React from "react";
 
 type Props = {};
 
-const statusOptions = [
-  {
-    id: 1,
-    value: "all",
-  },
-  {
-    id: 2,
-    value: "interview",
-  },
-  {
-    id: 3,
-    value: "declined",
-  },
-  {
-    id: 4,
-    value: "accepted",
-  },
-];
 
-const typeOptions = [
-  {
-    id: 1,
-    value: "full-time",
-  },
-  {
-    id: 2,
-    value: "part-time",
-  },
-  {
-    id: 3,
-    value: "internship",
-  },
-];
-
-const sortOptions = [
-  {
-    id: 1,
-    value: "newest",
-  },
-  {
-    id: 2,
-    value: "oldest",
-  },
-  {
-    id: 3,
-    value: "a-z",
-  },
-  {
-    id: 4,
-    value: "z-a",
-  },
-];
 
 const Search = (props: Props) => {
   return (
     <div className="my-5 flex flex-wrap items-center rounded-md bg-white p-5 text-grey-30 shadow-md">
-      <h1 className="my-3 text-[1.75rem]">Search Your Jobs</h1>
-      <Form
-        className="w-full flex-wrap items-center gap-3"
-        onSubmit={() => {}}
-      >
+      <FormTitle text="Search Your Jobs" />
+      <Form className="w-full flex-wrap items-center gap-3" onSubmit={() => {}}>
         <FormControl className="lg:w-[30%]">
           <Label text="Search Jobs" />
           <Input type="text" />
