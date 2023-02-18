@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {
+  className: string;
+  text: string
+};
 
-const FormButton = (props: Props) => {
+const FormButton = ({ className, text }: Props) => {
   return (
-    <div>FormButton</div>
-  )
-}
+    <button className={`w-1/2 rounded-md border sm:w-[200px] capitalize ${className}`}>
+      {text}
+    </button>
+  );
+};
 
-export default FormButton
+export default FormButton;

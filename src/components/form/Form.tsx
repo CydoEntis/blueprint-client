@@ -8,7 +8,7 @@ type Props = {
 
 const Form = ({ className, onSubmit, children }: Props) => {
   return (
-    <form className={`${className} flex flex-col`} onSubmit={onSubmit}>
+    <form className={`${className} flex`} onSubmit={onSubmit}>
       {children}
     </form>
   );
