@@ -6,6 +6,7 @@ import Input from "@/components/form/input/Input";
 import Label from "@/components/form/label/Label";
 import Select from "@/components/form/select/Select";
 import FormButtonWrapper from "@/components/form/wrapper/FormButtonWrapper";
+import { sortOptions, statusOptions, typeOptions } from "@/data/select-options";
 import React from "react";
 
 type Props = {};
