@@ -1,51 +1,106 @@
+import FormButton from "@/components/form/button/FormButton";
+import Form from "@/components/form/Form";
+import FormControl from "@/components/form/FormControl";
+import Input from "@/components/form/input/Input";
+import Label from "@/components/form/label/Label";
+import Select from "@/components/form/select/Select";
+import FormButtonWrapper from "@/components/form/wrapper/FormButtonWrapper";
 import React from "react";
 
 type Props = {};
 
+const statusOptions = [
+  {
+    id: 1,
+    value: "all",
+  },
+  {
+    id: 2,
+    value: "interview",
+  },
+  {
+    id: 3,
+    value: "declined",
+  },
+  {
+    id: 4,
+    value: "accepted",
+  },
+];
+
+const typeOptions = [
+  {
+    id: 1,
+    value: "full-time",
+  },
+  {
+    id: 2,
+    value: "part-time",
+  },
+  {
+    id: 3,
+    value: "internship",
+  },
+];
+
+const sortOptions = [
+  {
+    id: 1,
+    value: "newest",
+  },
+  {
+    id: 2,
+    value: "oldest",
+  },
+  {
+    id: 3,
+    value: "a-z",
+  },
+  {
+    id: 4,
+    value: "z-a",
+  },
+];
+
 const Search = (props: Props) => {
   return (
     <div className="my-5 flex flex-wrap items-center rounded-md bg-white p-5 text-grey-30 shadow-md">
-      <h1 className="my-3  text-[1.75rem]">Search Your Jobs</h1>
-      <form action="" className="flex w-full flex-wrap items-center gap-3">
-        <div className="flex w-full flex-col lg:w-[30%]">
-          <label className="pb-2 text-lg">Search Jobs</label>
-          <input className="rounded-md bg-off-white px-3 py-1 outline-blue-40" type="text" />
-        </div>
+      <h1 className="my-3 text-[1.75rem]">Search Your Jobs</h1>
+      <Form
+        className="w-full flex-wrap items-center gap-3"
+        onSubmit={() => {}}
+      >
+        <FormControl className="lg:w-[30%]">
+          <Label text="Search Jobs" />
+          <Input type="text" />
+        </FormControl>
 
-        <div className="flex w-full flex-col lg:w-[30%]">
-          <label className="pb-2 text-lg">Status</label>
-          <select className="rounded-md bg-off-white px-3 py-2 outline-blue-40">
-            <option value="all">All</option>
-            <option value="interview">Interview</option>
-            <option value="declined">Declined</option>
-            <option value="accepted">Accepted</option>
-          </select>
-        </div>
+        <FormControl className="lg:w-[30%]">
+          <Label text="status" />
+          <Select options={statusOptions} />
+        </FormControl>
 
-        <div className="flex w-full flex-col lg:w-[30%]">
-          <label className="pb-2 text-lg">Type</label>
-          <select className="rounded-md bg-off-white px-3 py-2 outline-blue-40">
-            <option value="all">All</option>
-            <option value="full-time">Full-Time</option>
-            <option value="part-time">Part-Time</option>
-            <option value="internship">Internship</option>
-          </select>
-        </div>
+        <FormControl className="lg:w-[30%]">
+          <Label text="type" />
+          <Select options={typeOptions} />
+        </FormControl>
 
-        <div className="flex w-full flex-col lg:w-[30%]">
-          <label className="pb-2 text-lg">Sort</label>
-          <select className="rounded-md bg-off-white px-3 py-2 outline-blue-40">
-            <option value="newest">Newest</option>
-            <option value="oldest">Oldest</option>
-            <option value="a-z">A-Z</option>
-            <option value="z-a">Z-A</option>
-          </select>
-        </div>
-        <div className="flex gap-2 w-full md:w-1/2 items-end h-[70px]">
-          <button className="w-1/2 bg-blue-10 border border-blue-40 text-blue-40 rounded-md py-1 sm:w-[200px]">Search</button>
-          <button className="w-1/2 bg-red-10 border border-red-40 text-red-40 rounded-md py-1 sm:w-[200px]">Clear</button>
-        </div>
-      </form>
+        <FormControl className="lg:w-[30%]">
+          <Label text="sort" />
+          <Select options={sortOptions} />
+        </FormControl>
+
+        <FormButtonWrapper>
+          <FormButton
+            className="border-blue-40 bg-blue-10 py-1 text-blue-40"
+            text="search"
+          />
+          <FormButton
+            className="border-red-40 bg-red-10 py-1 text-red-40"
+            text="clear"
+          />
+        </FormButtonWrapper>
+      </Form>
     </div>
   );
 };
