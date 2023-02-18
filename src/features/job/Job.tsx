@@ -24,7 +24,7 @@ const Job = ({
   status,
 }: Props) => {
   return (
-    <div className="w-full rounded-lg bg-white p-5 shadow-md md:w-[49%]">
+    <div className="w-full rounded-lg bg-white p-5 shadow-md md:w-[calc(50%-10px)]">
       <div className="flex flex-col">
         <div className="flex flex-col">
           <h3 className="text-xl text-grey-40">{role}</h3>

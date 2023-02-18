@@ -29,7 +29,7 @@ const NavItem = ({ to, icon, text }: Props) => {
           <div className="pr flex w-1/6 items-center justify-end px-2">
             {icon}
           </div>
-          <div className="flex w-1/3 items-center px-3">{text}</div>
+          <div className="flex w-1/2 items-center px-3">{text}</div>
         </div>
       </NavLink>
     </motion.li>

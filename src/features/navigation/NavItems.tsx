@@ -1,7 +1,8 @@
 import NavItem from "./NavItem";
 import { MdDashboard } from "react-icons/md";
-import { IoStatsChart, IoMoon } from "react-icons/io5";
+import { IoMoon } from "react-icons/io5";
 import { HiOutlineClipboardList } from "react-icons/hi";
+import { TiDocumentAdd } from "react-icons/ti";
 
 import { motion } from "framer-motion";
 import { staggerVariants } from "@/animation-variants/variants";
@@ -18,16 +19,18 @@ const NavItems = () => {
         text="Dashboard"
       />
       <NavItem
-        to="/projects"
+        to="/jobs"
         icon={
           <HiOutlineClipboardList className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />
         }
-        text="Projects"
+        text="Jobs"
       />
       <NavItem
-        to="/stats"
-        icon={<IoStatsChart className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />}
-        text="Stats"
+        to="/add-job"
+        icon={
+          <TiDocumentAdd className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />
+        }
+        text="Add Job"
       />
       <NavItem
         to="/theme"

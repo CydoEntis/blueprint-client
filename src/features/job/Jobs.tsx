@@ -5,7 +5,7 @@ type Props = {};
 
 const Jobs = (props: Props) => {
   return (
-    <div className="flex flex-wrap gap-x-8 gap-y-5 ">
+    <div className="flex flex-col md:flex-row md:flex-wrap justify-between gap-y-5">
       <Job
         role="Software Engineer"
         company="Netflix"

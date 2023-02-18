@@ -1,5 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
+// import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 import Dashboard from "@/pages/dashboard";
 import Error from "@/pages/error/Error";
 import LoginPage from "./pages/login/LoginPage";
@@ -11,6 +13,7 @@ import TaskPage from "@/pages/task/TaskPage";
 import TasksPage from "@/pages/task/TasksPage";
 import CreateProjectPage from "./pages/projects/CreateProjectPage";
 import JobsPage from "./pages/jobs/JobsPage";
+import AddJobPage from "./pages/jobs/AddJobPage";
 
 type Props = {};
 
@@ -56,6 +59,10 @@ const router = createBrowserRouter([
         path: "jobs",
         element: <JobsPage />,
       },
+      {
+        path: "add-job",
+        element: <AddJobPage />,
+      }
 
     ],
   },
@@ -65,6 +72,24 @@ const App = (props: Props) => {
   return (
     <div className="h-full w-full bg-white">
       <RouterProvider router={router} />
+      {/* <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={<ProtectedRoutes>
+              <Root />
+            </ProtectedRoutes>}
+          >
+            <Route index element={<Dashboard />}/>
+            <Route path="jobs" element={<JobsPage />}/>
+            <Route path="add-job" element={<AddJobPage />}/>
+            <Route path="profile" element={<AddJobPage />}/>
+          </Route>
+          <Route path="login" element={<LoginPage />}/>
+          <Route path="register" element={<RegisterPage />}/>
+          <Route path="*" element={<Error />}/>
+        </Routes>
+      </BrowserRouter> */}
     </div>
   );
 };
