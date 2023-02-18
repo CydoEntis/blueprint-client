@@ -13,36 +13,31 @@ const index = (props: Props) => {
   return (
     <div className=" w-full p-5">
       <Title className="p-5 text-[2rem]" text="Good afternoon, John Doe" />
-      <StatsContainer className="flex w-full flex-wrap gap-5 p-5">
-        <StatsBlock
-          className=" border-accent-30 bg-accent-10  text-accent-40"
-          count={150}
-          text="Total"
-        />
+      <StatsContainer className="flex w-full items-center justify-center gap-5 p-5 ">
         <StatsBlock
           className=" border-yellow-30 bg-yellow-10  text-yellow-40"
-          count={30}
-          text="In Progress"
+          count={56}
+          text="pending"
         />
         <StatsBlock
-          className=" border-green-30 bg-green-10  text-green-40"
-          count={376}
-          text="Completed"
+          className=" border-blue-30 bg-blue-10  text-blue-40"
+          count={13}
+          text="interviewing"
         />
         <StatsBlock
           className=" border-red-30 bg-red-10  text-red-40"
-          count={12}
-          text="Past Due"
+          count={9}
+          text="declined"
         />
       </StatsContainer>
-      <RecentItems>
+      {/* <RecentItems>
         <Title className="ml-5 text-2xl" text="Recent Projects" />
         <ProjectList projects={projects} />
       </RecentItems>
       <RecentItems>
         <Title className="ml-5 text-2xl" text="Recent Tasks" />
         <TaskList tasks={tasks} />
-      </RecentItems>
+      </RecentItems> */}
     </div>
   );
 };
