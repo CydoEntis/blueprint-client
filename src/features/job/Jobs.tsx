@@ -5,54 +5,30 @@ type Props = {};
 
 const Jobs = (props: Props) => {
   return (
-    <div className="flex flex-col md:flex-row md:flex-wrap justify-between gap-y-5">
+    <div className="flex flex-col justify-between gap-y-5 md:flex-row md:flex-wrap">
       <Job
         role="Software Engineer"
         company="Netflix"
         location="New Jersey"
         interviewDate="Dec 28, 2022"
-        type="Remote"
-        status="Full-time"
+        type="internship"
+        status="pending"
       />
       <Job
         role="Software Engineer"
         company="Netflix"
         location="New Jersey"
         interviewDate="Dec 28, 2022"
-        type="Remote"
-        status="Full-time"
+        type="part-time"
+        status="accepted"
       />
-            <Job
+      <Job
         role="Software Engineer"
         company="Netflix"
         location="New Jersey"
         interviewDate="Dec 28, 2022"
-        type="Remote"
-        status="Full-time"
-      />
-            <Job
-        role="Software Engineer"
-        company="Netflix"
-        location="New Jersey"
-        interviewDate="Dec 28, 2022"
-        type="Remote"
-        status="Full-time"
-      />
-            <Job
-        role="Software Engineer"
-        company="Netflix"
-        location="New Jersey"
-        interviewDate="Dec 28, 2022"
-        type="Remote"
-        status="Full-time"
-      />
-            <Job
-        role="Software Engineer"
-        company="Netflix"
-        location="New Jersey"
-        interviewDate="Dec 28, 2022"
-        type="Remote"
-        status="Full-time"
+        type="full-time"
+        status="declined"
       />
     </div>
   );

@@ -1,19 +1,15 @@
 import { ChildrenProps } from "@/types/layout-types";
 import { NavLink } from "react-router-dom";
 
-type Props = ChildrenProps & {
-  to: string;
+type Props = {
+  children: React.ReactNode;
 };
 
-const Card = ({ to, children }: Props) => {
+const Card = ({ children }: Props) => {
   return (
-    <NavLink
-      end
-      to={to}
-      className={`w-80 overflow-hidden rounded-2xl  bg-white drop-shadow-xl`}
-    >
+    <div className="w-full rounded-lg bg-white p-5 shadow-md md:w-[calc(50%-10px)]">
       {children}
-    </NavLink>
+    </div>
   );
 };
 

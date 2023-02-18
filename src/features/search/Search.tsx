@@ -1,3 +1,4 @@
+import Button from "@/components/buttons/Button";
 import FormButton from "@/components/form/button/FormButton";
 import Form from "@/components/form/Form";
 import FormControl from "@/components/form/FormControl";
@@ -39,14 +40,18 @@ const Search = (props: Props) => {
         </FormControl>
 
         <FormButtonWrapper>
-          <FormButton
-            className="border-blue-40 bg-blue-10 py-1 text-blue-40"
-            text="search"
-          />
-          <FormButton
-            className="border-red-40 bg-red-10 py-1 text-red-40"
-            text="clear"
-          />
+        <Button
+          className="mr-2 border-blue-40 bg-blue-40 px-3 py-1 text-sm text-white shadow-md lg:text-base w-1/2 sm:w-[200px]"
+          type="button"
+        >
+          Search
+        </Button>
+        <Button
+          className="mr-2 border-red-40 bg-red-40 px-3 py-1 text-sm text-white lg:text-base w-1/2 sm:w-[200px]"
+          type="button"
+        >
+          Clear
+        </Button>
         </FormButtonWrapper>
       </Form>
     </div>

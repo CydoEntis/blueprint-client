@@ -7,23 +7,17 @@ type Props = {
 const Tag = ({ text }: Props) => {
   // TODO: Move out into custom hook.
   let color = "";
-  if (text === "frontend") {
+  if (text === "accepted") {
     color = "green";
-  } else if (text === "backend") {
+  } else if (text === "declined") {
+    color = "red";
+  } else if (text === "pending") {
     color = "yellow";
-  } else if (text === "ui/ux") {
-    color = "purple";
-  } else if (text === "security") {
-    color = "blue";
-  } else if (text === "testing") {
-    color = "orange";
-  } else if (text === "mobile") {
-    color = "pink";
   }
 
   return (
     <span
-      className={`rounded-full py-1 px-3 bg-${color}-10 border border-${color}-30 text-xs text-${color}-40`}
+      className={`my-3 capitalize rounded-md py-1.5 px-3 bg-${color}-10 border border-${color}-30 text-md text-${color}-40`}
     >
       {text}
     </span>
