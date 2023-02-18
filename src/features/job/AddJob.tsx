@@ -8,6 +8,7 @@ import Label from "@/components/form/label/Label";
 import Select from "@/components/form/select/Select";
 import FormButtonWrapper from "@/components/form/wrapper/FormButtonWrapper";
 import { typeOptions } from "@/data/select-options";
+import Button from "@/components/buttons/Button";
 
 type Props = {};
 
@@ -37,14 +38,18 @@ const AddJob = (props: Props) => {
           <textarea className="h-48 w-full resize-none rounded-md bg-off-white outline-blue-40"></textarea>
         </div>
         <FormButtonWrapper>
-          <FormButton
-            className="border-blue-40 bg-blue-10 py-1 text-blue-40"
-            text="add"
-          />
-          <FormButton
-            className="border-red-40 bg-red-10 py-1 text-red-40"
-            text="clear"
-          />
+        <Button
+          className="mr-2 border-blue-40 bg-blue-40 px-3 py-1 text-sm text-white shadow-md lg:text-base w-1/2 sm:w-[200px]"
+          type="button"
+        >
+          Search
+        </Button>
+        <Button
+          className="mr-2 border-red-40 bg-red-40 px-3 py-1 text-sm text-white lg:text-base w-1/2 sm:w-[200px]"
+          type="button"
+        >
+          Clear
+        </Button>
         </FormButtonWrapper>
       </Form>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { CgCloseR } from "react-icons/cg";
 
 type Props = {
   className?: string;
@@ -9,10 +10,11 @@ type Props = {
 const StatsBlock = ({ className, count, text }: Props) => {
   return (
     <div
-      className={`${className} w-[calc(33%-10px)] justify-center items-center rounded-md p-5 border-t-8`}
+      className={`${className} w-[calc(33%-10px)] items-center justify-center rounded-md border-t-8 p-5 text-center`}
     >
-      <h1 className="text-[2.5rem] font-bold">{count}</h1>
-      <p className="text-lg capitalize">{text}</p>
+      <h1 className="text-[3rem] font-bold">{count}</h1>
+      <p className="text-2xl capitalize">{text}</p>
+      
     </div>
   );
 };

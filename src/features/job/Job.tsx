@@ -72,7 +72,7 @@ const Job = ({
           Edit
         </Button>
         <Button
-          className="mr-2 border-red-40 bg-red-40 px-3 py-1 text-sm text- lg:text-base"
+          className="mr-2 border-red-40 bg-red-40 px-3 py-1 text-sm text-white lg:text-base"
           type="button"
         >
           Delete
