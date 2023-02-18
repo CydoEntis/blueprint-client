@@ -5,7 +5,7 @@ type Props = {};
 
 const Jobs = (props: Props) => {
   return (
-    <div className="flex flex-wrap gap-4 md:flex-nowrap ">
+    <div className="flex flex-wrap gap-x-8 gap-y-5 ">
       <Job
         role="Software Engineer"
         company="Netflix"
@@ -15,6 +15,38 @@ const Jobs = (props: Props) => {
         status="Full-time"
       />
       <Job
+        role="Software Engineer"
+        company="Netflix"
+        location="New Jersey"
+        interviewDate="Dec 28, 2022"
+        type="Remote"
+        status="Full-time"
+      />
+            <Job
+        role="Software Engineer"
+        company="Netflix"
+        location="New Jersey"
+        interviewDate="Dec 28, 2022"
+        type="Remote"
+        status="Full-time"
+      />
+            <Job
+        role="Software Engineer"
+        company="Netflix"
+        location="New Jersey"
+        interviewDate="Dec 28, 2022"
+        type="Remote"
+        status="Full-time"
+      />
+            <Job
+        role="Software Engineer"
+        company="Netflix"
+        location="New Jersey"
+        interviewDate="Dec 28, 2022"
+        type="Remote"
+        status="Full-time"
+      />
+            <Job
         role="Software Engineer"
         company="Netflix"
         location="New Jersey"

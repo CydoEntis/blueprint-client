@@ -6,7 +6,7 @@ type Props = {
 
 const ContentWrapper = ({children}: Props) => {
   return (
-    <div className="relative lg:px-4 xl:px-12 xl:py-12">
+    <div className="relative lg:p-12">
         {children}
   </div>
   )

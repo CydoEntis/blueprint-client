@@ -3,7 +3,7 @@ import {
   HiOutlineLocationMarker,
   HiOutlineBriefcase,
   HiOutlineClock,
-  HiOutlineCalendar
+  HiOutlineCalendar,
 } from "react-icons/hi";
 
 type Props = {
@@ -23,12 +23,8 @@ const Job = ({
   type,
   status,
 }: Props) => {
-  function getRandomColor() {
-    return "hsl(" + Math.random() * 360 + ", 100%, 75%)";
-  }
-  // rgb(178, 255, 128)
   return (
-    <div className="w-full rounded-lg bg-white p-5 shadow-md md:w-1/2">
+    <div className="w-full rounded-lg bg-white p-5 shadow-md md:w-[49%]">
       <div className="flex flex-col">
         <div className="flex flex-col">
           <h3 className="text-xl text-grey-40">{role}</h3>
@@ -39,28 +35,42 @@ const Job = ({
           aut earum
         </p>
       </div>
-      <div className="w-full text-sm flex justify-between">
-        <div>
-          <div className="flex items-center text-grey-20 mb-1">
+      <div className="flex justify-center py-1 text-sm">
+        <div className="w-1/2">
+          <div className="mb-3 flex items-center text-grey-20">
             <HiOutlineLocationMarker className=" mr-2 text-lg" />
             <h3 className=""> {location}</h3>
           </div>
-          <div className="flex items-center text-grey-20 mb-1">
+          <div className="mb-3 flex items-center text-grey-20">
             <HiOutlineBriefcase className=" mr-2 text-lg" />
             <h3 className=""> {type}</h3>
           </div>
-          <div className="flex items-center text-grey-20 mb-1">
+          <div className="mb-2 w-[75px] shrink rounded-md border border-blue-40 bg-blue-50 px-2 py-1 text-sm text-blue-40">
+            <h3>Internship</h3>
+          </div>
+        </div>
+        <div className="w-1/2">
+          <div className="mb-3 flex items-center text-grey-20">
             <HiOutlineClock className=" mr-2 text-lg" />
             <h3 className=""> {status}</h3>
           </div>
-          <div className="flex items-center text-grey-20 mb-1">
+          <div className="mb-3 flex items-center text-grey-20">
             <HiOutlineCalendar className=" mr-2 text-lg" />
             <h3 className="">Dec 28, 2022</h3>
           </div>
+          <div className="mb-3 max-w-[100px] rounded-md border border-yellow-40 bg-yellow-50 px-2 py-1 text-center text-sm text-yellow-40 ">
+            <h3>Pending</h3>
+          </div>
         </div>
-        <div>
-   
-        </div>
+      </div>
+
+      <div className="">
+        <button className="mr-2 rounded-md border border-green-40 bg-green-10 px-3 py-1 text-sm text-green-40">
+          Edit
+        </button>
+        <button className="mr-2 rounded-md border border-red-40 bg-red-10 px-3 py-1 text-sm text-red-40">
+          Delete
+        </button>
       </div>
     </div>
   );
