@@ -20,7 +20,7 @@ const Root = () => {
         icon={<StarIcon className="text-gray-60 h-6 w-6" />}
       />
       {/* <Projects /> */}
-      <div className="rounded-tl-[3rem] bg-off-white lg:ml-80 lg:h-screen lg:overflow-hidden">
+      <div className="rounded-tl-[3rem] bg-off-white lg:ml-80 lg:overflow-x-hidden">
         {/* <div className="w-full bg-white">
 
           <ProjectNav />
