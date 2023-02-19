@@ -7,8 +7,8 @@ type Props = {
 const Tag = ({ text }: Props) => {
   // TODO: Move out into custom hook.
   let color = "";
-  if (text === "accepted") {
-    color = "green";
+  if (text === "interview") {
+    color = "blue";
   } else if (text === "declined") {
     color = "red";
   } else if (text === "pending") {

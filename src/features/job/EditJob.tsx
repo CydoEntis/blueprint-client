@@ -12,10 +12,10 @@ import Button from "@/components/buttons/Button";
 
 type Props = {};
 
-const AddJob = (props: Props) => {
+const EditJob = (props: Props) => {
   return (
     <div className="w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
-      <FormTitle text="Add a Job" />
+      <FormTitle text="Edit Job" />
       <Form className="w-full flex-wrap items-center gap-3" onSubmit={() => {}}>
         <FormControl className="lg:w-[calc(50%-10px)]">
           <Label text="position" />
@@ -42,7 +42,7 @@ const AddJob = (props: Props) => {
           className="mr-2 border-blue-40 bg-blue-40 px-3 py-1 text-sm text-white shadow-md lg:text-base w-1/2 sm:w-[200px]"
           type="button"
         >
-          Add
+          Search
         </Button>
         <Button
           className="mr-2 border-red-40 bg-red-40 px-3 py-1 text-sm text-white lg:text-base w-1/2 sm:w-[200px]"
@@ -56,4 +56,4 @@ const AddJob = (props: Props) => {
   );
 };
 
-export default AddJob;
+export default EditJob;

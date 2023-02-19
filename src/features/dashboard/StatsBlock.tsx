@@ -14,7 +14,6 @@ const StatsBlock = ({ className, count, text }: Props) => {
     >
       <h1 className="text-[3rem] font-bold">{count}</h1>
       <p className="text-2xl capitalize">{text}</p>
-      
     </div>
   );
 };

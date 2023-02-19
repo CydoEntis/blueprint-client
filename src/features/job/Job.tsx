@@ -7,32 +7,34 @@ import React from "react";
 import {
   HiOutlineLocationMarker,
   HiOutlineBriefcase,
-  HiOutlineClock,
   HiOutlineCalendar,
 } from "react-icons/hi";
+import { MdAttachMoney } from "react-icons/md";
 
 type Props = {
-  role: string;
+  position: string;
   company: string;
   location: string;
-  interviewDate: string;
+  interviewDate?: string;
   type: string;
   status: string;
+  createdAt: string;
 };
 
 const Job = ({
-  role,
+  position,
   company,
   location,
   interviewDate,
   type,
   status,
+  createdAt,
 }: Props) => {
   return (
     <Card>
       <FlexCol>
         <FlexCol>
-          <h3 className="text-xl text-grey-40">{role}</h3>
+          <h3 className="text-xl text-grey-40">{position}</h3>
           <h3 className="text-md text-grey-30">{company}</h3>
         </FlexCol>
         <p className="py-3 text-sm text-grey-20">
@@ -54,13 +56,17 @@ const Job = ({
         </div>
         <div className="w-1/2">
           <Detail>
-            <HiOutlineClock className="mr-2 text-lg" />
-            <h3 className="text-sm lg:text-base"> {status}</h3>
-          </Detail>
-          <Detail>
             <HiOutlineCalendar className="mr-2 text-lg" />
-            <h3 className="text-sm lg:text-base">Dec 28, 2022</h3>
+            <h3 className="text-sm lg:text-base">Applied on: {createdAt}</h3>
           </Detail>
+          {interviewDate !== "" && (
+            <Detail>
+              <HiOutlineCalendar className="mr-2 text-lg" />
+              <h3 className="text-sm lg:text-base">
+                Interview on: {interviewDate}
+              </h3>
+            </Detail>
+          )}
         </div>
       </div>
 
