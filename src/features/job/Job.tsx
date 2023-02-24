@@ -64,12 +64,13 @@ const Job = ({
           <Tag text={status} />
         </div>
         <div className="w-1/2">
-          <Detail>
-            <HiOutlineCalendar className="mr-2 text-lg" />
-            <h3 className="text-sm lg:text-base">Applied on: {createdAt}</h3>
+          <Detail className="absolute bottom-0 left-0 italic text-grey-10">
+            
+            <h3 className="text-sm lg:text-sm text-gray-400">Applied: {createdAt} </h3>
+            {/* <HiOutlineCalendar className="mx-2 text-lg" /> */}
           </Detail>
           {interviewDate !== "" && (
-            <Detail>
+            <Detail className="">
               <HiOutlineCalendar className="mr-2 text-lg" />
               <h3 className="text-sm lg:text-base">
                 Interview on: {interviewDate}
