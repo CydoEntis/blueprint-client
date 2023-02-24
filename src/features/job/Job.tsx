@@ -3,13 +3,13 @@ import Card from "@/components/cards/Card";
 import Detail from "@/components/detail/Detail";
 import FlexCol from "@/components/helpers/FlexCol";
 import Tag from "@/components/tags/Tag";
-import React from "react";
+import { deleteJob, removeJob } from "@/store/features/jobSlice";
 import {
   HiOutlineLocationMarker,
   HiOutlineBriefcase,
   HiOutlineCalendar,
 } from "react-icons/hi";
-import { MdAttachMoney } from "react-icons/md";
+import { useAppDispatch } from "@/store/store";
 import { Link } from "react-router-dom";
 
 type Props = {
@@ -33,6 +33,12 @@ const Job = ({
   status,
   createdAt,
 }: Props) => {
+  const dispatch = useAppDispatch();
+  async function deleteHandler() {
+    await dispatch(deleteJob(id!))
+    dispatch(removeJob(id!))
+  }
+
   return (
     <Card>
       <FlexCol>
@@ -83,6 +89,7 @@ const Job = ({
         <Button
           className="mr-2 border-red-40 bg-red-40 px-3 py-1 text-sm text-white lg:text-base"
           type="button"
+          onClick={deleteHandler}
         >
           Delete
         </Button>

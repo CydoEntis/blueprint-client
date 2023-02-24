@@ -37,7 +37,7 @@ export const getJobs = createAsyncThunk("/all", async () => {
   }
 });
 
-export const updateJob = createAsyncThunk("/update", async (job: IJob) => {
+export const updateJob = createAsyncThunk("job/update", async (job: IJob) => {
   try {
     const res = await axios.put(url + `/update/${job._id}`, job);
     return res.data;
@@ -47,7 +47,7 @@ export const updateJob = createAsyncThunk("/update", async (job: IJob) => {
 });
 
 export const addNewJob = createAsyncThunk(
-  "task/create",
+  "job/create",
   async (job: Omit<IJob, "_id">) => {
     try {
       const res = await axios.post(url + "/add", job);
@@ -58,6 +58,18 @@ export const addNewJob = createAsyncThunk(
   }
 );
 
+export const deleteJob = createAsyncThunk("job/update", async (jobId: string) => {
+  try {
+    console.log("Is deleting");
+    console.log(jobId)
+    const res = await axios.delete(url + `/delete/${jobId}`);
+    console.log(res.data)
+    return res.data;
+  } catch(error: any) {
+    console.log(error)
+  }
+})
+
 const JobSlice = createSlice({
   name: "job",
   initialState,
@@ -65,6 +77,9 @@ const JobSlice = createSlice({
     addJob: (state, action: PayloadAction<IJob>) => {
       state.jobs.push(action.payload);
     },
+    removeJob: (state, action: PayloadAction<string>) => {
+      state.jobs = state.jobs.filter(job => job._id !== action.payload);
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(getJobs.fulfilled, (state, action) => {
@@ -83,4 +98,4 @@ const JobSlice = createSlice({
 });
 
 export default JobSlice.reducer;
-export const { addJob } = JobSlice.actions;
+export const { addJob, removeJob } = JobSlice.actions;
