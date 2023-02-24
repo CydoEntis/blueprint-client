@@ -13,9 +13,6 @@ const Jobs = (props: Props) => {
     dispatch(getJobs());
   }, []);
 
-  console.log(typeof jobs);
-  console.log(jobs);
-
   return (
     <div className="flex flex-col justify-between gap-y-5 md:flex-row md:flex-wrap">
       {isLoading && <p>Is Loading...</p>}
@@ -28,9 +25,6 @@ const Jobs = (props: Props) => {
           } else {
             interviewDate = "";
           }
-
-          console.log(interviewDate)
-          console.log(appliedDate)
           return (
             <Job
               key={job._id}

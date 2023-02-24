@@ -47,7 +47,6 @@ const EditJob = (props: Props) => {
     setIsLoading(false);
 
     getJob();
-    console.log(job);
   }, []);
 
 
@@ -66,33 +65,34 @@ const EditJob = (props: Props) => {
             className="w-full flex-wrap items-center gap-3"
             onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
               e.preventDefault();
+              console.log("Clicked")
               console.log(job)
             }}
           >
             <FormControl className="lg:w-[calc(50%-10px)]">
               <Label text="position" />
-              <Input type="text" value={job?.position} onChange={onChange}/>
+              <Input type="text" value={job?.position} onChange={onChange} name="position"/>
             </FormControl>
             <FormControl className="lg:w-[calc(50%-10px)]">
               <Label text="company" />
-              <Input type="text" value={job?.company} onChange={onChange}/>
+              <Input type="text" value={job?.company} onChange={onChange} name="company"/>
             </FormControl>
             <FormControl className="lg:w-[calc(50%-10px)]">
               <Label text="job location" />
-              <Input type="text" value={job?.location} onChange={onChange}/>
+              <Input type="text" value={job?.location} onChange={onChange} name="location"/>
             </FormControl>
             <FormControl className="lg:w-[calc(50%-10px)]">
               <Label text="job type" />
-              <Select options={typeOptions} value={job?.jobType} onChange={onChange}/>
+              <Select options={typeOptions} value={job?.jobType} onChange={onChange} name="jobType"/>
             </FormControl>
             <div className="flex w-full flex-col lg:w-[calc(50%-10px)]">
               <label className="pb-2 text-lg">Description</label>
-              <textarea className="h-48 w-full resize-none rounded-md bg-off-white outline-blue-40 p-3" value={job?.description} onChange={onChange}></textarea>
+              <textarea className="h-48 w-full resize-none rounded-md bg-off-white outline-blue-40 p-3" value={job?.description} name="description" onChange={onChange}></textarea>
             </div>
             <FormButtonWrapper>
               <Button
                 className="mr-2 w-1/2 border-blue-40 bg-blue-40 px-3 py-1 text-sm text-white shadow-md sm:w-[200px] lg:text-base"
-                type="button"
+                type="submit"
               >
                 Confirm
               </Button>
