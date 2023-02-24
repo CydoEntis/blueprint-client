@@ -10,8 +10,10 @@ import {
   HiOutlineCalendar,
 } from "react-icons/hi";
 import { MdAttachMoney } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 type Props = {
+  id: string | undefined
   position: string;
   company: string;
   location: string;
@@ -22,6 +24,7 @@ type Props = {
 };
 
 const Job = ({
+  id,
   position,
   company,
   location,
@@ -71,12 +74,12 @@ const Job = ({
       </div>
 
       <div className="flex w-full justify-end">
-        <Button
-          className="mr-2 border-blue-40 bg-blue-40 px-3 py-1 text-sm text-white shadow-md lg:text-base"
+        <Link to={`/jobs/${id}`}
+          className="mr-2 border-blue-40 bg-blue-40 px-3 py-1 text-sm text-white shadow-md lg:text-base rounded-md border transition-all duration-300 ease-in-out capitalize hover:opacity-75"
           type="button"
         >
           Edit
-        </Button>
+        </Link>
         <Button
           className="mr-2 border-red-40 bg-red-40 px-3 py-1 text-sm text-white lg:text-base"
           type="button"

@@ -34,6 +34,7 @@ const Jobs = (props: Props) => {
           return (
             <Job
               key={job._id}
+              id={job._id}
               position={job.position}
               company={job.company}
               location={job.location}

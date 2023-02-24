@@ -14,6 +14,7 @@ import TasksPage from "@/pages/task/TasksPage";
 import CreateProjectPage from "./pages/projects/CreateProjectPage";
 import JobsPage from "./pages/jobs/JobsPage";
 import AddJobPage from "./pages/jobs/AddJobPage";
+import EditJobPage from "./pages/jobs/EditJobPage";
 
 type Props = {};
 
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "add-job",
         element: <AddJobPage />,
+      },
+      {
+        path: "jobs/:id",
+        element: <EditJobPage />,
       }
 
     ],
