@@ -49,7 +49,7 @@ const router = createBrowserRouter([
         element: <AddJobPage />,
       },
       {
-        path: "jobs/:id",
+        path: "jobs/:jobId",
         element: <EditJobPage />,
       }
 

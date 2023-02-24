@@ -10,27 +10,41 @@ export interface IJob {
 	position: string;
 	company: string;
 	location: string;
-	jobType: "remote" | "part-time" | "full-time" | "internship"
+	jobType: "remote" | "part-time" | "full-time" | "internship" | "";
   jobStatus: string;
 	interviewDate?: string,
   createdAt: string
+  description: string
 }
 
 export interface IJobState {
   jobs: IJob[];
+  // currentJob: IJob 
   isLoading: boolean;
 }
 
 const initialState: IJobState = {
   jobs: [],
+  // currentJob:
   isLoading: false,
 };
 
-export const getJobs = createAsyncThunk("/get", async () => {
+export const getJobs = createAsyncThunk("/all", async () => {
   try {
-    const res = await axios(url + "/get");
+    const res = await axios(url + "/all");
 
     return res.data.jobs;
+  } catch (error: any) {
+    console.log(error);
+  }
+});
+
+export const getJob = createAsyncThunk("/get", async (jobId: string |
+   undefined) => {
+  console.log(jobId);
+  try {
+    const res = await axios(url + `/get/${jobId}`);
+    return res.data.job;
   } catch (error: any) {
     console.log(error);
   }
