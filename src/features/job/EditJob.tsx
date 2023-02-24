@@ -11,13 +11,13 @@ import { typeOptions } from "@/data/select-options";
 import Button from "@/components/buttons/Button";
 import { useAppDispatch, useAppSelector } from "@/store/store";
 import { useNavigate, useParams } from "react-router-dom";
-import { getJob, IJob } from "@/store/features/jobSlice";
+import { IJob, updateJob } from "@/store/features/jobSlice";
 import axios from "axios";
 
 type Props = {};
 
 const EditJob = (props: Props) => {
-  const dipsatch = useAppDispatch();
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { jobId } = useParams();
   const [job, setJob] = useState<IJob>(
@@ -70,6 +70,8 @@ const EditJob = (props: Props) => {
   }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement> ) {
+    e.preventDefault();
+    console.log("submitted");
     if(!job.position || !job.company || !job.location || !job.jobType || !job.description) {
       setErrMsg("Please provide all fields.")
       setIsError(true);
