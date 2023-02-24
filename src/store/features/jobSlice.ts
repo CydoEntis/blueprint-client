@@ -19,13 +19,11 @@ export interface IJob {
 
 export interface IJobState {
   jobs: IJob[];
-  // currentJob: IJob 
   isLoading: boolean;
 }
 
 const initialState: IJobState = {
   jobs: [],
-  // currentJob:
   isLoading: false,
 };
 
@@ -39,12 +37,10 @@ export const getJobs = createAsyncThunk("/all", async () => {
   }
 });
 
-export const getJob = createAsyncThunk("/get", async (jobId: string |
-   undefined) => {
-  console.log(jobId);
+export const updateJob = createAsyncThunk("/update", async (job: IJob) => {
   try {
-    const res = await axios(url + `/get/${jobId}`);
-    return res.data.job;
+    const res = await axios.post(url + `/update}`, job);
+    return res.data;
   } catch (error: any) {
     console.log(error);
   }
@@ -63,7 +59,7 @@ export const addNewJob = createAsyncThunk(
 );
 
 const JobSlice = createSlice({
-  name: "Job",
+  name: "job",
   initialState,
   reducers: {
     addJob: (state, action: PayloadAction<IJob>) => {

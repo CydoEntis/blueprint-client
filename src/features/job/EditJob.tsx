@@ -10,13 +10,15 @@ import FormButtonWrapper from "@/components/form/wrapper/FormButtonWrapper";
 import { typeOptions } from "@/data/select-options";
 import Button from "@/components/buttons/Button";
 import { useAppDispatch, useAppSelector } from "@/store/store";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getJob, IJob } from "@/store/features/jobSlice";
 import axios from "axios";
 
 type Props = {};
 
 const EditJob = (props: Props) => {
+  const dipsatch = useAppDispatch();
+  const navigate = useNavigate();
   const { jobId } = useParams();
   const [job, setJob] = useState<IJob>(
     {
@@ -31,7 +33,8 @@ const EditJob = (props: Props) => {
       description: ""
     }
   );
-
+  const [isError, setIsError] = useState<boolean>(false);
+  const [errMsg, setErrMsg] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -47,7 +50,18 @@ const EditJob = (props: Props) => {
     setIsLoading(false);
 
     getJob();
-  }, []);
+
+
+    const timer = setTimeout(() => {
+      setErrMsg("");
+      setIsError(false);
+    }, 5000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+
+  }, [isError]);
 
 
 
@@ -55,6 +69,19 @@ const EditJob = (props: Props) => {
     setJob({ ...job, [e.target.name]: e.target.value });
   }
 
+  async function onSubmit(e: React.FormEvent<HTMLFormElement> ) {
+    if(!job.position || !job.company || !job.location || !job.jobType || !job.description) {
+      setErrMsg("Please provide all fields.")
+      setIsError(true);
+    } else {
+      setIsError(false);
+      setErrMsg("");
+    }
+
+    await dispatch(updateJob(job));
+    navigate("/jobs")
+
+  }
   return (
     <div className="w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
       {isLoading && <p>Loading...</p>}
@@ -63,11 +90,7 @@ const EditJob = (props: Props) => {
           <FormTitle text="Edit Job" />
           <Form
             className="w-full flex-wrap items-center gap-3"
-            onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
-              e.preventDefault();
-              console.log("Clicked")
-              console.log(job)
-            }}
+            onSubmit={onSubmit}
           >
             <FormControl className="lg:w-[calc(50%-10px)]">
               <Label text="position" />
