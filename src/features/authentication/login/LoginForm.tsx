@@ -143,7 +143,7 @@ const LoginForm = (props: Props) => {
           />
         ))}
 
-        <FormControl>
+        <FormControl className="my-3">
           <Button
             type="submit"
             className="w-48 border-accent-30 bg-accent-10 py-2 px-5 text-accent-40 hover:bg-accent-40 hover:text-white"

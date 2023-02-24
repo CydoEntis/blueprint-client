@@ -52,6 +52,11 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+export const logoutUser = createAsyncThunk("user/logout", async () => {
+  localStorage.removeItem("user")
+  localStorage.removeItem("token")
+})
+
 const UserSlice = createSlice({
   name: "user",
   initialState,
