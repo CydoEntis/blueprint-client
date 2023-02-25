@@ -16,23 +16,36 @@ import axios from "axios";
 
 type Props = {};
 
+const statusOptions = [
+  {
+    id: 1,
+    value: "interview",
+  },
+  {
+    id: 2,
+    value: "declined",
+  },
+  {
+    id: 3,
+    value: "pending",
+  },
+];
+
 const EditJob = (props: Props) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { jobId } = useParams();
-  const [job, setJob] = useState<IJob>(
-    {
-      _id: "",
-      position: "",
-      company: "",
-      location: "",
-      jobType: "",
-      jobStatus: "",
-      interviewDate: "",
-      createdAt: "",
-      description: ""
-    }
-  );
+  const [job, setJob] = useState<IJob>({
+    _id: "",
+    position: "",
+    company: "",
+    location: "",
+    jobType: "",
+    jobStatus: "",
+    interviewDate: "",
+    createdAt: "",
+    description: "",
+  });
   const [isError, setIsError] = useState<boolean>(false);
   const [errMsg, setErrMsg] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +55,7 @@ const EditJob = (props: Props) => {
     async function getJob() {
       try {
         const res = await axios("http://localhost:1337/jobs/get/" + jobId);
-        console.log("res:" , res.data.job);
+        console.log("res:", res.data.job);
         setJob(res.data.job);
       } catch (error: any) {
         console.log(error);
@@ -52,7 +65,6 @@ const EditJob = (props: Props) => {
 
     getJob();
 
-
     const timer = setTimeout(() => {
       setErrMsg("");
       setIsError(false);
@@ -61,80 +73,137 @@ const EditJob = (props: Props) => {
     return () => {
       clearTimeout(timer);
     };
-
   }, [isError]);
 
-
-
-  function onChange(e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement> | React.ChangeEvent<HTMLSelectElement>) {
+  function onChange(
+    e:
+      | React.ChangeEvent<HTMLInputElement>
+      | React.ChangeEvent<HTMLTextAreaElement>
+      | React.ChangeEvent<HTMLSelectElement>
+  ) {
     setJob({ ...job, [e.target.name]: e.target.value });
   }
 
-  async function onSubmit(e: React.FormEvent<HTMLFormElement> ) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log("submitted");
-    if(!job.position || !job.company || !job.location || !job.jobType || !job.description) {
-      setErrMsg("Please provide all fields.")
+    if (
+      !job.position ||
+      !job.company ||
+      !job.location ||
+      !job.jobType ||
+      !job.description
+    ) {
+      setErrMsg("Please provide all fields.");
       setIsError(true);
+      return;
+    } else if (job.jobStatus === "interview" && !job.interviewDate) {
+      setIsError(true);
+      setErrMsg("Please select a valid interview date");
+      return;
     } else {
       setIsError(false);
       setErrMsg("");
     }
 
-    
+    if(job.jobStatus !== 'interview') {
+      setJob({...job, interviewDate: ""})
+    }
+
     await dispatch(updateJob(job));
-    navigate("/jobs")
-    
+    navigate("/jobs");
   }
   console.log(job);
   return (
     <div className="w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
-          <FormTitle text="Edit Job" />
-          {isError && <p className="px-2 py-1 bg-red-10 text-red-40 border border-red-30 text-center rounded-md my-2">{errMsg}</p>}
-          <Form
-            className="w-full flex-wrap items-center gap-3"
-            onSubmit={onSubmit}
-          >
-            <FormControl className="lg:w-[calc(50%-10px)]">
-              <Label text="position" />
-              <Input type="text" value={job?.position} onChange={onChange} name="position"/>
-            </FormControl>
-            <FormControl className="lg:w-[calc(50%-10px)]">
-              <Label text="company" />
-              <Input type="text" value={job?.company} onChange={onChange} name="company"/>
-            </FormControl>
-            <FormControl className="lg:w-[calc(50%-10px)]">
-              <Label text="job location" />
-              <Input type="text" value={job?.location} onChange={onChange} name="location"/>
-            </FormControl>
-            <FormControl className="lg:w-[calc(50%-10px)]">
-              <Label text="job type" />
-              <Select options={typeOptions} value={job?.jobType} onChange={onChange} name="jobType"/>
-            </FormControl>
-            <FormControl className="lg:w-[calc(50%-10px)] justify-start items-start">
-              <Label text="interview date" />
-              <Input type="date" value={job?.interviewDate === null ? "" : job?.interviewDate} onChange={onChange} name="interviewDate"/>
-            </FormControl>
-            <div className="flex w-full flex-col">
-              <label className="pb-2 text-lg">Description</label>
-              <textarea className="h-48 w-full resize-none rounded-md bg-off-white outline-blue-40 p-3" value={job?.description} name="description" onChange={onChange}></textarea>
-            </div>
+      <FormTitle text="Edit Job" />
+      {isError && (
+        <p className="my-2 rounded-md border border-red-30 bg-red-10 px-2 py-1 text-center text-red-40">
+          {errMsg}
+        </p>
+      )}
+      <Form className="w-full flex-wrap items-center gap-3" onSubmit={onSubmit}>
+        <FormControl className="lg:w-[calc(50%-10px)]">
+          <Label text="position" />
+          <Input
+            type="text"
+            value={job?.position}
+            onChange={onChange}
+            name="position"
+          />
+        </FormControl>
+        <FormControl className="lg:w-[calc(50%-10px)]">
+          <Label text="company" />
+          <Input
+            type="text"
+            value={job?.company}
+            onChange={onChange}
+            name="company"
+          />
+        </FormControl>
+        <FormControl className="lg:w-[calc(50%-10px)]">
+          <Label text="job location" />
+          <Input
+            type="text"
+            value={job?.location}
+            onChange={onChange}
+            name="location"
+          />
+        </FormControl>
+        <FormControl className="lg:w-[calc(50%-10px)]">
+          <Label text="job type" />
+          <Select
+            options={typeOptions}
+            value={job?.jobType}
+            onChange={onChange}
+            name="jobType"
+          />
+        </FormControl>
+        <FormControl className="lg:w-[calc(50%-10px)]">
+          <Label text="job status" />
+          <Select
+            options={statusOptions}
+            value={job?.jobStatus}
+            onChange={onChange}
+            name="jobStatus"
+          />
+        </FormControl>
+        {job.jobStatus === "interview" && (
+          <FormControl className="items-start justify-start lg:w-[calc(50%-10px)]">
+            <Label text="interview date" />
+            <Input
+              type="date"
+              value={job?.interviewDate === null ? "" : job?.interviewDate}
+              onChange={onChange}
+              name="interviewDate"
+            />
+          </FormControl>
+        )}
+        <div className="flex w-full flex-col">
+          <label className="pb-2 text-lg">Description</label>
+          <textarea
+            className="h-48 w-full resize-none rounded-md bg-off-white p-3 outline-blue-40"
+            value={job?.description}
+            name="description"
+            onChange={onChange}
+          ></textarea>
+        </div>
 
-            <FormButtonWrapper>
-              <Button
-                className="mr-2 w-1/2 border-blue-40 bg-blue-40 px-3 py-1 text-sm text-white shadow-md sm:w-[200px] lg:text-base"
-                type="submit"
-              >
-                Confirm
-              </Button>
-              <Button
-                className="mr-2 w-1/2 border-red-40 bg-red-40 px-3 py-1 text-sm text-white sm:w-[200px] lg:text-base"
-                type="button"
-              >
-                Clear
-              </Button>
-            </FormButtonWrapper>
-          </Form>
+        <FormButtonWrapper>
+          <Button
+            className="mr-2 w-1/2 border-blue-40 bg-blue-40 px-3 py-1 text-sm text-white shadow-md sm:w-[200px] lg:text-base"
+            type="submit"
+          >
+            Confirm
+          </Button>
+          <Button
+            className="mr-2 w-1/2 border-red-40 bg-red-40 px-3 py-1 text-sm text-white sm:w-[200px] lg:text-base"
+            type="button"
+          >
+            Clear
+          </Button>
+        </FormButtonWrapper>
+      </Form>
     </div>
   );
 };
