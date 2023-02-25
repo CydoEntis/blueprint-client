@@ -13,6 +13,7 @@ import { useAppDispatch, useAppSelector } from "@/store/store";
 import { useNavigate, useParams } from "react-router-dom";
 import { IJob, updateJob } from "@/store/features/jobSlice";
 import axios from "axios";
+import Error from "@/components/error/Error";
 
 type Props = {};
 
@@ -31,21 +32,23 @@ const statusOptions = [
   },
 ];
 
+const initialJobState: IJob = {
+  _id: "",
+  position: "",
+  company: "",
+  location: "",
+  jobType: "full-time",
+  jobStatus: "pending",
+  interviewDate: "",
+  createdAt: "",
+  description: ""
+}
+
 const EditJob = (props: Props) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { jobId } = useParams();
-  const [job, setJob] = useState<IJob>({
-    _id: "",
-    position: "",
-    company: "",
-    location: "",
-    jobType: "",
-    jobStatus: "",
-    interviewDate: "",
-    createdAt: "",
-    description: "",
-  });
+  const [job, setJob] = useState<IJob>(initialJobState);
   const [isError, setIsError] = useState<boolean>(false);
   const [errMsg, setErrMsg] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
@@ -113,14 +116,16 @@ const EditJob = (props: Props) => {
     await dispatch(updateJob(job));
     navigate("/jobs");
   }
-  console.log(job);
+
+  function clearFields() {
+    setJob(initialJobState);
+  }
+
   return (
     <div className="w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
       <FormTitle text="Edit Job" />
       {isError && (
-        <p className="my-2 rounded-md border border-red-30 bg-red-10 px-2 py-1 text-center text-red-40">
-          {errMsg}
-        </p>
+        <Error message={errMsg}/>
       )}
       <Form className="w-full flex-wrap items-center gap-3" onSubmit={onSubmit}>
         <FormControl className="lg:w-[calc(50%-10px)]">
@@ -199,6 +204,7 @@ const EditJob = (props: Props) => {
           <Button
             className="mr-2 w-1/2 border-red-40 bg-red-40 px-3 py-1 text-sm text-white sm:w-[200px] lg:text-base"
             type="button"
+            onClick={clearFields}
           >
             Clear
           </Button>

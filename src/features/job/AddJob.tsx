@@ -13,6 +13,7 @@ import { addJob, addNewJob, IJob } from "@/store/features/jobSlice";
 import { useAppDispatch } from "@/store/store";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
+import Error from "@/components/error/Error";
 
 
 
@@ -78,7 +79,7 @@ const AddJob = (props: Props) => {
   return (
     <div className="w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
       <FormTitle text="Add a Job" />
-      {isError && <p className="px-2 py-1 bg-red-10 text-red-40 border border-red-30 text-center rounded-md my-2">{errMsg}</p>}
+      {isError && <Error message={errMsg}/>}
       <Form className="w-full flex-wrap items-center gap-3" onSubmit={onSubmitHandler}>
         <FormControl className="lg:w-[calc(50%-10px)]">
           <Label text="position" />
