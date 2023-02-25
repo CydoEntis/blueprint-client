@@ -10,7 +10,7 @@ type Props = {
 const StatsBlock = ({ className, count, text }: Props) => {
   return (
     <div
-      className={`${className} w-[calc(33%-10px)] items-center justify-center rounded-md border-t-8 p-5 text-center`}
+      className={`${className} w-full md:w-[calc(33%-10px)] items-center justify-center rounded-md border-t-8 p-5 text-center min-h-[180px]`}
     >
       <h1 className="text-[3rem] font-bold">{count}</h1>
       <p className="text-2xl capitalize">{text}</p>

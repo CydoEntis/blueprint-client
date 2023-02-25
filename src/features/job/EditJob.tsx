@@ -14,6 +14,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { IJob, updateJob } from "@/store/features/jobSlice";
 import axios from "axios";
 import Error from "@/components/error/Error";
+import { useFormInputsHandler } from "@/hooks/useFormInputsHandler";
 
 type Props = {};
 
@@ -48,13 +49,13 @@ const EditJob = (props: Props) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { jobId } = useParams();
-  const [job, setJob] = useState<IJob>(initialJobState);
   const [isError, setIsError] = useState<boolean>(false);
   const [errMsg, setErrMsg] = useState<string>("");
-  const [isLoading, setIsLoading] = useState(false);
+
+  const {setJob, job, clearFields, onChangeHandler} = useFormInputsHandler();
+
 
   useEffect(() => {
-    setIsLoading(true);
     async function getJob() {
       try {
         const res = await axios("http://localhost:1337/jobs/get/" + jobId);
@@ -64,7 +65,6 @@ const EditJob = (props: Props) => {
         console.log(error);
       }
     }
-    setIsLoading(false);
 
     getJob();
 
@@ -78,18 +78,10 @@ const EditJob = (props: Props) => {
     };
   }, [isError]);
 
-  function onChange(
-    e:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-      | React.ChangeEvent<HTMLSelectElement>
-  ) {
-    setJob({ ...job, [e.target.name]: e.target.value });
-  }
+
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log("submitted");
     if (
       !job.position ||
       !job.company ||
@@ -117,9 +109,6 @@ const EditJob = (props: Props) => {
     navigate("/jobs");
   }
 
-  function clearFields() {
-    setJob(initialJobState);
-  }
 
   return (
     <div className="w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
@@ -133,7 +122,7 @@ const EditJob = (props: Props) => {
           <Input
             type="text"
             value={job?.position}
-            onChange={onChange}
+            onChange={onChangeHandler}
             name="position"
           />
         </FormControl>
@@ -142,7 +131,7 @@ const EditJob = (props: Props) => {
           <Input
             type="text"
             value={job?.company}
-            onChange={onChange}
+            onChange={onChangeHandler}
             name="company"
           />
         </FormControl>
@@ -151,7 +140,7 @@ const EditJob = (props: Props) => {
           <Input
             type="text"
             value={job?.location}
-            onChange={onChange}
+            onChange={onChangeHandler}
             name="location"
           />
         </FormControl>
@@ -160,7 +149,7 @@ const EditJob = (props: Props) => {
           <Select
             options={typeOptions}
             value={job?.jobType}
-            onChange={onChange}
+            onChange={onChangeHandler}
             name="jobType"
           />
         </FormControl>
@@ -169,7 +158,7 @@ const EditJob = (props: Props) => {
           <Select
             options={statusOptions}
             value={job?.jobStatus}
-            onChange={onChange}
+            onChange={onChangeHandler}
             name="jobStatus"
           />
         </FormControl>
@@ -179,7 +168,7 @@ const EditJob = (props: Props) => {
             <Input
               type="date"
               value={job?.interviewDate === null ? "" : job?.interviewDate}
-              onChange={onChange}
+              onChange={onChangeHandler}
               name="interviewDate"
             />
           </FormControl>
@@ -190,7 +179,7 @@ const EditJob = (props: Props) => {
             className="h-48 w-full resize-none rounded-md bg-off-white p-3 outline-blue-40"
             value={job?.description}
             name="description"
-            onChange={onChange}
+            onChange={onChangeHandler}
           ></textarea>
         </div>
 

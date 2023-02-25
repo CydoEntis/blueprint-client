@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import FormButton from "@/components/form/button/FormButton";
 import Form from "@/components/form/Form";
 import FormControl from "@/components/form/FormControl";
 import FormTitle from "@/components/form/FormTitle";
@@ -12,36 +11,19 @@ import Button from "@/components/buttons/Button";
 import { addJob, addNewJob, IJob } from "@/store/features/jobSlice";
 import { useAppDispatch } from "@/store/store";
 import { useNavigate } from "react-router-dom";
-import { v4 as uuidv4 } from 'uuid';
 import Error from "@/components/error/Error";
-
-
+import { useFormInputsHandler } from "@/hooks/useFormInputsHandler";
 
 type Props = {};
 
-const initialJobState: IJob = {
-  _id: "",
-  position: "",
-  company: "",
-  location: "",
-  jobType: "full-time",
-  jobStatus: "pending",
-  interviewDate: "",
-  createdAt: "",
-  description: ""
-}
-
 const AddJob = (props: Props) => {
-  const [job, setJob] = useState<IJob>(initialJobState);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [isError, setIsError] = useState<boolean>(false);
   const [errMsg, setErrMsg] = useState<string>("");
-  const [isLoading, setIsLoading] = useState(false);
 
-  function onChangeHandler(e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement> | React.ChangeEvent<HTMLSelectElement>) {
-    setJob({ ...job, _id: uuidv4(),createdAt: Date.now().toString(), [e.target.name]: e.target.value,  });
-  }
+  const {job, clearFields, onChangeHandler} = useFormInputsHandler();
+ 
 
   async function onSubmitHandler(e: React.FormEvent<HTMLFormElement> ) {
     e.preventDefault();
@@ -53,15 +35,12 @@ const AddJob = (props: Props) => {
       setIsError(false);
       setErrMsg("");
     }
+
     await dispatch(addNewJob(job))
     dispatch(addJob(job));
-    console.log(job);
     navigate("/jobs");
   }
 
-  function clearFields() {
-    setJob(initialJobState);
-  }
 
   
   useEffect(() => {

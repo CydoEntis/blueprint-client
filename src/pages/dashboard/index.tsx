@@ -1,34 +1,33 @@
 import StatsBlock from "@/features/dashboard/StatsBlock";
 import StatsContainer from "@/features/dashboard/StatsContainer";
-import TaskList from "@/features/tasks/TaskList";
-import ProjectList from "@/features/projects/ProjectList";
-import tasks from "@/data/recent-tasks-data.json";
-import projects from "@/data/recent-projects-data.json";
-import RecentItems from "@/features/dashboard/RecentItems";
 import Title from "@/components/typography/Typography";
-import { CgCloseR } from "react-icons/cg";
+import { useAppSelector } from "@/store/store";
 
 type Props = {};
 
 const index = (props: Props) => {
+  const pending = useAppSelector((state) => state.job.pending);
+  const declined = useAppSelector((state) => state.job.declined);
+  const interview = useAppSelector((state) => state.job.interview);
+
   return (
     <div className=" w-full p-5">
       <Title className="p-5 text-[2rem]" text="Good afternoon, John Doe" />
-      <StatsContainer className="flex w-full items-center justify-center gap-5 p-5 ">
+      <StatsContainer className="flex w-full flex-wrap md:flex-nowrap items-center justify-center gap-5 p-5 ">
         <StatsBlock
 
           className=" border-yellow-30 bg-yellow-10  text-yellow-40"
-          count={56}
+          count={pending}
           text="pending applications"
         />
         <StatsBlock
           className=" border-blue-30 bg-blue-10  text-blue-40"
-          count={13}
+          count={interview}
           text="interviews scheduled"
         />
         <StatsBlock
           className=" border-red-30 bg-red-10  text-red-40"
-          count={9}
+          count={declined}
           text="jobs declined"
         />
       </StatsContainer>

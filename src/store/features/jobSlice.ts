@@ -5,6 +5,8 @@ import axios from "axios";
 // const url = "http://localhost:8000/task";
 const url = "http://localhost:1337/jobs";
 
+
+
 export interface IJob {
   _id?: string;
 	position: string;
@@ -38,8 +40,7 @@ const initialState: IJobState = {
 export const getJobs = createAsyncThunk("/all", async () => {
   try {
     const res = await axios(url + "/all");
-
-    return res.data.jobs;
+    return res.data;
   } catch (error: any) {
     console.log(error);
   }
@@ -94,9 +95,9 @@ const JobSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getJobs.fulfilled, (state, action) => {
-      state.jobs = action.payload;
+      state.jobs = action.payload.jobs;
       state.pending = action.payload.pending;
-      state.interview = action.payload.interivew;
+      state.interview = action.payload.interview;
       state.declined = action.payload.declined;
       state.isLoading = false;
     });
