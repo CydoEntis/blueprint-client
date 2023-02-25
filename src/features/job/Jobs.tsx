@@ -19,7 +19,6 @@ const Jobs = (props: Props) => {
       {isLoading && <p>Is Loading...</p>}
       {!isLoading &&
         jobs.map((job: IJob) => {
-          console.log(job._id);
           let appliedDate = "";
           if(job.createdAt || job.createdAt !== undefined) {
              appliedDate = new Date(job.createdAt).toDateString();

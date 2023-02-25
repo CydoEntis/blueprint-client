@@ -13,7 +13,7 @@ import { useAppDispatch } from "@/store/store";
 import { Link } from "react-router-dom";
 
 type Props = {
-  id: string | undefined
+  id?: string
   position: string;
   company: string;
   location: string;
@@ -66,7 +66,7 @@ const Job = ({
         <div className="w-1/2">
           <Detail className="absolute bottom-0 left-0 italic text-grey-10">
             
-            <h3 className="text-sm lg:text-sm text-gray-400">Applied: {createdAt} </h3>
+            <h3 className="text-xs xl:text-sm text-gray-400">Applied: {createdAt} </h3>
             {/* <HiOutlineCalendar className="mx-2 text-lg" /> */}
           </Detail>
           {interviewDate !== "" && (

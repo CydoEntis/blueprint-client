@@ -96,7 +96,7 @@ const AddJob = (props: Props) => {
           <Label text="job type" />
           <Select options={typeOptions} name="jobType" value={job.jobType} onChange={onChangeHandler}/>
         </FormControl>
-        <div className="flex w-full flex-col lg:w-[calc(50%-10px)]">
+        <div className="flex w-full flex-col">
           <label className="pb-2 text-lg">Description</label>
           <textarea className="h-48 w-full resize-none rounded-md bg-off-white outline-blue-40" name="description" value={job.description}onChange={onChangeHandler}></textarea>
         </div>

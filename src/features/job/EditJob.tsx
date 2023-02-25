@@ -42,6 +42,7 @@ const EditJob = (props: Props) => {
     async function getJob() {
       try {
         const res = await axios("http://localhost:1337/jobs/get/" + jobId);
+        console.log("res:" , res.data.job);
         setJob(res.data.job);
       } catch (error: any) {
         console.log(error);
@@ -80,10 +81,12 @@ const EditJob = (props: Props) => {
       setErrMsg("");
     }
 
+    
     await dispatch(updateJob(job));
     navigate("/jobs")
-
+    
   }
+  console.log(job);
   return (
     <div className="w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
           <FormTitle text="Edit Job" />
@@ -108,10 +111,15 @@ const EditJob = (props: Props) => {
               <Label text="job type" />
               <Select options={typeOptions} value={job?.jobType} onChange={onChange} name="jobType"/>
             </FormControl>
-            <div className="flex w-full flex-col lg:w-[calc(50%-10px)]">
+            <FormControl className="lg:w-[calc(50%-10px)] justify-start items-start">
+              <Label text="interview date" />
+              <Input type="date" value={job?.interviewDate === null ? "" : job?.interviewDate} onChange={onChange} name="interviewDate"/>
+            </FormControl>
+            <div className="flex w-full flex-col">
               <label className="pb-2 text-lg">Description</label>
               <textarea className="h-48 w-full resize-none rounded-md bg-off-white outline-blue-40 p-3" value={job?.description} name="description" onChange={onChange}></textarea>
             </div>
+
             <FormButtonWrapper>
               <Button
                 className="mr-2 w-1/2 border-blue-40 bg-blue-40 px-3 py-1 text-sm text-white shadow-md sm:w-[200px] lg:text-base"
