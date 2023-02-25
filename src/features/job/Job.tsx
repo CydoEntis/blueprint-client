@@ -20,7 +20,7 @@ type Props = {
   interviewDate?: string;
   type: string;
   status: string;
-  createdAt: string;
+  createdAt?: string | undefined;
 };
 
 const Job = ({

@@ -19,12 +19,20 @@ export interface IJob {
 
 export interface IJobState {
   jobs: IJob[];
+  pending: number;
+  interview: number;
+  declined: number;
   isLoading: boolean;
+  errorMsg: string;
 }
 
 const initialState: IJobState = {
   jobs: [],
+  pending: 0,
+  interview: 0,
+  declined: 0,
   isLoading: false,
+  errorMsg: ""
 };
 
 export const getJobs = createAsyncThunk("/all", async () => {
@@ -42,7 +50,7 @@ export const updateJob = createAsyncThunk("job/update", async (job: IJob) => {
     const res = await axios.put(url + `/update/${job._id}`, job);
     return res.data;
   } catch (error: any) {
-    console.log(error);
+    throw Error(error.response.data.message);
   }
 });
 
@@ -54,7 +62,7 @@ export const addNewJob = createAsyncThunk(
       console.log(res.data);
       return res.data;
     } catch (error: any) {
-      console.log(error);
+      throw Error(error.response.data.message);
     }
   }
 );
@@ -85,6 +93,9 @@ const JobSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getJobs.fulfilled, (state, action) => {
       state.jobs = action.payload;
+      state.pending = action.payload.pending;
+      state.interview = action.payload.interivew;
+      state.declined = action.payload.declined;
       state.isLoading = false;
     });
 
@@ -95,6 +106,10 @@ const JobSlice = createSlice({
     builder.addCase(addNewJob.fulfilled, (state, action) => {
       state.jobs.push(action.payload);
     });
+
+    builder.addCase(addNewJob.rejected, (state, action) => {
+      state.errorMsg = action.error.message || "";
+    })
   },
 });
 

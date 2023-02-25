@@ -86,10 +86,8 @@ const EditJob = (props: Props) => {
   }
   return (
     <div className="w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
-      {isLoading && <p>Loading...</p>}
-      {!isLoading && (
-        <>
           <FormTitle text="Edit Job" />
+          {isError && <p className="px-2 py-1 bg-red-10 text-red-40 border border-red-30 text-center rounded-md my-2">{errMsg}</p>}
           <Form
             className="w-full flex-wrap items-center gap-3"
             onSubmit={onSubmit}
@@ -129,8 +127,6 @@ const EditJob = (props: Props) => {
               </Button>
             </FormButtonWrapper>
           </Form>
-        </>
-      )}
     </div>
   );
 };

@@ -6,9 +6,10 @@ import Job from "./Job";
 type Props = {};
 
 const Jobs = (props: Props) => {
-  const dispatch = useAppDispatch();
   const jobs = useAppSelector((state) => state.job.jobs);
   const isLoading = useAppSelector((state) => state.job.isLoading);
+
+  const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(getJobs());
   }, []);
@@ -18,8 +19,12 @@ const Jobs = (props: Props) => {
       {isLoading && <p>Is Loading...</p>}
       {!isLoading &&
         jobs.map((job: IJob) => {
-          let appliedDate = new Date(job.createdAt).toDateString();
-          let interviewDate;
+          console.log(job._id);
+          let appliedDate = "";
+          if(job.createdAt || job.createdAt !== undefined) {
+             appliedDate = new Date(job.createdAt).toDateString();
+          }
+          let interviewDate = "";
           if(job.interviewDate) {
              interviewDate = new Date(job.interviewDate).toDateString();
           } else {
