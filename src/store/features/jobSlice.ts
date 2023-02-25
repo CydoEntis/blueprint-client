@@ -47,10 +47,11 @@ export const updateJob = createAsyncThunk("job/update", async (job: IJob) => {
 });
 
 export const addNewJob = createAsyncThunk(
-  "job/create",
+  "job/add",
   async (job: Omit<IJob, "_id">) => {
     try {
       const res = await axios.post(url + "/add", job);
+      console.log(res.data);
       return res.data;
     } catch (error: any) {
       console.log(error);

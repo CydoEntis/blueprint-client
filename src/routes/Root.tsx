@@ -10,7 +10,7 @@ const Root = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <main className="p-3 lg:p-0 relative flex h-screen w-screen flex-col bg-off-white lg:bg-white">
+    <main className="p-3 lg:p-0 relative flex min-h-screen w-screen flex-col bg-off-white lg:bg-white">
       <Nav />
       <MobileNav isOpen={isOpen} />
       <Toggle isOpen={isOpen} onClick={() => setIsOpen((isOpen) => !isOpen)} />
@@ -19,12 +19,7 @@ const Root = () => {
         iconColor="red"
         icon={<StarIcon className="text-gray-60 h-6 w-6" />}
       />
-      {/* <Projects /> */}
-      <div className="rounded-tl-[3rem] bg-off-white lg:ml-80 lg:overflow-x-hidden">
-        {/* <div className="w-full bg-white">
-
-          <ProjectNav />
-        </div> */}
+      <div className="rounded-tl-[3rem] bg-off-white lg:ml-80 lg:overflow-x-hidden max-h-full h-[calc(100vh-108px)]">
         <Outlet />
       </div>
     </main>
