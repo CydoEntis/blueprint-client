@@ -20,14 +20,18 @@ export const statusOptions = [
 export const typeOptions = [
   {
     id: 1,
-    value: "full-time",
+    value: 'all'
   },
   {
     id: 2,
-    value: "part-time",
+    value: "full-time",
   },
   {
     id: 3,
+    value: "part-time",
+  },
+  {
+    id: 4,
     value: "internship",
   },
 ];

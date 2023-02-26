@@ -37,9 +37,23 @@ const initialState: IJobState = {
   errorMsg: ""
 };
 
-export const getJobs = createAsyncThunk("/all", async () => {
+export interface ISearchOptions {
+  search: string;
+  jobStatus: "all" | "interview" | "declined" | "pending";
+  jobType: "all" | "full-time" | "part-time" | "interview";
+  sort: "newest" | "oldest" | "a-z" | "z-a"
+}
+
+export const getJobs = createAsyncThunk("/all", async (searchOptions: ISearchOptions = {
+  search: "",
+  jobStatus: "all",
+  jobType: "all",
+  sort: "newest"
+}) => {
+
+  const {search, jobStatus, jobType, sort} = searchOptions;
   try {
-    const res = await axios(url + "/all");
+    const res = await axios(url + `/all?search=${search}&jobStatus=${jobStatus}&jobType=${jobType}&sort=${sort}`);
     return res.data;
   } catch (error: any) {
     console.log(error);
