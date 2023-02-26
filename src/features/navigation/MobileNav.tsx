@@ -16,9 +16,10 @@ type Props = {
   isOpen: boolean;
   onClick: () => void;
   themeHandler: () => void;
+  theme: string;
 };
 
-const MobileNav = ({ isOpen, onClick, themeHandler }: Props) => {
+const MobileNav = ({ isOpen, onClick, themeHandler, theme }: Props) => {
   return (
     <motion.div
       initial={false}
@@ -28,7 +29,7 @@ const MobileNav = ({ isOpen, onClick, themeHandler }: Props) => {
     >
       <nav className="flex h-full w-full flex-col justify-evenly items-center">
         <Avatar className="w-60 h-14" />
-        <NavItems onClick={onClick} themeHandler={themeHandler}/>
+        <NavItems onClick={onClick} themeHandler={themeHandler} theme={theme}/>
         <NavActions />
       </nav>
     </motion.div>

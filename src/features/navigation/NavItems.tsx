@@ -1,6 +1,6 @@
 import NavItem from "./NavItem";
 import { MdDashboard } from "react-icons/md";
-import { IoMoon } from "react-icons/io5";
+import { IoMoon, IoSunny } from "react-icons/io5";
 import { HiOutlineClipboardList } from "react-icons/hi";
 import { TiDocumentAdd } from "react-icons/ti";
 
@@ -12,9 +12,10 @@ import { useEffect, useState } from "react";
 type Props = {
   onClick: () => void;
   themeHandler: () => void;
+  theme: string;
 };
 
-const NavItems = ({ onClick, themeHandler}: Props) => {
+const NavItems = ({ onClick, themeHandler, theme}: Props) => {
 
 
   return (
@@ -44,7 +45,7 @@ const NavItems = ({ onClick, themeHandler}: Props) => {
         text="Add Job"
         onClick={onClick}
       />
-      <Button className="border-white flex w-full items-center justify-center rounded-xl py-2  px-5 text-xl text-grey-30 dark:text-off-white transition-all  duration-300  ease-in-out  hover:border hover:border-accent-30 hover:bg-accent-10 hover:text-accent-40 dark:border-zinc-900" onClick={themeHandler} type="button" >Theme</Button>
+      <Button className="border-white flex w-full items-center justify-center rounded-xl py-2  px-5 text-grey-30 dark:text-off-white transition-all  duration-300  ease-in-out  hover:border hover:border-accent-30 hover:bg-accent-10 hover:text-accent-40 dark:border-zinc-900 text-2xl" onClick={themeHandler} type="button" >{theme === 'dark' ? <IoSunny /> : <IoMoon /> }</Button>
     </motion.ul>
   );
 };
