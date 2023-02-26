@@ -43,13 +43,19 @@ const Search = (props: Props) => {
     await dispatch(getJobs(searchOptions));
   }
 
+  async function clearSearch() {
+    setSearchOptions(initialSearchState);
+    console.log(searchOptions);
+    // await dispatch(getJobs(searchOptions));
+  }
+
   return (
     <div className="my-5 flex flex-wrap items-center rounded-md bg-white p-5 text-grey-30 shadow-md">
       <FormTitle text="Search Your Jobs" />
       <Form className="w-full flex-wrap items-center gap-3" onSubmit={onSubmitHandler}>
         <FormControl className="lg:w-[30%]">
           <Label text="Search Jobs" />
-          <Input type="text" name="search" onChange={onChangeHandler} />
+          <Input type="text" name="search" value={searchOptions.search} onChange={onChangeHandler} />
         </FormControl>
 
         <FormControl className="lg:w-[30%]">
@@ -58,6 +64,7 @@ const Search = (props: Props) => {
             name="jobStatus"
             options={statusOptions}
             onChange={onChangeHandler}
+            value={searchOptions.jobStatus}
           />
         </FormControl>
 
@@ -67,6 +74,7 @@ const Search = (props: Props) => {
             name="jobType"
             options={typeOptions}
             onChange={onChangeHandler}
+            value={searchOptions.jobType}
           />
         </FormControl>
 
@@ -76,6 +84,7 @@ const Search = (props: Props) => {
             options={sortOptions}
             name="sort"
             onChange={onChangeHandler}
+            value={searchOptions.sort}
           />
         </FormControl>
 
@@ -89,6 +98,7 @@ const Search = (props: Props) => {
           <Button
             className="mr-2 w-1/2 border-red-40 bg-red-40 px-3 py-1 text-sm text-white sm:w-[200px] lg:text-base"
             type="button"
+            onClick={clearSearch}
           >
             Clear
           </Button>

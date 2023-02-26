@@ -13,7 +13,7 @@ export const statusOptions = [
   },
   {
     id: 4,
-    value: "accepted",
+    value: "pending",
   },
 ];
 

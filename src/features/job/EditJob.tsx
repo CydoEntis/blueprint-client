@@ -7,7 +7,6 @@ import Input from "@/components/form/input/Input";
 import Label from "@/components/form/label/Label";
 import Select from "@/components/form/select/Select";
 import FormButtonWrapper from "@/components/form/wrapper/FormButtonWrapper";
-import { typeOptions } from "@/data/select-options";
 import Button from "@/components/buttons/Button";
 import { useAppDispatch, useAppSelector } from "@/store/store";
 import { useNavigate, useParams } from "react-router-dom";
@@ -32,6 +31,21 @@ const statusOptions = [
     value: "pending",
   },
 ];
+
+const typeOptions = [
+  {
+    id: 1,
+    value: "interview",
+  },
+  {
+    id: 2,
+    value: "declined",
+  },
+  {
+    id: 3,
+    value: "pending",
+  },
+]
 
 const initialJobState: IJob = {
   _id: "",
