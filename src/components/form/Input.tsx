@@ -16,7 +16,7 @@ type Props = {
 const Input = ({ className, id, type, onChange, value, onBlur }: Props) => {
   return (
     <input
-      className={`${className} rounded-lg bg-off-white p-2 outline-accent-30`}
+      className={`${className} rounded-lg bg-off-white p-2 outline-accent-30 dark:bg-zinc-700 dark:text-white`}
       id={id}
       type={type}
       name={id}

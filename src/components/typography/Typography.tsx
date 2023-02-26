@@ -6,7 +6,7 @@ type Props = {
 };
 
 const Typography = ({ className, text }: Props) => {
-  return <h1 className={`${className} text-grey-30`}>{text}</h1>;
+  return <h1 className={`${className} text-grey-30 dark:text-off-white`}>{text}</h1>;
 };
 
 export default Typography;

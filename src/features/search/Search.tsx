@@ -56,7 +56,7 @@ const Search = () => {
   }
 
   return (
-    <div className="my-5 flex flex-wrap items-center rounded-md bg-white p-5 text-grey-30 shadow-md">
+    <div className="my-5 flex flex-wrap items-center rounded-md bg-white p-5 text-grey-30 shadow-md dark:text-off-white dark:bg-zinc-900">
       <FormTitle text="Search Your Jobs" />
       <Form
         className="w-full flex-wrap items-center gap-3"

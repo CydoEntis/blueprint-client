@@ -15,19 +15,20 @@ const slideVariants = {
 type Props = {
   isOpen: boolean;
   onClick: () => void;
+  themeHandler: () => void;
 };
 
-const MobileNav = ({ isOpen, onClick }: Props) => {
+const MobileNav = ({ isOpen, onClick, themeHandler }: Props) => {
   return (
     <motion.div
       initial={false}
       animate={isOpen ? "open" : "closed" }
       variants={slideVariants}
-      className="fixed z-40 flex w-full h-screen items-center bg-white p-2 lg:hidden"
+      className="fixed z-40 flex w-full h-screen items-center bg-white p-2 lg:hidden dark:bg-zinc-900"
     >
       <nav className="flex h-full w-full flex-col justify-evenly items-center">
         <Avatar className="w-60 h-14" />
-        <NavItems onClick={onClick}/>
+        <NavItems onClick={onClick} themeHandler={themeHandler}/>
         <NavActions />
       </nav>
     </motion.div>

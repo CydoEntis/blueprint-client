@@ -61,24 +61,6 @@ const App = (props: Props) => {
   return (
     <div className="h-full w-full bg-white">
       <RouterProvider router={router} />
-      {/* <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={<ProtectedRoutes>
-              <Root />
-            </ProtectedRoutes>}
-          >
-            <Route index element={<Dashboard />}/>
-            <Route path="jobs" element={<JobsPage />}/>
-            <Route path="add-job" element={<AddJobPage />}/>
-            <Route path="profile" element={<AddJobPage />}/>
-          </Route>
-          <Route path="login" element={<LoginPage />}/>
-          <Route path="register" element={<RegisterPage />}/>
-          <Route path="*" element={<Error />}/>
-        </Routes>
-      </BrowserRouter> */}
     </div>
   );
 };

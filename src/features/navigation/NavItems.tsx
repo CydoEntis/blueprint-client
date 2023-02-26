@@ -6,12 +6,17 @@ import { TiDocumentAdd } from "react-icons/ti";
 
 import { motion } from "framer-motion";
 import { staggerVariants } from "@/animation-variants/variants";
+import Button from "@/components/buttons/Button";
+import { useEffect, useState } from "react";
 
 type Props = {
   onClick: () => void;
+  themeHandler: () => void;
 };
 
-const NavItems = ({ onClick }: Props) => {
+const NavItems = ({ onClick, themeHandler}: Props) => {
+
+
   return (
     <motion.ul
       variants={staggerVariants}
@@ -39,7 +44,7 @@ const NavItems = ({ onClick }: Props) => {
         text="Add Job"
         onClick={onClick}
       />
-
+      <Button className="border-white flex w-full items-center justify-center rounded-xl py-2  px-5 text-xl text-grey-30 dark:text-off-white transition-all  duration-300  ease-in-out  hover:border hover:border-accent-30 hover:bg-accent-10 hover:text-accent-40 dark:border-zinc-900" onClick={themeHandler} type="button" >Theme</Button>
     </motion.ul>
   );
 };

@@ -4,28 +4,29 @@ import Jobs from "@/features/job/Jobs";
 import Pagination from "@/features/pagination/Pagination";
 import Search from "@/features/search/Search";
 import { IOptions, getJobs } from "@/store/features/jobSlice";
-import { useAppDispatch } from "@/store/store";
-import React, { useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/store/store";
+import React, { useEffect, useState } from "react";
 
 type Props = {};
 
-const initialSearchState: IOptions = {
-  search: "",
-  jobStatus: "all",
-  jobType: "all",
-  sort: "newest",
-  page: 1,
-};
-
 const JobsPage = (props: Props) => {
-  const [searchOptions, setSearchOptions] =
-    useState<IOptions>(initialSearchState);
+  const isLoading = useAppSelector((state) => state.job.isLoading);
+
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(getJobs());
+  }, []);
 
   return (
     <ContentWrapper>
-      <Search />
-      <Jobs />
-      <Pagination />
+      {isLoading && <Loading className="absolute left-1/2 top-1/2"/>}
+      {!isLoading && (
+        <>
+          <Search />
+          <Jobs />
+          <Pagination />
+        </>
+      )}
     </ContentWrapper>
   );
 };

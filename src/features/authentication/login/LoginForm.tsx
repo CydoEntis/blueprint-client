@@ -85,10 +85,10 @@ const LoginForm = (props: Props) => {
   }
 
   return (
-    <div className="flex w-full flex-col bg-white p-3 drop-shadow-2xl md:max-w-[650px] md:items-center md:justify-center md:rounded-2xl md:p-5">
+    <div className="flex w-full flex-col bg-white p-3 drop-shadow-2xl md:max-w-[650px] md:items-center md:justify-center md:rounded-2xl md:p-5 dark:bg-zinc-800">
       <div className="border-b-2 border-blue-30 py-5 px-3 lg:p-8">
         <Typography
-          className="p-3 text-center text-2xl text-grey-40 lg:text-[2rem]"
+          className="p-3 text-center text-2xl text-grey-40 lg:text-[2rem] dark:text-off-white"
           text="Welcome Back!"
         />
         <p className="text-center text-xs text-grey-20 sm:text-sm lg:text-sm">
@@ -151,7 +151,7 @@ const LoginForm = (props: Props) => {
             Login
           </Button>
         </FormControl>
-        <p className="p-5 text-grey-30">
+        <p className="p-5 text-grey-30 dark:text-off-white">
           Need an acount?{" "}
           <Link className="font-bold text-blue-40 underline" to="/register">
             Register

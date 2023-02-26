@@ -56,7 +56,7 @@ const AddJob = (props: Props) => {
   }, [isError]) 
 
   return (
-    <div className="my-5 w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
+    <div className="my-5 w-full rounded-md bg-white p-5 text-grey-30 shadow-md dark:bg-zinc-800 dark:text-off-white">
       <FormTitle text="Add a Job" />
       {isError && <Error message={errMsg}/>}
       <Form className="w-full flex-wrap items-center gap-3" onSubmit={onSubmitHandler}>
@@ -78,7 +78,7 @@ const AddJob = (props: Props) => {
         </FormControl>
         <div className="flex w-full flex-col">
           <label className="pb-2 text-lg">Description</label>
-          <textarea className="h-48 w-full resize-none rounded-md bg-off-white outline-blue-40" name="description" value={job.description}onChange={onChangeHandler}></textarea>
+          <textarea className="h-48 w-full resize-none rounded-md bg-off-white outline-blue-40 dark:bg-zinc-700" name="description" value={job.description}onChange={onChangeHandler}></textarea>
         </div>
         <FormButtonWrapper>
         <Button

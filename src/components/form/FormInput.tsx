@@ -1,13 +1,15 @@
+import { ILoginInput } from "@/features/authentication/login/LoginForm";
+import { IRegisterInput } from "@/features/authentication/register/RegisterForm";
 import React, { FocusEvent, useEffect, useState } from "react";
 
 import FormControl from "./FormControl";
 import Input from "./Input";
 import Label from "./Label";
-
 type Props =  {
   className: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
+  inputProps?: IRegisterInput[] | ILoginInput
 };
 
 const FormInput = ({ className, onChange, value, ...inputProps }: Props) => {
@@ -31,22 +33,22 @@ const FormInput = ({ className, onChange, value, ...inputProps }: Props) => {
   function handleBlur(e: FocusEvent<HTMLInputElement>) {
     setBlur(true);
 
-    if (inputProps.errorMsg) {
-      if (inputProps.type === "email") {
-        if (!value.includes("@")) {
-          console.log("incorrect email");
-          setIsValid(false);
+      if (inputProps?.errorMsg) {
+        if (inputProps?.type === "email") {
+          if (!value.includes("@")) {
+            console.log("incorrect email");
+            setIsValid(false);
+          } else {
+            setIsValid(true);
+          }
         } else {
-          setIsValid(true);
-        }
-      } else {
-        if (!value.match(new RegExp(inputProps.pattern!))) {
-          setIsValid(false);
-        } else {
-          setIsValid(true);
+          if (!value.match(new RegExp(inputProps?.pattern!))) {
+            setIsValid(false);
+          } else {
+            setIsValid(true);
+          }
         }
       }
-    }
   }
 
   return (

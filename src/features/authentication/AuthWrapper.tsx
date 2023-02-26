@@ -6,7 +6,7 @@ type Props = {
 
 const AuthWrapper = ({ children }: Props) => {
   return (
-    <div className="flex h-screen w-full bg-off-white-20 md:items-center md:justify-center">
+    <div className="flex h-screen w-full bg-off-white-20 md:items-center md:justify-center dark:bg-zinc-900">
       {children}
     </div>
   );

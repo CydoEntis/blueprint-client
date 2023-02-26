@@ -8,7 +8,7 @@ type Props = {
 
 const Label = ({ className, htmlFor, children }: Props) => {
   return (
-    <label className={`${className} py-1 text-grey-30`} htmlFor={htmlFor}>
+    <label className={`${className} py-1 text-grey-30 dark:text-off-white`} htmlFor={htmlFor}>
       {children}
     </label>
   );

@@ -43,10 +43,10 @@ const Job = ({
     <Card>
       <FlexCol>
         <FlexCol>
-          <h3 className="text-xl text-grey-40">{position}</h3>
-          <h3 className="text-md text-grey-30">{company}</h3>
+          <h3 className="text-xl text-grey-40 dark:text-white">{position}</h3>
+          <h3 className="text-md text-grey-30 dark:text-off-white">{company}</h3>
         </FlexCol>
-        <p className="py-3 text-sm text-grey-20">
+        <p className="py-3 text-sm text-grey-20 dark:text-off-white">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil labore
           aut earum
         </p>

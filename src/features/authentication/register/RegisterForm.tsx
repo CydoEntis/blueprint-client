@@ -14,7 +14,7 @@ export interface IRegisterUser extends IUser {
   confirmPassword: string;
 }
 
-interface IRegisterInput {
+export interface IRegisterInput {
   id: number;
   name: string;
   type: string;
@@ -119,13 +119,13 @@ const RegisterForm = (props: Props) => {
   }
 
   return (
-    <div className="flex w-full flex-col bg-white p-5 drop-shadow-2xl md:max-w-[650px] md:items-center md:justify-center md:rounded-2xl">
+    <div className="flex w-full flex-col bg-white p-5 drop-shadow-2xl md:max-w-[650px] md:items-center md:justify-center md:rounded-2xl dark:bg-zinc-800">
       <div className="border-b-2 border-blue-30 py-5 px-3 lg:p-8">
         <Typography
-          className="p-3 text-center text-2xl text-grey-40 lg:text-[2rem]"
+          className="p-3 text-center text-2xl text-grey-40 lg:text-[2rem] dark:text-off-white"
           text="Sign up to Blueprint"
         />
-        <p className="text-center text-xs text-grey-20 sm:text-sm lg:text-sm">
+        <p className="text-center text-xs text-grey-20 sm:text-sm lg:text-sm dark:text-off-white">
           A project management application, work, plan and achieve amazing
           things together.
         </p>
@@ -155,7 +155,7 @@ const RegisterForm = (props: Props) => {
             Register
           </Button>
         </FormControl>
-        <p className="p-5 text-grey-30">
+        <p className="p-5 text-grey-30 dark:text-off-white">
           Already have an account?{" "}
           <Link className="font-bold text-blue-40 underline" to="/login">
             Login

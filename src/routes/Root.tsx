@@ -16,13 +16,30 @@ const Root = () => {
     dispatch(getJobs());
   }, []);
 
+  const savedTheme = localStorage.getItem("theme") || "light";
+  const [theme, setTheme] = useState<string>(savedTheme);
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  function handleThemeSwitch() {
+    setTheme(theme === "dark" ? "light" : "dark");
+    console.log(theme)
+    setIsOpen(false);
+    localStorage.setItem("theme", theme === "dark" ? "light" : "dark");
+  }
+
   return (
-    <main className="relative flex min-h-screen w-screen flex-col bg-off-white lg:bg-white lg:p-0">
-      <Nav />
-      <MobileNav isOpen={isOpen} onClick={() => setIsOpen(false)} />
+    <main className="relative flex min-h-screen w-screen flex-col bg-off-white lg:bg-white lg:p-0 dark:bg-zinc-900">
+      <Nav onClick={() => setIsOpen(false)} themeHandler={handleThemeSwitch}/>
+      <MobileNav isOpen={isOpen} onClick={() => setIsOpen(false)} themeHandler={handleThemeSwitch}/>
       <Toggle isOpen={isOpen} onClick={() => setIsOpen((isOpen) => !isOpen)} />
       <MainHeader />
-      <div className="h-[calc(100vh-108px)] max-h-full rounded-tl-[3rem] bg-off-white lg:ml-80 lg:overflow-x-hidden">
+      <div className="h-[calc(100vh-108px)] max-h-full rounded-md bg-off-white lg:ml-80 lg:overflow-x-hidden dark:bg-zinc-800">
         <Outlet />
       </div>
     </main>

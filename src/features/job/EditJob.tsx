@@ -125,7 +125,7 @@ const EditJob = (props: Props) => {
 
 
   return (
-    <div className="my-5 w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
+    <div className="my-5 w-full rounded-md bg-white p-5 text-grey-30 shadow-md dark:bg-zinc-800 dark:text-off-white">
       <FormTitle text="Edit Job" />
       {isError && (
         <Error message={errMsg}/>
@@ -190,7 +190,7 @@ const EditJob = (props: Props) => {
         <div className="flex w-full flex-col">
           <label className="pb-2 text-lg">Description</label>
           <textarea
-            className="h-48 w-full resize-none rounded-md bg-off-white p-3 outline-blue-40"
+            className="h-48 w-full resize-none rounded-md bg-off-white p-3 outline-blue-40 dark:bg-zinc-700"
             value={job?.description}
             name="description"
             onChange={onChangeHandler}
