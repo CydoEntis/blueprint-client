@@ -92,7 +92,7 @@ const LoginForm = (props: Props) => {
           text="Welcome Back!"
         />
         <p className="text-center text-xs text-grey-20 sm:text-sm lg:text-sm">
-          Sign in to your account to access all your projects/tasks
+          Sign in to your account to track all current and future job applications
         </p>
 
         <div className="my-3 rounded-lg border border-blue-40 bg-blue-10 p-3 text-sm font-bold text-blue-40">
@@ -106,15 +106,6 @@ const LoginForm = (props: Props) => {
             </p>
             <p>
               Password: <span className="text-grey-40">user123!</span>
-            </p>
-          </div>
-          <div className="py-1">
-            <h4 className="underline">Demo Admin Account</h4>
-            <p>
-              Username: <span className="text-grey-40">admin@admin.com</span>
-            </p>
-            <p>
-              Password: <span className="text-grey-40">admin123!</span>
             </p>
           </div>
         </div>

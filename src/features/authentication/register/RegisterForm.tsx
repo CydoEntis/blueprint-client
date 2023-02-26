@@ -125,9 +125,8 @@ const RegisterForm = (props: Props) => {
           className="p-3 text-center text-2xl text-grey-40 lg:text-[2rem] dark:text-off-white"
           text="Sign up to Blueprint"
         />
-        <p className="text-center text-xs text-grey-20 sm:text-sm lg:text-sm dark:text-off-white">
-          A project management application, work, plan and achieve amazing
-          things together.
+        <p className="text-center text-xs text-grey-20 sm:text-sm lg:text-sm ">
+          A job application tracker, easily keep track of all current and future jobs you apply for
         </p>
       </div>
 
