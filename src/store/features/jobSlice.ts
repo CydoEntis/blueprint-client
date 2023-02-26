@@ -19,6 +19,13 @@ export interface IJob {
   description: string
 }
 
+export interface ISearchOptions {
+  search: string;
+  jobStatus: "all" | "interview" | "declined" | "pending";
+  jobType: "all" | "full-time" | "part-time" | "interview";
+  sort: "newest" | "oldest" | "a-z" | "z-a";
+}
+
 export interface IJobState {
   jobs: IJob[];
   pending: number;
@@ -26,6 +33,10 @@ export interface IJobState {
   declined: number;
   isLoading: boolean;
   errorMsg: string;
+  numOfPages: number;
+  totalJobs: number;
+  searchOptions: ISearchOptions;
+  page: number;
 }
 
 const initialState: IJobState = {
@@ -34,26 +45,33 @@ const initialState: IJobState = {
   interview: 0,
   declined: 0,
   isLoading: false,
-  errorMsg: ""
+  errorMsg: "",
+  numOfPages: 0,
+  totalJobs: 0,
+  searchOptions: {
+    search: "",
+    jobStatus: "all",
+    jobType: "all",
+    sort: "newest",
+  },
+  page: 1
 };
 
-export interface ISearchOptions {
-  search: string;
-  jobStatus: "all" | "interview" | "declined" | "pending";
-  jobType: "all" | "full-time" | "part-time" | "interview";
-  sort: "newest" | "oldest" | "a-z" | "z-a"
+export interface IOptions extends ISearchOptions {
+  page?: number;
 }
 
-export const getJobs = createAsyncThunk("/all", async (searchOptions: ISearchOptions = {
+export const getJobs = createAsyncThunk("/all", async (options: IOptions = {
   search: "",
   jobStatus: "all",
   jobType: "all",
-  sort: "newest"
+  sort: "newest",
+  page: 1
 }) => {
 
-  const {search, jobStatus, jobType, sort} = searchOptions;
+  const {search, jobStatus, jobType, sort, page} = options;
   try {
-    const res = await axios(url + `/all?search=${search}&jobStatus=${jobStatus}&jobType=${jobType}&sort=${sort}`);
+    const res = await axios(url + `/all?&page=${page}&search=${search}&jobStatus=${jobStatus}&jobType=${jobType}&sort=${sort}`);
     return res.data;
   } catch (error: any) {
     console.log(error);
@@ -105,6 +123,12 @@ const JobSlice = createSlice({
     },
     removeJob: (state, action: PayloadAction<string>) => {
       state.jobs = state.jobs.filter(job => job._id !== action.payload);
+    },
+    setGlobalSearchOptions: (state, action: PayloadAction<ISearchOptions>) => {
+      state.searchOptions = action.payload;
+    },
+    setPage: (state, action: PayloadAction<number>) => {
+      state.page = action.payload;
     }
   },
   extraReducers: (builder) => {
@@ -113,6 +137,8 @@ const JobSlice = createSlice({
       state.pending = action.payload.pending;
       state.interview = action.payload.interview;
       state.declined = action.payload.declined;
+      state.numOfPages = action.payload.numOfPages;
+      state.totalJobs = action.payload.totalJobs;
       state.isLoading = false;
     });
 
@@ -131,4 +157,4 @@ const JobSlice = createSlice({
 });
 
 export default JobSlice.reducer;
-export const { addJob, removeJob } = JobSlice.actions;
+export const { addJob, removeJob, setGlobalSearchOptions, setPage } = JobSlice.actions;

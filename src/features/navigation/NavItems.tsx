@@ -19,7 +19,7 @@ const NavItems = () => {
         text="Dashboard"
       />
       <NavItem
-        to="/jobs"
+        to="/jobs?page=1"
         icon={
           <HiOutlineClipboardList className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />
         }

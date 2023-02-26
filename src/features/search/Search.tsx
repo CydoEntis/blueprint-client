@@ -8,25 +8,24 @@ import Label from "@/components/form/label/Label";
 import Select from "@/components/form/select/Select";
 import FormButtonWrapper from "@/components/form/wrapper/FormButtonWrapper";
 import { sortOptions, statusOptions, typeOptions } from "@/data/select-options";
-import { getJobs, ISearchOptions } from "@/store/features/jobSlice";
-import { useAppDispatch } from "@/store/store";
+import { getJobs, ISearchOptions, IOptions, setGlobalSearchOptions } from "@/store/features/jobSlice";
+import { useAppDispatch, useAppSelector } from "@/store/store";
 import React, { useState } from "react";
-
-type Props = {};
 
 const initialSearchState: ISearchOptions = {
   search: "",
   jobStatus: "all",
   jobType: "all",
   sort: "newest",
-};
+}
 
-const Search = (props: Props) => {
+const Search = () => {
   const dispatch = useAppDispatch();
+  const searchValues = useAppSelector(state => state.job.searchOptions);
   const [searchOptions, setSearchOptions] =
     useState<ISearchOptions>(initialSearchState);
-
-  function onChangeHandler(
+  
+    function onChangeHandler(
     e:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>
@@ -36,26 +35,42 @@ const Search = (props: Props) => {
       ...searchOptions,
       [e.target.name]: e.target.value.toLowerCase(),
     });
+
+    dispatch(setGlobalSearchOptions(searchOptions));
   }
 
   async function onSubmitHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    await dispatch(getJobs(searchOptions));
+
+    const options: IOptions = {
+      ...searchOptions,
+      page: 1
+    }
+
+    console.log("Options: ", options);
+
+    await dispatch(getJobs(options));
   }
 
   async function clearSearch() {
     setSearchOptions(initialSearchState);
-    console.log(searchOptions);
-    // await dispatch(getJobs(searchOptions));
   }
 
   return (
     <div className="my-5 flex flex-wrap items-center rounded-md bg-white p-5 text-grey-30 shadow-md">
       <FormTitle text="Search Your Jobs" />
-      <Form className="w-full flex-wrap items-center gap-3" onSubmit={onSubmitHandler}>
+      <Form
+        className="w-full flex-wrap items-center gap-3"
+        onSubmit={onSubmitHandler}
+      >
         <FormControl className="lg:w-[30%]">
           <Label text="Search Jobs" />
-          <Input type="text" name="search" value={searchOptions.search} onChange={onChangeHandler} />
+          <Input
+            type="text"
+            name="search"
+            value={searchOptions.search}
+            onChange={onChangeHandler}
+          />
         </FormControl>
 
         <FormControl className="lg:w-[30%]">
