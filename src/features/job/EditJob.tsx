@@ -125,7 +125,7 @@ const EditJob = (props: Props) => {
 
 
   return (
-    <div className="w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
+    <div className="my-5 w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
       <FormTitle text="Edit Job" />
       {isError && (
         <Error message={errMsg}/>

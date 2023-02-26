@@ -7,7 +7,11 @@ import { TiDocumentAdd } from "react-icons/ti";
 import { motion } from "framer-motion";
 import { staggerVariants } from "@/animation-variants/variants";
 
-const NavItems = () => {
+type Props = {
+  onClick: () => void;
+};
+
+const NavItems = ({ onClick }: Props) => {
   return (
     <motion.ul
       variants={staggerVariants}
@@ -17,13 +21,15 @@ const NavItems = () => {
         to="/"
         icon={<MdDashboard className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />}
         text="Dashboard"
+        onClick={onClick}
       />
       <NavItem
-        to="/jobs?page=1"
+        to="/jobs"
         icon={
           <HiOutlineClipboardList className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />
         }
         text="Jobs"
+        onClick={onClick}
       />
       <NavItem
         to="/add-job"
@@ -31,12 +37,9 @@ const NavItems = () => {
           <TiDocumentAdd className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />
         }
         text="Add Job"
+        onClick={onClick}
       />
-      <NavItem
-        to="/theme"
-        icon={<IoMoon className="h-8 w-8 cursor-pointer lg:h-6 lg:w-6" />}
-        text="Theme"
-      />
+
     </motion.ul>
   );
 };

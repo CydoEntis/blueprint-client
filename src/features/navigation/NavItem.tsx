@@ -7,15 +7,17 @@ type Props = {
   to: string;
   icon: React.ReactNode;
   text: string;
+  onClick: () => void;
 };
 
-const NavItem = ({ to, icon, text }: Props) => {
+const NavItem = ({ to, icon, text, onClick }: Props) => {
   return (
     <motion.li
       variants={fadeInVariants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       className="mb-5 flex w-full rounded-md py-1 px-3"
+      onClick={onClick}
     >
       <NavLink
         to={to}

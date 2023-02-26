@@ -11,7 +11,7 @@ const Nav = (props: Props) => {
       <motion.div className="flex h-screen w-full items-center  p-2 lg:h-full">
         <nav className="flex h-full w-full flex-col justify-between">
           <div className="">
-            <Logo />
+            <Logo className="mb-32 py-5" />
             <NavItems />
           </div>
           <MobileNavActions />

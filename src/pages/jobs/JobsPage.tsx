@@ -1,3 +1,4 @@
+import Loading from "@/components/Spinners/Loading";
 import ContentWrapper from "@/components/wrapper/ContentWrapper";
 import Jobs from "@/features/job/Jobs";
 import Pagination from "@/features/pagination/Pagination";

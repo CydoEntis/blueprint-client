@@ -56,7 +56,7 @@ const AddJob = (props: Props) => {
   }, [isError]) 
 
   return (
-    <div className="w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
+    <div className="my-5 w-full rounded-md bg-white p-5 text-grey-30 shadow-md ">
       <FormTitle text="Add a Job" />
       {isError && <Error message={errMsg}/>}
       <Form className="w-full flex-wrap items-center gap-3" onSubmit={onSubmitHandler}>

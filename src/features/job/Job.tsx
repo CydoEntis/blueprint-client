@@ -64,10 +64,8 @@ const Job = ({
           <Tag text={status} />
         </div>
         <div className="w-1/2">
-          <Detail className="absolute bottom-0 left-0 italic text-grey-10">
-            
+          <Detail className="absolute -bottom-2 left-0 italic text-grey-10">
             <h3 className="text-xs xl:text-sm text-gray-400">Applied: {createdAt} </h3>
-            {/* <HiOutlineCalendar className="mx-2 text-lg" /> */}
           </Detail>
           {interviewDate !== "" && (
             <Detail className="">
@@ -80,7 +78,7 @@ const Job = ({
         </div>
       </div>
 
-      <div className="flex w-full justify-end">
+      <div className="flex w-full justify-end py-2">
         <Link to={`/jobs/${id}`}
           className="mr-2 border-blue-40 bg-blue-40 px-3 py-1 text-sm text-white shadow-md lg:text-base rounded-md border transition-all duration-300 ease-in-out capitalize hover:opacity-75"
           type="button"

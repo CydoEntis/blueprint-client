@@ -1,53 +1,87 @@
-import { getJobs, IOptions, ISearchOptions, setPage } from "@/store/features/jobSlice";
+import Button from "@/components/buttons/Button";
+import {
+  getJobs,
+  IOptions,
+  setPage,
+} from "@/store/features/jobSlice";
 import { useAppDispatch, useAppSelector } from "@/store/store";
-import React from "react";
-import { Link, useSearchParams } from "react-router-dom";
 
+import {  useSearchParams } from "react-router-dom";
+
+const getPages = (currentPage: number, maxPages: number, pageNumbers: number[]) => {
+	let startingPage;
+	let endingPage;
+	if (currentPage === 1) {
+		startingPage = currentPage - 1;
+		endingPage = currentPage + maxPages - 1;
+	} else if (currentPage === 2) {
+		startingPage = currentPage - 2;
+		endingPage = currentPage + 3;
+	} else if (currentPage === 3) {
+		startingPage = currentPage - 3;
+		endingPage = currentPage + 2;
+	} else if (currentPage === pageNumbers.length) {
+		startingPage = pageNumbers.length - (maxPages);
+		endingPage = pageNumbers.length;
+	} else if (currentPage === pageNumbers.length - 3) {
+		startingPage = currentPage - 3;
+		endingPage = currentPage + 2;
+	} else if (currentPage === pageNumbers.length - 2) {
+		startingPage = currentPage - 3;
+		endingPage = currentPage + 2;
+	} else if (currentPage === pageNumbers.length - 1) {
+		startingPage = currentPage - 4;
+		endingPage = currentPage + 1;
+	} else {
+		startingPage = currentPage - 3;
+		endingPage = currentPage + 2;
+	}
+
+	return pageNumbers.slice(startingPage, endingPage);
+};
 
 
 const Pagination = () => {
   const [searchParams] = useSearchParams();
-  const searchValues = useAppSelector(state => state.job.searchOptions);
-    const numOfPages = useAppSelector((state) => state.job.numOfPages);
+  const searchValues = useAppSelector((state) => state.job.searchOptions);
+  const numOfPages = useAppSelector((state) => state.job.numOfPages);
   const pages = Array.from({ length: numOfPages }, (_, index) => {
     return index + 1;
   });
+  const currentPage = useAppSelector((state) => state.job.page);
+
+  let currentPages = getPages(currentPage, 5, pages);
 
   const dispatch = useAppDispatch();
-  const currPage = searchParams.get("page");
   let classes = "";
 
   async function paginate(page: number) {
     dispatch(setPage(page));
     const options: IOptions = {
-        ...searchValues,
-        page
-      }
-    // setSearchOptions({...searchOptions, page: page})
-    // console.log(page);
-    // console.log(searchOptions);
-    await dispatch(getJobs(options))
+      ...searchValues,
+      page,
+    };
+    await dispatch(getJobs(options));
   }
 
-
   return (
-    <div className="absolute bottom-3 flex w-full items-center justify-center" >
-      {pages.map((page) => {
-        if (page === Number(currPage)) {
-            classes = "bg-blue-40 border border-blue-40 text-white";
+    <div className="py-3 flex w-full items-center ">
+      {currentPages.map((page) => {
+        if (page === Number(currentPage)) {
+          classes = "bg-blue-40 border border-blue-40 text-white";
         } else {
-            classes = "bg-blue-10 border border-blue-40 text-blue-40";
+          classes = "bg-blue-10 border border-blue-40 text-blue-40";
         }
-          return (
-            <Link
-              className={`${classes} mx-1 flex h-[36px] w-[40px] items-center  justify-center rounded-md`}
-              key={page}
-              to={`/jobs?page=${page}`}
-              onClick={() => paginate(page)}
-            >
-              {page}
-            </Link>
-          );
+        return (
+          <Button
+            className={`${classes} mx-1 flex h-[48px] w-[52px] items-center justify-center shadow-md rounded-md`}
+            key={page}
+            onClick={() => paginate(page)}
+            type={"button"}
+          >
+            {page}
+          </Button>
+        );
       })}
     </div>
   );

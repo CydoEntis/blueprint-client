@@ -8,7 +8,7 @@ import Label from "@/components/form/label/Label";
 import Select from "@/components/form/select/Select";
 import FormButtonWrapper from "@/components/form/wrapper/FormButtonWrapper";
 import { sortOptions, statusOptions, typeOptions } from "@/data/select-options";
-import { getJobs, ISearchOptions, IOptions, setGlobalSearchOptions } from "@/store/features/jobSlice";
+import { getJobs, ISearchOptions, IOptions, setGlobalSearchOptions, setPage } from "@/store/features/jobSlice";
 import { useAppDispatch, useAppSelector } from "@/store/store";
 import React, { useState } from "react";
 
@@ -46,8 +46,7 @@ const Search = () => {
       ...searchOptions,
       page: 1
     }
-
-    console.log("Options: ", options);
+    dispatch(setPage(1))
 
     await dispatch(getJobs(options));
   }

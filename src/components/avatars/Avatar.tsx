@@ -3,7 +3,6 @@ import { AiOutlineUser } from "react-icons/ai";
 import React from "react";
 
 type Props = {
-  src: string;
   className?: string;
 };
 

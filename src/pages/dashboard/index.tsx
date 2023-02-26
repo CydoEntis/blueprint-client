@@ -9,10 +9,10 @@ const index = (props: Props) => {
   const pending = useAppSelector((state) => state.job.pending);
   const declined = useAppSelector((state) => state.job.declined);
   const interview = useAppSelector((state) => state.job.interview);
-
+  const user = useAppSelector(state => state.user.user);
   return (
     <div className=" w-full p-5">
-      <Title className="p-5 text-[2rem]" text="Good afternoon, John Doe" />
+      <Title className="p-5 text-[2rem]" text={`Good afternoon, ${user.username}`} />
       <StatsContainer className="flex w-full flex-wrap md:flex-nowrap items-center justify-center gap-5 p-5 ">
         <StatsBlock
 

@@ -1,3 +1,4 @@
+import Loading from "@/components/Spinners/Loading";
 import { getJobs, IJob } from "@/store/features/jobSlice";
 import { useAppDispatch, useAppSelector } from "@/store/store";
 import React, { useEffect } from "react";
@@ -15,8 +16,8 @@ const Jobs = (props: Props) => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-between gap-y-5 md:flex-row md:flex-wrap">
-      {isLoading && <p>Is Loading...</p>}
+    <div className="relative flex flex-col justify-between gap-y-5 md:flex-row md:flex-wrap">
+      {isLoading && <Loading className="absolute top-1/2 left-1/2"/>}
       {!isLoading &&
         jobs.map((job: IJob) => {
           let appliedDate = "";

@@ -1,10 +1,12 @@
 import React from "react";
 
-type Props = {};
+type Props = { className?: string };
 
-const Logo = (props: Props) => {
+const Logo = ({ className }: Props) => {
   return (
-    <h1 className="mb-32 py-5 text-center text-2xl font-bold text-accent-40">
+    <h1
+      className={`${className} text-center text-2xl font-bold text-accent-40`}
+    >
       Blueprint
     </h1>
   );
