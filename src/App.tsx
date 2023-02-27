@@ -14,14 +14,6 @@ type Props = {};
 
 const router = createBrowserRouter([
   {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "/register",
-    element: <RegisterPage />,
-  },
-  {
     path: "/",
     element: (
       <ProtectedRoutes>
@@ -47,6 +39,14 @@ const router = createBrowserRouter([
         element: <EditJobPage />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/register",
+    element: <RegisterPage />,
   },
 ]);
 
