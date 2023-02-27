@@ -22,11 +22,12 @@ const index = (props: Props) => {
   const interview = useAppSelector((state) => state.job.interview);
   const user = useAppSelector((state) => state.user.user);
 
+
   const [monthlyApps, setMonthlyApps] = useState();
 
   useEffect(() => {
     async function getMonthlyApps() {
-      const res = await axios("http://localhost:1337/jobs/apps");
+      const res = await axios(`${import.meta.env.VITE_ENDPOINT}/jobs/apps`);
       setMonthlyApps(res.data.monthlyApplications);
     }
 
