@@ -1,3 +1,8 @@
-{
-    "rewrites": [{ "source": "/(.*)", "destination": "./dist/index.html" }]
-}
+[
+  {
+    "rewrites": [{ "src": "/(.*)", "destination": "./dist/index.html" }]
+  },
+  {
+    "routes": [{ "src": "/[^.]+", "dest": "./dist/index.html", "status": 200 }]
+  }
+]
