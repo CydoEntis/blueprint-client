@@ -115,7 +115,6 @@ const RegisterForm = (props: Props) => {
       setIsError(false);
       setErrMsg("");
     }
-    console.log(inputValues)
     dispatch(createUser(inputValues));
     navigate("/login");
   }

@@ -79,10 +79,8 @@ export const getJobs = createAsyncThunk("/all", async (options: IOptions = {
 });
 
 export const updateJob = createAsyncThunk("job/update", async (job: IJob) => {
-  console.log(job);
   try {
     const res = await axios.put(url + `/update/${job._id}`, job);
-    console.log(res.data);
     return res.data;
   } catch (error: any) {
     throw Error(error.response.data.message);
@@ -94,7 +92,6 @@ export const addNewJob = createAsyncThunk(
   async (job: Omit<IJob, "_id">) => {
     try {
       const res = await axios.post(url + "/add", job);
-      console.log(res.data);
       return res.data;
     } catch (error: any) {
       throw Error(error.response.data.message);
@@ -104,10 +101,7 @@ export const addNewJob = createAsyncThunk(
 
 export const deleteJob = createAsyncThunk("job/update", async (jobId: string) => {
   try {
-    console.log("Is deleting");
-    console.log(jobId)
     const res = await axios.delete(url + `/delete/${jobId}`);
-    console.log(res.data)
     return res.data;
   } catch(error: any) {
     console.log(error)

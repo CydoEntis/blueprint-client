@@ -73,7 +73,6 @@ const EditJob = (props: Props) => {
     async function getJob() {
       try {
         const res = await axios(`${import.meta.env.VITE_ENDPOINT}/jobs/get/${jobId}`);
-        console.log("res:", res.data.job);
         setJob(res.data.job);
       } catch (error: any) {
         console.log(error);

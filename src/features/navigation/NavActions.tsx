@@ -11,7 +11,6 @@ const MobileNavActions = () => {
   const navigate = useNavigate();
 
   function handleLogout() {
-    console.log("Logout")
     dispatch(logoutUser());
     navigate("/login");
   }

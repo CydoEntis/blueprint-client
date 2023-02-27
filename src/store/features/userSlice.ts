@@ -30,7 +30,6 @@ export const createUser = createAsyncThunk(
   "user/create",
   async (user: IRegisterUser) => {
     try {
-      console.log(user);
       const res = await axios.post(url + "/create", user);
       return res.data;
     } catch (error) {}

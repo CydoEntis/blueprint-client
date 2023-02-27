@@ -74,7 +74,6 @@ const LoginForm = (props: Props) => {
     setInputValues({ ...inputValues, [e.target.name]: e.target.value });
   }
 
-  console.log(inputValues);
 
   async function loginUserHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
