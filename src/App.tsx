@@ -1,17 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-// import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
 import Dashboard from "@/pages/dashboard";
 import Error from "@/pages/error/Error";
 import LoginPage from "./pages/login/LoginPage";
-import ProjectsPage from "@/pages/projects/ProjectsPage";
 import ProtectedRoutes from "./routes/ProtectedRoutes";
 import RegisterPage from "./pages/register/RegisterPage";
 import Root from "@/routes/Root";
-import TaskPage from "@/pages/task/TaskPage";
-import TasksPage from "@/pages/task/TasksPage";
-import CreateProjectPage from "./pages/projects/CreateProjectPage";
 import JobsPage from "./pages/jobs/JobsPage";
 import AddJobPage from "./pages/jobs/AddJobPage";
 import EditJobPage from "./pages/jobs/EditJobPage";
@@ -66,37 +60,3 @@ const App = (props: Props) => {
 };
 
 export default App;
-
-{
-  /* <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-              <Layout />
-              </ProtectedRoute>
-            }
-          >
-            <Route path="projects" element={<Project />} />
-            <Route path="/projects/:id" element={<Tasks />} />
-            <Route path="tasks" />
-            </Route>
-            <Route path="projects" element={<Project />} />
-            
-            <Route path=":id/in-progress" element={<Project />} />
-            <Route path=":id/in-review" element={<Project />} />
-            <Route path=":id/completed" element={<Project />} />
-            <Route path=":id/bugs" element={<Project />} />
-            <Route path=":id/past-due" element={<Project />} />
-
-            <Route path="all-jobs" element={<Stats />} />
-            <Route path="add-job" element={<AddJob />} />
-            <Route path="profile" element={<Profile />} />
-          </Route>
-          <Route path="/register" element={<Register />} />
-          <Route path="/landing" element={<Landing />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </BrowserRouter> */
-}
