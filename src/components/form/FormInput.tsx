@@ -41,7 +41,6 @@ const FormInput = ({ className, onChange, value, type, name, errorMsg, label, pa
       if (errorMsg) {
         if (type === "email") {
           if (!value.includes("@")) {
-            console.log("incorrect email");
             setIsValid(false);
           } else {
             setIsValid(true);
