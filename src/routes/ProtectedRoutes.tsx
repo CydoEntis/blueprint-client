@@ -8,11 +8,8 @@ type Props = {
 
 const ProtectedRoutes = ({ children }: Props) => {
   const token = useAppSelector((state) => state.user.token);
-  if (!token) {
-    return <Navigate to="/login" replace />;
-  }
 
-  return children;
+  return token ? children : <Navigate to="/login" />;
 };
 
 export default ProtectedRoutes;

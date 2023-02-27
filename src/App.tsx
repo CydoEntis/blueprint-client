@@ -1,5 +1,9 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "@/pages/dashboard";
 import Error from "@/pages/error/Error";
 import LoginPage from "./pages/login/LoginPage";
@@ -49,6 +53,27 @@ const router = createBrowserRouter([
     element: <RegisterPage />,
   },
 ]);
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Routes>
+//       <Route
+//         path="/"
+//         element={
+//           <ProtectedRoutes>
+//             <Root />
+//           </ProtectedRoutes>
+//         }
+//       >
+//         <Route index element={<Dashboard />} />
+//         <Route path="jobs" element={<JobsPage />} />
+//         <Route path="add-job" element={<AddJobPage />} />
+//       </Route>
+//       <Route path="/login" element={<LoginPage />} />
+//       <Route path="/register" element={<RegisterPage />} />
+//       <Route path="*" element={<Error to="/" text="Return home" />} />
+//     </Routes>
+//   )
+// );
 
 const App = (props: Props) => {
   return (
