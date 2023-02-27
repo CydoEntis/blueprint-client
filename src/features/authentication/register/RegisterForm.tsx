@@ -21,7 +21,7 @@ export interface IInput {
   errorMsg: string;
   label: string;
   pattern: string;
-  required?: boolean;
+  required: boolean;
 }
 
 
@@ -138,11 +138,17 @@ const RegisterForm = (props: Props) => {
             {errMsg}
           </p>
         )}
-        {inputs.map((inputProps: any) => (
+        {inputs.map((inputProps: IInput) => (
           <FormInput
             key={inputProps.id}
             className="flex flex-col"
-            {...inputProps}
+            id={inputProps.id}
+            label={inputProps.label}
+            name={inputProps.name}
+            type={inputProps.type}
+            errorMsg={inputProps.errorMsg}
+            pattern={inputProps.pattern}
+            required={inputProps.required}
             value={inputValues[inputProps.name as keyof IRegisterUser]}
             onChange={onChange}
           />

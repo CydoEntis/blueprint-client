@@ -6,7 +6,7 @@ type Props = {
 
 const Label = ({text}: Props) => {
   return (
-    <label className="capitalize pb-2 text-lg">{text}</label>
+    <label className="capitalize pb-2 text-lg text-grey-40 dark:text-off-white">{text}</label>
   )
 }
 

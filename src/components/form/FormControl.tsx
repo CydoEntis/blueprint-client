@@ -6,7 +6,9 @@ type Props = {
 };
 
 const FormControl = ({ className, children }: Props) => {
-  return <div className={`${className} flex w-full flex-col`}>{children}</div>;
+  return <div className={`${className} flex w-full flex-col`}>
+    {children}
+    </div>;
 };
 
 export default FormControl;

@@ -10,7 +10,7 @@ type Props = {
 const Input = ({ type, value, name, onChange }: Props) => {
   return (
     <input
-      className="rounded-md bg-off-white px-3 py-1 outline-blue-40 dark:bg-zinc-700"
+      className="rounded-md bg-off-white px-3 py-1 outline-blue-40 dark:bg-zinc-700 dark:text-off-white"
       onChange={onChange}
       name={name}
       type={type}

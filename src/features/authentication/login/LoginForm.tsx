@@ -10,9 +10,10 @@ import userSlice, {
 import Button from "@/components/buttons/Button";
 import FormControl from "@/components/form/FormControl";
 import Typography from "@/components/typography/Typography";
-import Input from "@/components/form/Input";
+import Input from "@/components/form/input/Input";
+
 import { IInput } from "../register/RegisterForm";
-import FormInput from "@/components/form/FormInput";
+import Label from "@/components/form/label/Label";
 
 type Props = {};
 
@@ -69,9 +70,11 @@ const LoginForm = (props: Props) => {
     };
   }, [isError, error]);
 
-  function onChange(e: React.ChangeEvent<HTMLInputElement>) {
+  function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setInputValues({ ...inputValues, [e.target.name]: e.target.value });
   }
+
+  console.log(inputValues);
 
   async function loginUserHandler(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -128,17 +131,24 @@ const LoginForm = (props: Props) => {
             {error}
           </p>
         ) : null}
-        {inputs.map((inputProps: any) => (
-          <FormInput
-            key={inputProps.id}
-            className="flex flex-col"
-            {...inputProps}
-            value={
-              inputValues[inputProps.name as keyof Omit<IUser, "username">]
-            }
-            onChange={onChange}
+        <FormControl>
+          <Label text="Email" />
+          <Input
+            type="email"
+            name="email"
+            value={inputValues.email}
+            onChange={onChangeHandler}
           />
-        ))}
+        </FormControl>
+        <FormControl>
+          <Label text="Password" />
+          <Input
+            type="password"
+            name="password"
+            value={inputValues.password}
+            onChange={onChangeHandler}
+          />
+        </FormControl>
 
         <FormControl className="my-3">
           <Button

@@ -16,10 +16,12 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
+    errorElement: <Error to="/login" text="Return to login page"/>,
   },
   {
     path: "/register",
     element: <RegisterPage />,
+    errorElement: <Error to="/register" text="Return to register page"/>,
   },
   {
     path: "/",
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
         <Root />
       </ProtectedRoutes>
     ),
-    errorElement: <Error />,
+    errorElement: <Error to="/" text="Return home"/>,
     children: [
       {
         path: "/",
