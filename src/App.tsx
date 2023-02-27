@@ -16,64 +16,64 @@ import EditJobPage from "./pages/jobs/EditJobPage";
 
 type Props = {};
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: (
-      <ProtectedRoutes>
-        <Root />
-      </ProtectedRoutes>
-    ),
-    errorElement: <Error to="/" text="Return home" />,
-    children: [
-      {
-        path: "/",
-        element: <Dashboard />,
-      },
-      {
-        path: "jobs",
-        element: <JobsPage />,
-      },
-      {
-        path: "add-job",
-        element: <AddJobPage />,
-      },
-      {
-        path: "jobs/:jobId",
-        element: <EditJobPage />,
-      },
-    ],
-  },
-  {
-    path: "login",
-    element: <LoginPage />,
-  },
-  {
-    path: "register",
-    element: <RegisterPage />,
-  },
-]);
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <Routes>
-//       <Route
-//         path="/"
-//         element={
-//           <ProtectedRoutes>
-//             <Root />
-//           </ProtectedRoutes>
-//         }
-//       >
-//         <Route index element={<Dashboard />} />
-//         <Route path="jobs" element={<JobsPage />} />
-//         <Route path="add-job" element={<AddJobPage />} />
-//       </Route>
-//       <Route path="/login" element={<LoginPage />} />
-//       <Route path="/register" element={<RegisterPage />} />
-//       <Route path="*" element={<Error to="/" text="Return home" />} />
-//     </Routes>
-//   )
-// );
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: (
+//       <ProtectedRoutes>
+//         <Root />
+//       </ProtectedRoutes>
+//     ),
+//     errorElement: <Error to="/" text="Return home" />,
+//     children: [
+//       {
+//         path: "/",
+//         element: <Dashboard />,
+//       },
+//       {
+//         path: "jobs",
+//         element: <JobsPage />,
+//       },
+//       {
+//         path: "add-job",
+//         element: <AddJobPage />,
+//       },
+//       {
+//         path: "jobs/:jobId",
+//         element: <EditJobPage />,
+//       },
+//     ],
+//   },
+//   {
+//     path: "login",
+//     element: <LoginPage />,
+//   },
+//   {
+//     path: "register",
+//     element: <RegisterPage />,
+//   },
+// ]);
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route>
+      <Route
+        path="/"
+        element={
+          <ProtectedRoutes>
+            <Root />
+          </ProtectedRoutes>
+        }
+      >
+        <Route index element={<Dashboard />} />
+        <Route path="jobs" element={<JobsPage />} />
+        <Route path="add-job" element={<AddJobPage />} />
+      </Route>
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
+      <Route path="*" element={<Error to="/" text="Return home" />} />
+    </Route>
+  )
+);
 
 const App = (props: Props) => {
   return (
