@@ -1,4 +1,6 @@
-import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { HiBars3BottomRight } from "react-icons/hi2";
+import { IoMdClose } from "react-icons/io";
+
 
 type Props = {
   isOpen: boolean;
@@ -12,9 +14,9 @@ const Toggle = ({ isOpen, onClick }: Props) => {
       onClick={onClick}
     >
       {isOpen ? (
-        <XMarkIcon className="h-8 w-8 text-blue-30" />
+        <IoMdClose className="h-8 w-8 text-blue-30" />
       ) : (
-        <Bars3BottomRightIcon className="h-8 w-8 text-blue-30" />
+        <HiBars3BottomRight className="h-8 w-8 text-blue-30" />
       )}
     </div>
   );

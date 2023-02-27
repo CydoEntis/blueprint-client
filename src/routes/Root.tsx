@@ -3,7 +3,6 @@ import { Outlet } from "react-router-dom";
 import MobileNav from "../features/navigation/MobileNav";
 import Nav from "@/features/navigation/Nav";
 import Toggle from "@/features/navigation/Toggle";
-import { StarIcon } from "@heroicons/react/24/solid";
 import { useAppDispatch } from "@/store/store";
 import { getJobs } from "@/store/features/jobSlice";
 import MainHeader from "@/components/header/MainHeader";
