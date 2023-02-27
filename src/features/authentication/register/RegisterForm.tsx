@@ -14,15 +14,17 @@ export interface IRegisterUser extends IUser {
   confirmPassword: string;
 }
 
-export interface IRegisterInput {
+export interface IInput {
   id: number;
   name: string;
   type: string;
-  errorMsg?: string;
+  errorMsg: string;
   label: string;
-  pattern?: string;
-  required: boolean;
+  pattern: string;
+  required?: boolean;
 }
+
+
 
 const RegisterForm = (props: Props) => {
   const [inputValues, setInputValues] = useState<IRegisterUser>({
@@ -36,7 +38,7 @@ const RegisterForm = (props: Props) => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const inputs: IRegisterInput[] = [
+  const inputs: IInput[] = [
     {
       id: 1,
       name: "username",
@@ -136,7 +138,7 @@ const RegisterForm = (props: Props) => {
             {errMsg}
           </p>
         )}
-        {inputs.map((inputProps) => (
+        {inputs.map((inputProps: any) => (
           <FormInput
             key={inputProps.id}
             className="flex flex-col"

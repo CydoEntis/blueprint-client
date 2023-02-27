@@ -1,17 +1,18 @@
 import { Form, Link, useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { store, useAppDispatch, useAppSelector } from "@/store/store";
+import { useAppDispatch, useAppSelector } from "@/store/store";
 import userSlice, {
   IUser,
-  addUser,
   clearError,
   loginUser,
 } from "@/store/features/userSlice";
 
 import Button from "@/components/buttons/Button";
 import FormControl from "@/components/form/FormControl";
-import FormInput from "@/components/form/FormInput";
 import Typography from "@/components/typography/Typography";
+import Input from "@/components/form/Input";
+import { IInput } from "../register/RegisterForm";
+import FormInput from "@/components/form/FormInput";
 
 type Props = {};
 
@@ -36,13 +37,15 @@ const LoginForm = (props: Props) => {
 
   let error = useAppSelector((state) => state.user.errorMsg);
 
-  const inputs: ILoginInput[] = [
+  const inputs: IInput[] = [
     {
       id: 1,
       name: "email",
       type: "email",
       label: "Email",
       required: true,
+      errorMsg: "",
+      pattern: "",
     },
     {
       id: 2,
@@ -50,6 +53,8 @@ const LoginForm = (props: Props) => {
       type: "password",
       label: "Password",
       required: true,
+      errorMsg: "",
+      pattern: "",
     },
   ];
 
@@ -85,14 +90,15 @@ const LoginForm = (props: Props) => {
   }
 
   return (
-    <div className="flex w-full flex-col bg-white p-3 drop-shadow-2xl md:max-w-[650px] md:items-center md:justify-center md:rounded-2xl md:p-5 dark:bg-zinc-800">
+    <div className="flex w-full flex-col bg-white p-3 drop-shadow-2xl dark:bg-zinc-800 md:max-w-[650px] md:items-center md:justify-center md:rounded-2xl md:p-5">
       <div className="border-b-2 border-blue-30 py-5 px-3 lg:p-8">
         <Typography
-          className="p-3 text-center text-2xl text-grey-40 lg:text-[2rem] dark:text-off-white"
+          className="p-3 text-center text-2xl text-grey-40 dark:text-off-white lg:text-[2rem]"
           text="Welcome Back!"
         />
         <p className="text-center text-xs text-grey-20 sm:text-sm lg:text-sm">
-          Sign in to your account to track all current and future job applications
+          Sign in to your account to track all current and future job
+          applications
         </p>
 
         <div className="my-3 rounded-lg border border-blue-40 bg-blue-10 p-3 text-sm font-bold text-blue-40">
@@ -122,7 +128,7 @@ const LoginForm = (props: Props) => {
             {error}
           </p>
         ) : null}
-        {inputs.map((inputProps) => (
+        {inputs.map((inputProps: any) => (
           <FormInput
             key={inputProps.id}
             className="flex flex-col"

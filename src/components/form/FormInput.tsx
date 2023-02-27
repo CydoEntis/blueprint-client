@@ -1,18 +1,17 @@
-import { ILoginInput } from "@/features/authentication/login/LoginForm";
-import { IRegisterInput } from "@/features/authentication/register/RegisterForm";
+import { IInput } from "@/features/authentication/register/RegisterForm";
 import React, { FocusEvent, useEffect, useState } from "react";
 
 import FormControl from "./FormControl";
 import Input from "./Input";
 import Label from "./Label";
-type Props =  {
+type Props = {
   className: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
-  inputProps?: IRegisterInput[] | ILoginInput
+  inputProps: IInput;
 };
 
-const FormInput = ({ className, onChange, value, ...inputProps }: Props) => {
+const FormInput = ({ className, onChange, value, inputProps }: Props) => {
   const [isBlur, setBlur] = useState<boolean>(false);
   const [isValid, setIsValid] = useState<boolean>(true);
 
@@ -33,22 +32,22 @@ const FormInput = ({ className, onChange, value, ...inputProps }: Props) => {
   function handleBlur(e: FocusEvent<HTMLInputElement>) {
     setBlur(true);
 
-      if (inputProps?.errorMsg) {
-        if (inputProps?.type === "email") {
-          if (!value.includes("@")) {
-            console.log("incorrect email");
-            setIsValid(false);
-          } else {
-            setIsValid(true);
-          }
+    if (inputProps?.errorMsg) {
+      if (inputProps?.type === "email") {
+        if (!value.includes("@")) {
+          console.log("incorrect email");
+          setIsValid(false);
         } else {
-          if (!value.match(new RegExp(inputProps?.pattern!))) {
-            setIsValid(false);
-          } else {
-            setIsValid(true);
-          }
+          setIsValid(true);
+        }
+      } else {
+        if (!value.match(new RegExp(inputProps?.pattern!))) {
+          setIsValid(false);
+        } else {
+          setIsValid(true);
         }
       }
+    }
   }
 
   return (
@@ -56,7 +55,7 @@ const FormInput = ({ className, onChange, value, ...inputProps }: Props) => {
       <Label htmlFor={inputProps.name}>{inputProps.label}</Label>
       <Input
         id={inputProps.name}
-        type={inputProps.type}
+        type={inputProps.type as string}
         value={value}
         onChange={onChange}
         onBlur={handleBlur}
