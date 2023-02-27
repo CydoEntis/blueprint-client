@@ -3,8 +3,6 @@ import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { IRegisterUser } from "@/features/authentication/register/RegisterForm";
 import axios from "axios";
 
-// const url = "http://localhost:8000/user";
-// const url = "http://localhost:1337/user";
 const url = `${import.meta.env.VITE_ENDPOINT}/user`;
 
 const user = localStorage.getItem("user");
