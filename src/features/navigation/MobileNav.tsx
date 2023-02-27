@@ -1,9 +1,5 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import ActionButton from "./NavBtn";
-import Toggle from "./Toggle";
 import NavActions from "./NavActions";
-import User from "../../components/user/User";
 import NavItems from "./NavItems";
 import Avatar from "@/components/avatars/Avatar";
 
