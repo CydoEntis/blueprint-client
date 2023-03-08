@@ -5,6 +5,8 @@ import axios from "axios";
 // const url = "http://localhost:8000/task";
 const url = `${import.meta.env.VITE_ENDPOINT}/jobs`;
 
+console.log(url);
+
 
 
 export interface IJob {
@@ -72,6 +74,7 @@ export const getJobs = createAsyncThunk("/all", async (options: IOptions = {
   const {search, jobStatus, jobType, sort, page} = options;
   try {
     const res = await axios(url + `/all?&page=${page}&search=${search}&jobStatus=${jobStatus}&jobType=${jobType}&sort=${sort}`);
+    console.log(res);
     return res.data;
   } catch (error: any) {
     console.log(error);

@@ -73,6 +73,7 @@ const EditJob = (props: Props) => {
     async function getJob() {
       try {
         const res = await axios(`${import.meta.env.VITE_ENDPOINT}/jobs/get/${jobId}`);
+        console.log(res);
         setJob(res.data.job);
       } catch (error: any) {
         console.log(error);
@@ -122,7 +123,7 @@ const EditJob = (props: Props) => {
     navigate("/jobs");
   }
 
-
+  console.log(jobId);
   return (
     <div className="my-5 w-full rounded-md bg-white p-5 text-grey-30 shadow-md dark:bg-zinc-800 dark:text-off-white">
       <FormTitle text="Edit Job" />

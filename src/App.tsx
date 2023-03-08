@@ -30,6 +30,7 @@ const router = createBrowserRouter(
         <Route index element={<Dashboard />} />
         <Route path="jobs" element={<JobsPage />} />
         <Route path="add-job" element={<AddJobPage />} />
+        <Route path="jobs/:jobId" element={<EditJobPage />} />
       </Route>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />

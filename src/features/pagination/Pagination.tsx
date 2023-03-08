@@ -11,7 +11,7 @@ const Pagination = () => {
   const paginationRange = usePagination({
     currentPage,
     totalCount: numOfPages,
-    siblingCount: 5,
+    siblingCount: 1,
     pageSize: 10,
   });
 

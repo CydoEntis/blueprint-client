@@ -28,11 +28,14 @@ const index = (props: Props) => {
   useEffect(() => {
     async function getMonthlyApps() {
       const res = await axios(`${import.meta.env.VITE_ENDPOINT}/jobs/apps`);
+      console.log("res: " + res);
       setMonthlyApps(res.data.monthlyApplications);
     }
 
     getMonthlyApps();
   }, []);
+
+  console.log("Monthly apps: " + monthlyApps);
 
   return (
     <div className=" w-full p-5">

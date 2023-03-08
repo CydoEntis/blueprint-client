@@ -33,12 +33,12 @@ const Root = () => {
   }
 
   return (
-    <main className="relative flex min-h-screen w-screen flex-col bg-off-white lg:bg-white lg:p-0 dark:bg-zinc-900">
+    <main className="relative flex h-full lg:min-h-screen w-screen flex-col bg-off-white lg:bg-white lg:p-0 dark:bg-zinc-900">
       <Nav onClick={() => setIsOpen(false)} themeHandler={handleThemeSwitch} theme={theme}/>
       <MobileNav isOpen={isOpen} onClick={() => setIsOpen(false)} themeHandler={handleThemeSwitch} theme={theme}/>
       <Toggle isOpen={isOpen} onClick={() => setIsOpen((isOpen) => !isOpen)} />
       <MainHeader />
-      <div className="h-[calc(100vh-108px)] max-h-full rounded-md bg-off-white lg:ml-80 lg:overflow-x-hidden dark:bg-zinc-800">
+      <div className="lg:h-[calc(100vh-108px)]  rounded-md bg-off-white lg:ml-80 lg:overflow-x-hidden dark:bg-zinc-800">
         <Outlet />
       </div>
     </main>
