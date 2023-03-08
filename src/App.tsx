@@ -16,43 +16,6 @@ import EditJobPage from "./pages/jobs/EditJobPage";
 
 type Props = {};
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: (
-//       <ProtectedRoutes>
-//         <Root />
-//       </ProtectedRoutes>
-//     ),
-//     errorElement: <Error to="/" text="Return home" />,
-//     children: [
-//       {
-//         path: "/",
-//         element: <Dashboard />,
-//       },
-//       {
-//         path: "jobs",
-//         element: <JobsPage />,
-//       },
-//       {
-//         path: "add-job",
-//         element: <AddJobPage />,
-//       },
-//       {
-//         path: "jobs/:jobId",
-//         element: <EditJobPage />,
-//       },
-//     ],
-//   },
-//   {
-//     path: "login",
-//     element: <LoginPage />,
-//   },
-//   {
-//     path: "register",
-//     element: <RegisterPage />,
-//   },
-// ]);
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
